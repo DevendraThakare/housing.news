@@ -1,0 +1,294 @@
+/*
+Theme Name: Vancouver
+Description: Used to style the TinyMCE editor.
+*/
+
+/** Merriweather font **/
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic,300italic,300);
+
+/** Oswald font **/
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext);
+
+html .mceContentBody {
+	max-width: 770px;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0
+}
+fieldset, img {
+	border: 0
+}
+caption, th {
+	text-align: left
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal
+}
+q:before, q:after {
+	content: ''
+}
+strong {
+	font-weight: bold
+}
+em {
+	font-style: italic
+}
+img {
+	max-width: 100%;
+}
+a img {
+	border: none
+}
+body {
+	font-family: 'Merriweather', sans-serif;
+	color: #313131;
+	background-color: #FFF;
+	font-size: 13px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+	font-style: normal;
+}
+a {
+	text-decoration: none;
+	color: #BF9F5A;
+	outline: none;
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: underline;
+}
+p, h1, h2, h3, h4, h5, h6, hr {
+	margin-bottom: 22px;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #313131;
+	clear: both;
+	font-weight: normal;
+	letter-spacing: 1px;
+	line-height: 1.2em;
+}
+h1 {
+	font-size: 30px;
+}
+h2 {
+	font-size: 28px;
+}
+h3 {
+	font-size: 26px;
+}
+h4 {
+	font-size: 22px;
+}
+h5 {
+	font-size: 18px;
+}
+h6 {
+	font-size: 16px;
+}
+hr {
+	border: 0;
+	height: 0;
+	border-bottom: 1px solid #e9e9e9;
+	clear: both;
+}
+blockquote {
+	padding: 0 0 0 60px;
+	position: relative;
+	margin-bottom: 20px;
+}
+blockquote,
+blockquote p {
+	font-size: 16px;
+	color: #9e9e9e;
+	font-style: italic;
+	line-height: 1.7;
+}
+blockquote:before {
+	color: #BF9F5A;
+	font-size: 90px;
+	font-family: 'Oswald', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+	text-rendering: auto;
+	display: inline-block;
+	float: left;
+	content: '“';
+	font-style: normal;
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-weight: bold;
+	line-height: 1;
+}
+blockquote cite,
+blockquote .author {
+	display: block;
+	font-size: 16px;
+	margin-top: 10px;
+	font-weight: bold;
+	color: #BF9F5A;
+	font-style: italic;
+}
+ul, ol {
+	padding-left: 60px;
+	margin-bottom: 20px;
+}
+ol {
+	padding-left: 78px;
+}
+ul ul {
+	margin: 10px 0;
+	padding-left: 20px;
+}
+ol ol {
+	margin: 10px 0;
+	padding-left: 39px;
+}
+ul li {
+	margin-bottom: 6px;
+	list-style: none;
+	position: relative;
+	padding-left: 18px;
+}
+ul li:before {
+	content: "";
+	width: 5px;
+	height: 5px;
+	display: inline-block;
+	margin-right: 16px;
+	transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	background: #BF9F5A;
+	position: absolute;
+	top: 8px;
+	left: 0;
+}
+ol li {
+	margin-bottom: 6px;
+	list-style: decimal;
+}
+table {
+	width: 100%;
+	margin-bottom: 22px;
+	border-collapse: collapse;
+	border-left: 1px solid #f5f5f5;
+	border-right: 1px solid #f5f5f5;
+}
+td, th {
+	padding: 12px;
+	border-bottom: 1px #e9e9e9 solid;
+}
+th {
+	font-weight: bold;
+	font-size: 16px;
+	background: #f5f5f5;
+}
+tr:hover {
+	background: #ffffff;
+}
+
+/* = Wordpress style of core
+-----------------------------------------------------*/
+.alignnone {
+	margin: 5px 20px 20px 0;
+}
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin: 5px auto 20px auto;
+}
+.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+.aligncenter {
+	display: block;
+	margin: 5px auto 5px auto;
+}
+a img.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+a img.alignnone {
+	margin: 5px 20px 20px 0;
+}
+a img.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+a img.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+.wp-caption {
+	background: #fff;
+	border: 1px solid #f0f0f0;
+	max-width: 95%;
+	padding: 5px 5px 6px;
+	text-align: center;
+	font-family: "Oswald";
+}
+.wp-caption.alignnone {
+	margin: 5px 20px 12px 0;
+}
+.wp-caption.alignleft {
+	margin: 5px 20px 12px 0;
+}
+.wp-caption.alignright {
+	margin: 5px 0 12px 20px;
+}
+.wp-caption img {
+	border: 0 none;
+	height: auto;
+	margin: 0;
+	max-width: 100%;
+	padding: 0;
+	width: auto;
+}
+.wp-caption p.wp-caption-text {
+	font-size: 13px;
+	line-height: 18px;
+	margin: 0;
+	padding: 0 4px 5px;
+	color: #939393;
+	margin-top: 6px;
+	letter-spacing: 1px;
+	font-style: italic;
+	font-weight: 300;
+}
+
+/*** Pre & Code ***/
+pre {
+	display: block;
+	font-size: 14px;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	background-color: #f4f4f4;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	margin: 0 0 20px;
+	line-height: 1.4;
+	padding: 15px;
+	letter-spacing: 0;
+	color: inherit;
+}
+code {
+	font-size: 12px;
+	line-height: 20px;
+	border-top: 1px solid #e9e9e9;
+	border-bottom: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+	border-left: 4px solid #e9e9e9;
+	padding: 5px 10px;
+}
