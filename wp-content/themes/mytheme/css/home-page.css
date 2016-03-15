@@ -1,0 +1,16 @@
+#main-slider .item img{
+	width: 100%;
+}
+.main-carousel .carousel-caption{
+	bottom: 200px;
+	text-shadow:none
+}
+.main-carousel .carousel-caption a{
+	color : #fff
+}
+
+.main-carousel .caption-title{
+	margin: 24px 0;
+    font-size: 40px;
+    font-weight: bold;
+}

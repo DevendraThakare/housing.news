@@ -450,11 +450,6 @@ html {
 	box-sizing: inherit;
 }
 
-body {
-	background: #1a1a1a;
-	/* Fallback for when there is no custom background color defined. */
-}
-
 hr {
 	background-color: #d1d1d1;
 	border: 0;
@@ -1536,9 +1531,6 @@ blockquote:after,
  * 11.1 - Header
  */
 
-.site-header {
-	padding: 2.625em 7.6923%;
-}
 
 .site-header-main {
 	-webkit-align-items: center;
@@ -2713,18 +2705,10 @@ p > video {
 	body:not(.custom-background-image):after {
 		bottom: 0;
 	}
-
-	.site {
-		margin: 21px;
-	}
-
 	.site-main {
 		margin-bottom: 5.25em;
 	}
 
-	.site-header {
-		padding: 3.9375em 7.6923%;
-	}
 
 	.site-branding {
 		margin-top: 1.3125em;
@@ -2915,10 +2899,6 @@ p > video {
  */
 
 @media screen and (min-width: 56.875em) {
-	.site-header {
-		padding-right: 4.5455%;
-		padding-left: 4.5455%;
-	}
 
 	.site-header-main {
 		-webkit-align-items: flex-start;
@@ -3345,9 +3325,6 @@ p > video {
 		margin-bottom: 7.0em;
 	}
 
-	.site-header {
-		padding: 5.25em 4.5455%;
-	}
 
 	.site-branding,
 	.site-header-menu,
