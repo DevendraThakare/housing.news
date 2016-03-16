@@ -8,7 +8,7 @@ function post_meta() {
 		);
 	}
 	if ( in_array( get_post_type(), array( 'post', 'attachment' ) ) ) {
-		twentysixteen_entry_date();
+		post_date();
 	}
 }
 endif;
@@ -90,6 +90,20 @@ endif;
 if ( ! function_exists( 'post_date' ) ) :
 	function post_date(){
 
+		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+			$time_string = sprintf( $time_string, esc_attr( get_the_modified_date( 'c' ) ), get_the_modified_date());
+
+		}
+		else{
+			$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+			$time_string = sprintf( $time_string, esc_attr( get_the_date( 'c' ) ), get_the_date());
+		}
+
+		printf( '<span class="posted-on"><span class="screen-reader-text"></span><a href="%1$s" rel="bookmark">%2$s</a></span>',
+			esc_url( get_permalink() ),
+			$time_string
+		);
 	}
 endif;
 

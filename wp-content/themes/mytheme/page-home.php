@@ -4,9 +4,10 @@
 <?php query_posts('posts_per_page=4&paged='. get_query_var('paged')); ?>
 <div class="main-carousel">
 	<?php get_template_part( 'template-parts/content', 'slider'); ?>
+	<?php wp_reset_postdata(); ?>
 </div>
 
-<div id="page-container"class="clear">
+<div id="page-container" class="clear">
 	<?php query_posts('posts_per_page=10&paged='. get_query_var('paged')); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -50,6 +51,7 @@
 									) );
 								?>
 							</div>
+							<?php wp_reset_postdata(); ?>
 						<?php
 						// If no content, include the "No posts found" template.
 						else :

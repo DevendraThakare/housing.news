@@ -493,6 +493,12 @@ a:hover{
 	width: 100px;
 }
 
+.tweet_data{
+	font-family: "din", "Calibri", "Cantarell", sans-serif !important;
+}
+a.more-link{
+	display: block;
+}
 
 @media screen and (min-width: 768px){
 	.carousel-control .glyphicon-menu-left{

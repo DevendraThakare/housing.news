@@ -45,6 +45,7 @@
 								<?php endif; // End header image check. ?>
 							</a>
 						</div>
+						<?php echo get_search_form( $echo ); ?>
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
 						    <?php
 						        wp_nav_menu( array(

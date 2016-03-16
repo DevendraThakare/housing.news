@@ -15,17 +15,17 @@
  */
 
 get_header(); ?>
-
+<div id="page-container" class="clear">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
-			<?php if ( is_home() && ! is_front_page() ) : ?>
+			<!-- <?php if ( is_home() && ! is_front_page() ) : ?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
-			<?php endif; ?>
+			<?php endif; ?> -->
 
 			<?php
 			// Start the loop.
@@ -57,6 +57,6 @@ get_header(); ?>
 
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
-
-<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
+</div>
 <?php get_footer(); ?>

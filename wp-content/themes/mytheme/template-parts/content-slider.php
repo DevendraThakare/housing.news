@@ -10,7 +10,7 @@
 					</div>
 					<h4 class="caption-title"><?php the_title();?></h4>
 					<div class="date-comment-count-wrap">
-				 		<span class="slider-date"><?php twentysixteen_entry_date(); ?></span>
+				 		<span class="slider-date"><?php post_date(); ?></span>
 				 		<span class="comment-count"> <?php comments_number(); ?> </span>
 				 	</div>
 				</div>
@@ -26,7 +26,7 @@
 					</div>
 					<h4 class="caption-title"><?php the_title();?></h4>
 					<div class="date-comment-count-wrap">
-				 		<span class="slider-date"><?php twentysixteen_entry_date(); ?></span>
+				 		<span class="slider-date"><?php post_date(); ?></span>
 				 		<span class="comment-count"> <?php comments_number(); ?> </span>
 				 	</div>
 				</div>
