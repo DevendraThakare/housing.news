@@ -132,6 +132,7 @@ a:hover{
 
 .content-area{
 	max-width: 900px;
+	width: 70%;
 }
 
 .site {
@@ -507,8 +508,10 @@ a:hover{
  */
 
 .sidebar {
-	width: 320px;
-	margin-left: 40px;
+	// width: 320px;
+	// margin-left: 40px;
+	width: 24%;
+	margin-left: 6%
 }
 
 .sidebar .widget .widget-title{
