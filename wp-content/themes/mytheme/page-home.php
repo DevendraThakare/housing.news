@@ -1,32 +1,41 @@
 <?php /* Template Name: HomePage */ ?>
 
 <?php get_header(); ?>
-<?php query_posts('posts_per_page=4&paged='. get_query_var('paged')); ?>
 <div class="main-carousel">
 	<?php get_template_part( 'template-parts/content', 'slider'); ?>
-	<?php wp_reset_postdata(); ?>
 </div>
 
 <div id="page-container" class="clear">
 	<?php query_posts('posts_per_page=10&paged='. get_query_var('paged')); ?>
+	<?php 
+
+		// $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+		if ( get_query_var('paged') ) { 
+			$paged = get_query_var('paged'); 
+		}
+		elseif ( get_query_var('page') ) {
+			$paged = get_query_var('page'); 
+		}
+		else { $paged = 1; }
+
+		$args = array(
+		   'posts_per_page' => 10,
+		   'paged' => $paged
+		);
+
+		query_posts($args);
+	?>
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<div id="main" class="site-main" role="main">
 			<div class="main-tabs">
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#latest-posts" aria-controls="home" role="tab" data-toggle="tab">Latest Post</a></li>
+					<li role="presentation" class="active"><a href="#latest-posts" aria-controls="home" role="tab" data-toggle="tab">WHAT'S NEW</a></li>
 				</ul>
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane fade in active" id="latest-posts">
 						<?php if ( have_posts() ) : ?>
-
-							<?php if ( is_home() && ! is_front_page() ) : ?>
-								<header>
-									<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-								</header>
-							<?php endif; ?>
-
 							<?php
 							// Start the loop.
 							while ( have_posts() ) : the_post();
@@ -51,7 +60,6 @@
 									) );
 								?>
 							</div>
-							<?php wp_reset_postdata(); ?>
 						<?php
 						// If no content, include the "No posts found" template.
 						else :
@@ -62,8 +70,9 @@
 					</div>
 				</div>
 			</div>
-		</main><!-- .site-main -->
+		</div><!-- .site-main -->
 	</div><!-- .content-area -->
+	<?php wp_reset_query(); ?>
 	<?php get_sidebar(); ?>
 </div>
 

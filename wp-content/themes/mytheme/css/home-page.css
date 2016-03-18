@@ -1,12 +1,15 @@
 #main-slider{
-	min-height: 576px;
 }
 
 #main-slider .item img{
 	width: 100%;
 }
 .main-carousel .carousel-caption{
-	bottom: 200px;
+    text-shadow: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
 	text-shadow:none
 }
 .main-carousel .carousel-caption a{
@@ -17,4 +20,9 @@
 	margin: 24px 0;
     font-size: 40px;
     font-weight: bold;
+}
+@media (max-width: 960px){
+	.main-carousel .caption-title{
+		font-size: 32px;
+	}
 }

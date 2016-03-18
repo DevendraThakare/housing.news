@@ -14,6 +14,10 @@
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="site-info clear">
+				<div class="footer-menu-wrap housing-line">
+					<div class="footer-logo-coloured"></div>
+					<div class="desc"> © 2012-15 Locon Solutions Pvt. Ltd. </div>
+				</div>
 				<div class="footer-menu-wrap company-menu-wrap">
 					<h4 class="footer-menu-head">COMPLANY</h4>
 					<?php

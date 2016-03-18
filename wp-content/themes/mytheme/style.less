@@ -101,7 +101,7 @@ a:hover{
 
 .site-header .navbar-default .navbar-nav>.open>a, .site-header .navbar-default .navbar-nav>.open>a:focus, .site-header .navbar-default .navbar-nav>.open>a:hover{
 	color: #fff;
-	background-color: #8442DA;
+	background-color: #000;
 }
 
 .site-header .navbar-default .navbar-toggle{
@@ -113,9 +113,6 @@ a:hover{
 	background-color: transparent;
 }
 
-.site-header .navbar-default .navbar-nav>.active>a, .site-header .navbar-default .navbar-nav>.active>a:focus, .site-header .navbar-default .navbar-nav>.active>a:hover{
-	background-color: #8442DA;
-}
 
 
 
@@ -531,11 +528,7 @@ a:hover{
 }
 .footer-menu-wrap{
 	float: left;
-    max-width: 220px;
-    margin-right: 40px;
-}
-.housing-line{
-	max-width: 260px;
+	width: 28%;
 }
 .footer-links-wrap{
 	list-style: none;
@@ -545,18 +538,6 @@ a:hover{
 	display: inline-block;
 	width: 100px;
 }
-.footer-logo-coloured{
-	height: 60px;
-    background-image: url(images/combined-logo@2x.png);
-    background-size: contain;
-    background-position: left;
-    background-repeat: no-repeat;
-    margin-bottom: 10px;
-}
-
-.site-footer #menu-explore li{
-	display: block;
-}
 
 .tweet_data{
 	font-family: "din", "Calibri", "Cantarell", sans-serif !important;
@@ -564,9 +545,6 @@ a:hover{
 a.more-link{
 	display: block;
 }
-
-
-
 
 @media screen and (min-width: 768px){
 	.carousel-control .glyphicon-menu-left{
@@ -590,67 +568,3 @@ a.more-link{
     display: inline-block;
     margin-top: -10px;
 }
-
-@media (min-width: 768px) and (max-width: 1260px){
-	.search-form.navbar-form{
-		width: 320px;
-	}
-}
-
-@media (max-width: 1160px){
-	.site-header .search-form.navbar-form{
-		width: 420px;
-		padding: 0px;
-		border: 0px;
-		position: absolute;
-		left: 128px;
-		top: 8px;
-		margin: 0;
-	}
-	.site-header .navbar-nav>li, .site-header .navbar-nav{
-		float: none ;
-	}
-	.site-header .navbar-default .navbar-toggle{
-		display: inline-block;
-		position: absolute;
-    	right: 0px;
-	}
-	.site-header .navbar-collapse{
-		position: absolute;
-		z-index: 1;
-		background-color: #7323dc;
-		right: 0px;
-		top: 50px;
-	}
-	.site-header .navbar-collapse.collapse{
-		height: 0px !important;
-		overflow: hidden !important;
-	}
-}
-
-@media (max-width: 768px) {
-	.sidebar{
-		width: 100%;
-		margin: 0;
-		box-sizing: border-box;
-	}
-	.post{
-		box-shadow: 0px 2px 2px #ccc;
-	}
-	.post-thum-wrap, .post-thum-wrap img{
-		position: static;
-		width: 100%;
-		height: auto;
-		max-height: 320px;
-	}
-	.post-content-wrap{
-		margin-left: 0;
-		padding: 20px;
-	}
-	#page-container{
-		margin-top: 0px;
-		padding: 0 2%;
-	}
-}
-
-

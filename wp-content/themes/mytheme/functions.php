@@ -239,7 +239,8 @@ function twentysixteen_scripts() {
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array( 'twentysixteen-style' ), '20160309' );
-	wp_enqueue_style( 'twentysixteen-style', get_stylesheet_uri() );
+	// wp_enqueue_style( 'less-style', get_stylesheet_directory_uri() . '/style.less' );
+
 	wp_enqueue_style( 'homepage-style', get_template_directory_uri() . '/css/home-page.css', array( 'twentysixteen-style' ), '20160309' );
 	// Load the Internet Explorer specific stylesheet.
 	// wp_enqueue_style( 'twentysixteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentysixteen-style' ), '20150930' );
@@ -273,6 +274,10 @@ function twentysixteen_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'twentysixteen_scripts' );
 
+add_action( 'wp_enqueue_scripts', 'load_my_child_styles', 51 );
+function load_my_child_styles() {
+    wp_enqueue_style( 'twentysixteen-style', get_stylesheet_uri() );
+}
 /**
  * Adds custom classes to the array of body classes.
  *
