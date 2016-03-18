@@ -218,7 +218,9 @@ a:hover{
 .post-content-wrap{
 	margin-left: 320px;
 }
-
+.post-banner-img .wp-post-image{
+	width: 100%;
+}
 .post:not(.has-post-thumbnail) .post-content-wrap{
 	margin-left: 0px;
 }

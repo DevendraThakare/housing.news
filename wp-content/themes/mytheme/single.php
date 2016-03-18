@@ -9,6 +9,7 @@
 
 get_header(); ?>
 <div id="page-container" class="clear">
+	<?php post_banner_img(); ?>
 	<div id="primary" class="content-area">
 		<div id="main" class="site-main" role="main">
 			<?php

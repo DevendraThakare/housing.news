@@ -14,16 +14,6 @@ function post_meta() {
 endif;
 
 if ( ! function_exists( 'post_thumbnail' ) ) :
-/**
- * Displays an optional post thumbnail.
- *
- * Wraps the post thumbnail in an anchor element on index views, or a div
- * element when on single views.
- *
- * Create your own twentysixteen_post_thumbnail() function to override in a child theme.
- *
- * @since Twenty Sixteen 1.0
- */
 function post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
@@ -47,6 +37,19 @@ function post_thumbnail() {
 	</div><?php
 }
 endif;
+
+if ( ! function_exists( 'post_banner_img' ) ) :
+	function post_banner_img() {
+	?>
+		<div class="post-banner-wrap">
+			<a class="post-banner-img" href="<?php the_permalink(); ?>" aria-hidden="true">
+				<?php the_post_thumbnail( array(1160, 450), array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
+			</a>
+		</div>
+	<?php
+	}
+endif;
+
 
 if ( ! function_exists( 'post_excerpt' ) ) :
 	function post_excerpt(){
