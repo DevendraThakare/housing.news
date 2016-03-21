@@ -121,11 +121,6 @@ a:hover{
 	background-color: #8442DA;
 }
 
-
-
-
-
-
 .content-area, .sidebar{
 	float: left;
 }
@@ -176,6 +171,13 @@ a:hover{
 
 }
 
+.tab-content{
+	margin-top: 30px;
+}
+
+.menu-social_links-container{
+	margin-top: 20px;
+}
 /**
  * 11.2 - Posts and pages
  */
@@ -183,12 +185,26 @@ a:hover{
 .entry-title{
 	font-size: 22px;
 	font-weight: bold;
+	margin-top: 18px;
+	margin-bottom: 14px;
 }
+
 .entry-title a{
 	color: #000;
 }
 .entry-content{
-	color: #8E8E8E;
+  color: #7f7f7f;
+  font-size: 15px;
+  line-height: 22px;
+  border-bottom: 1px solid #7f7f7f;
+}
+
+.entry-footer{
+	margin-top:20px; 
+}
+
+.site-main{
+	margin-left: 12px;
 }
 .post-thumbnail img {
 	width: 300px;
@@ -235,7 +251,17 @@ a:hover{
     color: #fff;
 }
 .pagination .page-numbers:hover{
-	color: #7323dc
+	color: #7323dc;
+}
+
+.author-bio-details{
+  display: block;
+  float: right;
+  width: 92%;
+}
+
+.author-bio-details .posted-on{
+	display: block;
 }
 
 
@@ -513,7 +539,7 @@ a:hover{
 }
 
 .sidebar .widget:first-child h2{
-	margin-top: 0px;
+	margin-top: 6px;
 	color: #000000;
   display: block;
   text-transform: uppercase;
@@ -536,20 +562,26 @@ a:hover{
   color: #fff;
 }
 
-.rpwwt-post-date{
-	color: #7f7f7f;
-}
+
 .rpwwt-post-title{
+  display: block;
+  float: left;
+  width: 66%;
+  font-size: 13px;
+  margin-top: 18px;
 	color: #000000;
 	font-weight: bold;
-	font-size: 13px;
-	line-height: 20px;
 }
 
 .rpwwt-post-title:hover{
 	color: #7323dc;
 }
 
+/** Autor footer **/
+
+.entry-footer .byline .author .avatar{
+	margin-right: 14px;
+}
 /**
  * 11.6 - Footer
  */
