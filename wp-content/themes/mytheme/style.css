@@ -152,43 +152,30 @@ a:hover{
 
 #page-container{
 	word-wrap: break-word;
-	max-width: 1260px;
-	width: 100%;
-	margin: 0 auto;
-	margin-top: 40px;
+    max-width: 1340px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 0 2%;
+}
+.single-post #page-container{
+	margin-top: 0px;
 }
 
-
-.main-tabs .nav-tabs>li>a{
-	color: #7323dc;
-  display: block;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: .4px;
-  padding: 10px 0px;
-	border: 1px solid rgba(0,0,0,0);
+.whats-new{
+	font-size: 16px;
+	padding: 8px 0px;
 	border-bottom: 1px solid #e6e6e6;
 }
 
-.main-tabs  .nav-tabs{
-	border-bottom: 1px solid #e6e6e6;
+#latest-posts{
+	padding-top: 40px;
 }
 
-.main-tabs  .nav-tabs>li.active>a, .main-tabs  .nav-tabs>li.active>a:focus, .main-tabs  .nav-tabs>li.active>a:hover{
-	color: #000;
-    border: 1px solid rgba(0,0,0,0);
-    font-size: 16px;
-    font-weight: 500;
-	border: 1px solid rgba(0,0,0,0);
-	border-bottom: 1px solid #e6e6e6;
+.whats-new{
+
 }
 
-.main-tabs .nav>li>a:focus, .main-tabs .nav>li>a:hover{
-	background-color: #fff;
-	border: 1px solid rgba(0,0,0,0);
-	border-bottom: 1px solid #e6e6e6;
-	color: #000;
-}
 /**
  * 11.2 - Posts and pages
  */
@@ -510,8 +497,8 @@ a:hover{
 .sidebar {
 	// width: 320px;
 	// margin-left: 40px;
-	width: 24%;
-	margin-left: 6%
+	width: 26%;
+	margin-left: 4%
 }
 
 .sidebar .widget .widget-title{
@@ -575,6 +562,13 @@ a:hover{
 .site-footer a{
 	color: #7f7f7f;
 }
+.site-footer .site-info{
+    max-width: 1340px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
 .footer-menu-head{
 	font-size: 14px;
 	font-weight: bold;
@@ -680,13 +674,21 @@ a.more-link{
 }
 
 @media (max-width: 768px) {
+	#latest-posts{
+		padding-top: 20px;
+	}
+	.content-area{
+		width: 100%;
+	}
+
 	.sidebar{
 		width: 100%;
 		margin: 0;
 		box-sizing: border-box;
 	}
 	.post{
-		box-shadow: 0px 2px 2px #ccc;
+		box-shadow: 0px 2px 2px #EAE8E8;
+		-webkit-box-shadow:0px 2px 2px #EAE8E8;
 	}
 	.post-thum-wrap, .post-thum-wrap img{
 		position: static;
@@ -697,9 +699,29 @@ a.more-link{
 	.post-content-wrap{
 		margin-left: 0;
 		padding: 20px;
+		padding-bottom: 36px;
 	}
 	#page-container{
 		margin-top: 0px;
 		padding: 0 2%;
 	}
+	a.more-link{
+		display: block;
+		position: absolute;
+		padding: 8px 20px;
+		bottom: 0px;
+		right: 0px;
+		left: 0px;
+	}
+	.post .entry-content{
+		border-bottom: 1px solid #e6e6e6;
+	}
+}
+
+{
+	.whats-new{
+		
+	}
+
+}
 }

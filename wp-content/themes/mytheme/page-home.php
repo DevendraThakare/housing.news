@@ -29,9 +29,9 @@
 		<div id="main" class="site-main" role="main">
 			<div class="main-tabs">
 				<!-- Nav tabs -->
-				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#latest-posts" aria-controls="home" role="tab" data-toggle="tab">WHAT'S NEW</a></li>
-				</ul>
+				<div class="whats-new">
+					WHAT'S NEW
+				</div>
 				<!-- Tab panes -->
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane fade in active" id="latest-posts">
