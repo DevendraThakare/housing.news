@@ -90,6 +90,30 @@ endif;
 // endif;
 
 
+
+function social_page_links() {
+	$menu_name = 'media_pages'; // specify custom menu slug
+	if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
+		$menu = wp_get_nav_menu_object($locations[$menu_name]);
+		$menu_items = wp_get_nav_menu_items($menu->term_id);
+
+		$menu_list .= "\t\t\t\t". '<ul class="media-pages-links nav navbar-nav">' ."\n";
+		foreach ((array) $menu_items as $key => $menu_item) {
+			$el_class='glyphicon-tint';
+			$title = $menu_item->title;
+			$url = $menu_item->url;
+			$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'"><span class="glyphicon '.$el_class.'"></span></a></li>' ."\n";
+		}
+		$menu_list .= "\t\t\t\t". '</ul>' ."\n";
+		$menu_list .= "\t\t\t". '</nav>' ."\n";
+	} else {
+		// $menu_list = '<!-- no list defined -->';
+	}
+	echo $menu_list;
+}
+
+
+
 if ( ! function_exists( 'post_date' ) ) :
 	function post_date(){
 

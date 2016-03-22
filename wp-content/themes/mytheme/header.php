@@ -33,6 +33,7 @@
 					<div class="container-fluid">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
+							<span class="glyphicon glyphicon-menu-hamburger side-menu-icon"></span>
 							<a class="navbar-brand" href="<?php echo home_url(); ?>">
 								<?php if ( get_header_image() ) : ?>
 									<?php $custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' ); ?>
@@ -40,28 +41,29 @@
 								<?php endif; // End header image check. ?>
 							</a>
 							<?php echo get_search_form( $echo ); ?>
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
+							<?php if ( has_nav_menu( 'primary' ) ) : ?>
+							    <?php
+							        wp_nav_menu( array(
+							            'menu'              => 'primary',
+							            'theme_location'    => 'primary',
+							            'depth'             => 2,
+							            'container'         => 'div',
+							            'container_class'   => 'collapse navbar-collapse pull-right',
+							    		'container_id'      => 'main-menu',
+							            'menu_class'        => 'nav navbar-nav',
+							            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+							            'walker'            => new wp_bootstrap_navwalker())
+							        );
+							    ?>
+							<?php endif; ?>
+							<?php //social_page_links(); ?>
 						</div>
-						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-						    <?php
-						        wp_nav_menu( array(
-						            'menu'              => 'primary',
-						            'theme_location'    => 'primary',
-						            'depth'             => 2,
-						            'container'         => 'div',
-						            'container_class'   => 'collapse navbar-collapse pull-right',
-						    				'container_id'      => 'bs-example-navbar-collapse-1',
-						            'menu_class'        => 'nav navbar-nav',
-						            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-						            'walker'            => new wp_bootstrap_navwalker())
-						        );
-						    ?>
-						<?php endif; ?>
 						<?php if ( has_nav_menu( 'social' ) ) : ?>
 							<?php
 								// wp_nav_menu( array(

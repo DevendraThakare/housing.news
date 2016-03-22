@@ -9,7 +9,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php post_thumbnail(); ?>
+	<?php 
+		$post_image_id = get_post_thumbnail_id($post_to_use->ID);
+		if ($post_image_id) {
+			$thumbnail = wp_get_attachment_image_src( $post_image_id, 'medium', false);
+			if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+		}
+	?>
+	<div class="entry-thumb" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
+	<div class="category-tag">
+		<?php the_category( ', ' ); ?>
+	</div>
 	<div class="post-content-wrap">
 		<header class="entry-header">
 			<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
@@ -24,7 +34,7 @@
 		<?php twentysixteen_excerpt(); ?>
 
 
-		<div class="entry-content">
+		<div class="entry-excerpt">
 			<?php
 				/* translators: %s: Name of current post */
 				echo post_excerpt();
@@ -44,17 +54,18 @@
 			?>
 		</div><!-- .entry-content -->
 
-		<footer class="entry-footer">
+
+		<!-- <footer class="entry-footer">
 			<?php
-				edit_post_link(
-					sprintf(
-						/* translators: %s: Name of current post */
-						__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-						get_the_title()
-					),
-					'<span class="edit-link">',
-					'</span>'
-				);
+				// edit_post_link(
+				// 	sprintf(
+				// 		/* translators: %s: Name of current post */
+				// 		__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
+				// 		get_the_title()
+				// 	),
+				// 	'<span class="edit-link">',
+				// 	'</span>'
+				// );
 			?>
 		</footer><!-- .entry-footer -->
 	</div>

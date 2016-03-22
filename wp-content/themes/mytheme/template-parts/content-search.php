@@ -9,7 +9,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php post_thumbnail(); ?>
+	<?php 
+		$post_image_id = get_post_thumbnail_id($post_to_use->ID);
+		if ($post_image_id) {
+			$thumbnail = wp_get_attachment_image_src( $post_image_id, 'medium', false);
+			if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+		}
+	?>
+	<div class="entry-thumb" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
+	<?php //post_thumbnail(); ?>
 	<div class="post-content-wrap">
 		<header class="entry-header">
 			<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
@@ -23,7 +31,7 @@
 
 
 
-		<div class="entry-content">
+		<div class="entry-excerpt">
 			<?php
 				/* translators: %s: Name of current post */
 				echo post_excerpt();

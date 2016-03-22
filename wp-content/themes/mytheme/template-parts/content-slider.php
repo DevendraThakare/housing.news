@@ -3,7 +3,17 @@
 		<?php $the_query = new WP_Query(array('category_name' => 'slider', 'posts_per_page' => 1 )); 
 			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<div class="item active">
-				<?php the_post_thumbnail('large');?>
+				<?php 
+					$post_image_id = get_post_thumbnail_id($post_to_use->ID);
+					if ($post_image_id) {
+						$thumbnail = wp_get_attachment_image_src( $post_image_id, 'large', false);
+						if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+					}
+
+					?>
+				<div class="img-holder" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
+
+				<?php //the_post_thumbnail('large');?>
 				<div class="carousel-caption">
 					<div class="caption-author"> 
 						BY <a class="" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>"><?php echo strtoupper(get_the_author()); ?></a>
@@ -19,7 +29,17 @@
 		<?php $the_query = new WP_Query(array('category_name' => 'slider', 'posts_per_page' => 3, 'offset' => 1 )); 
 			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<div class="item">
-				<?php the_post_thumbnail('large');?>
+				<?php 
+					$post_image_id = get_post_thumbnail_id($post_to_use->ID);
+					if ($post_image_id) {
+						$thumbnail = wp_get_attachment_image_src( $post_image_id, 'large', false);
+						if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+					}
+
+					?>
+				<div class="img-holder" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
+
+				<?php //the_post_thumbnail('large');?>
 				<div class="carousel-caption">
 					<div class="caption-author"> 
 						BY <a class="" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>"><?php echo strtoupper(get_the_author()); ?></a>
