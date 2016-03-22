@@ -540,7 +540,24 @@ a:hover{
 	font-family: "din", "Calibri", "Cantarell", sans-serif !important;
 }
 
+.wpp-list{
+	padding-left: 0px;
+}
+.wpp-list > li{
+	margin-bottom: 15px;
+}
 
+.wpp-list .wpp-post-title{
+	color: #000;
+	font-weight: bold;
+}
+.wpp-list .wpp-post-title:hover{
+	color: #7323DC;
+}
+.wpp-list .wpp-date{
+	font-size: 14px;
+	font-weight: normal;
+}
 @media screen and (min-width: 768px){
 	.carousel-control .glyphicon-menu-left{
 	    margin-left: -10px;
@@ -721,5 +738,11 @@ a:hover{
 	}
 	.site-header .navbar-brand img{
 		width: 80px;
+	}
+	.wpp-list > li{
+		margin-bottom: 15px;
+		float: left !important;
+		width: 50%;
+		clear: none !important;
 	}
 }
