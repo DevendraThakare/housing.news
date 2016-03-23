@@ -18,7 +18,7 @@
 					<div class="caption-author"> 
 						BY <a class="" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>"><?php echo strtoupper(get_the_author()); ?></a>
 					</div>
-					<h4 class="caption-title"><?php the_title();?></h4>
+					<h4 class="caption-title"><a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark"><?php the_title();?></a></h4>
 					<div class="date-comment-count-wrap">
 				 		<span class="slider-date"><?php post_date(); ?></span>
 				 		<span class="comment-count"> <?php comments_number(); ?> </span>
@@ -44,7 +44,7 @@
 					<div class="caption-author"> 
 						BY <a class="" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>"><?php echo strtoupper(get_the_author()); ?></a>
 					</div>
-					<h4 class="caption-title"><?php the_title();?></h4>
+					<h4 class="caption-title"><a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark"><?php the_title();?></a></h4>
 					<div class="date-comment-count-wrap">
 				 		<span class="slider-date"><?php post_date(); ?></span>
 				 		<span class="comment-count"> <?php comments_number(); ?> </span>

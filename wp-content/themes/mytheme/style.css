@@ -29,7 +29,8 @@ blockquote:after,
 .textwidget:before,
 .textwidget:after,
 .content-bottom-widgets:before,
-.content-bottom-widgets:after {
+.content-bottom-widgets:after,
+.wpp-list:after, .wpp-list:before {
 	content: "";
 	display: table;
 }
@@ -44,7 +45,7 @@ blockquote:after,
 .primary-menu:after,
 .social-links-menu:after,
 .textwidget:after,
-.content-bottom-widgets:after {
+.content-bottom-widgets:after, .wpp-list:after {
 	clear: both;
 }
 
@@ -135,13 +136,9 @@ a:hover{
 .site-header .search-form{
 	background-color: transparent;
 	color: #fff;
+	padding: 0;
 }
 
-
-
-.site-header .media-pages-links{
-
-}
 
 /** Search Form **/
 .search-form .search-icon{
@@ -223,6 +220,17 @@ a:hover{
     margin-top: 40px;
     padding: 0 2%;
 }
+
+.page-header{
+	margin: 0px;
+}
+.page-title{
+	margin: 0;
+	font-size: 20px;
+}
+.entry-wrapper{
+	padding-top: 40px;
+}
 .single-post #page-container{
 	margin-top: 0px;
 }
@@ -232,11 +240,6 @@ a:hover{
 	padding: 8px 0px;
 	border-bottom: 1px solid #e6e6e6;
 }
-
-.whats-new{
-
-}
-
 .tab-content{
 	margin-top: 30px;
 }
@@ -256,6 +259,9 @@ a:hover{
 }
 
 .entry-title a{
+	color: #4C4C4C;
+}
+.entry-title a:hover{
 	color: #000;
 }
 .entry-content, .entry-excerpt{
@@ -392,9 +398,9 @@ a:hover{
 
 .sidebar .widget .widget-title{
 	font-size: 12px;
-  border-bottom: 1px solid #e6e6e6;
-  padding: 12px 0;
-  margin: 10px 0;
+	border-bottom: 1px solid #e6e6e6;
+	padding: 10px 0;
+	margin: 10px 0;
 }
 
 .sidebar .widget .widget_text{
@@ -402,12 +408,12 @@ a:hover{
 }
 
 .sidebar .widget:first-child h2{
-	margin-top: 6px;
-	color: #000000;
-  display: block;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: .4px;
+	color: #000;
+	display: block;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: .4px;
+	margin-top: 0px;
 }
 
 
@@ -548,11 +554,11 @@ a:hover{
 }
 
 .wpp-list .wpp-post-title{
-	color: #000;
+	color: #4C4C4C;
 	font-weight: bold;
 }
 .wpp-list .wpp-post-title:hover{
-	color: #7323DC;
+	color: #000;
 }
 .wpp-list .wpp-date{
 	font-size: 14px;
@@ -722,7 +728,7 @@ a:hover{
 		padding: 20px;
 	}
 	#page-container{
-		margin-top: 0px;
+		margin-top: 20px;
 		padding: 0 2%;
 	}
 	.entry-excerpt .more-link{
@@ -741,8 +747,5 @@ a:hover{
 	}
 	.wpp-list > li{
 		margin-bottom: 15px;
-		float: left !important;
-		width: 50%;
-		clear: none !important;
 	}
 }
