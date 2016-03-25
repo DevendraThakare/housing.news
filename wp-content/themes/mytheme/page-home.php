@@ -26,11 +26,11 @@
 						get_template_part( 'template-parts/content', get_post_format() );
 						endwhile;
 					?>
-					<div class="navigation">
+					<!-- <div class="navigation">
 						<div class="alignleft"><?php previous_posts_link('&laquo; Previous') ?></div>
 						<div class="alignright"><?php next_posts_link('More &raquo;') ?></div>
-					</div>
-					<!-- <div class="pagination-wrap">
+					</div> -->
+					<div class="pagination-wrap">
 						<nav class="navigation pagination">
 							<div class="nav-links">
 								<?php if($the_query->max_num_pages>1){ ?>
@@ -53,7 +53,7 @@
 								<?php } ?>
 							</div>
 						</nav>
-					</div> -->
+					</div>
 					<?php 
 						// the_posts_pagination( array(
 						// 	'prev_text'          => __( 'Previous page', 'twentysixteen' ),

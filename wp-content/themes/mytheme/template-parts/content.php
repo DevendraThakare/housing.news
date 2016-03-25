@@ -16,7 +16,7 @@
 			if ($thumbnail) (string)$thumbnail = $thumbnail[0];
 		}
 	?>
-	<div class="entry-thumb" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
+	<a href="<?php echo  esc_url( get_permalink());?>"><div class="entry-thumb" style="background-image: url('<?php echo $thumbnail; ?>');"></div></a>
 	<div class="category-tag">
 		<?php the_category( ', ' ); ?>
 	</div>
