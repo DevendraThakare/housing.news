@@ -24,6 +24,7 @@ get_header(); ?>
 							if ( is_singular( 'attachment' ) ) {
 								the_post_navigation( array(
 									'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'twentysixteen' ),
+									'screen_reader_text'=>' '
 								) );
 							} elseif ( is_singular( 'post' ) ) {
 								the_post_navigation( array(
@@ -33,6 +34,7 @@ get_header(); ?>
 									'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentysixteen' ) . '</span> ' .
 										'<span class="screen-reader-text">' . __( 'Previous post:', 'twentysixteen' ) . '</span> ' .
 										'<span class="post-title">%title</span>',
+									'screen_reader_text'=>' '
 								) );
 							}
 						?>
