@@ -113,7 +113,6 @@ function social_page_links() {
 }
 
 
-
 if ( ! function_exists( 'post_date' ) ) :
 	function post_date(){
 
@@ -133,5 +132,145 @@ if ( ! function_exists( 'post_date' ) ) :
 		);
 	}
 endif;
+
+
+
+
+
+
+
+function custom_pagination($current_page_no, $max_num_pages){
+	/*
+		Place code to connect to your DB here.
+	*/
+	
+	// How many adjacent pages should be shown on each side?
+	$adjacents = 2;
+	
+	/* 
+	   First get total number of rows in data table. 
+	   If you have a WHERE clause in your query, make sure you mirror it here.
+	*/
+	$total_pages = $max_num_pages;
+	
+	/* Setup vars for query. */
+	$limit = 10; 
+	$page = $current_page_no;							//how many items to show per page
+	if($page) 
+		$start = ($page - 1) * $limit; 			//first item to display on this page
+	else
+		$start = 0;								//if no page var is given, set start to 0
+	
+	/* Setup page vars for display. */
+	if ($page == 0) $page = 1;					//if no page var is given, default to 1.
+	$prev = $page - 1;							//previous page is page - 1
+	$next = $page + 1;							//next page is page + 1
+	$lastpage = $total_pages;		//lastpage is = total pages / items per page, rounded up.
+	$lpm1 = $lastpage - 1;						//last page minus 1
+	
+	/* 
+		Now we apply our rules and draw the pagination object. 
+		We're actually saving the code to a variable in case we want to draw it more than once.
+	*/
+	$pagination = "";
+	$url = $_SERVER['PHP_SELF'];
+	if($lastpage > 1)
+	{	
+		//previous button
+		if ($page > 1) 
+			$pagination.= "<a class\"page-numbers  page-numbers\" href=\"$url?page=$prev\">«</a>";
+		else
+			$pagination.= "<span class=\"page-numbers disabled\">«</span>";	
+		
+		//pages	
+		if ($lastpage < 7 + ($adjacents * 2))	//not enough pages to bother breaking it up
+		{	
+			for ($counter = 1; $counter <= $lastpage; $counter++)
+			{
+				if ($counter == $page)
+					$pagination.= "<span class=\"page-numbers current\">$counter</span>";
+				else
+					$pagination.= "<a class=\"page-numbers\" href=\"$url?page=$counter\">$counter</a>";					
+			}
+		}
+		elseif($lastpage > 5 + ($adjacents * 2))	//enough pages to hide some
+		{
+			//close to beginning; only hide later pages
+			if($page < 1 + ($adjacents * 2))		
+			{
+				for ($counter = 1; $counter < 4 + ($adjacents * 2); $counter++)
+				{
+					if ($counter == $page)
+						$pagination.= "<span class=\"page-numbers  current\">$counter</span>";
+					else
+						$pagination.= "<a class=\"page-numbers\" href=\"$url?page=$counter\">$counter</a>";					
+				}
+				$pagination.= "...";
+				$pagination.= "<a class=\"page-numbers\" href=\"$url?page=$lpm1\">$lpm1</a>";
+				$pagination.= "<a class=\"page-numbers\" href=\"$url?page=$lastpage\">$lastpage</a>";		
+			}
+			//in middle; hide some front and some back
+			elseif($lastpage - ($adjacents * 2) > $page && $page > ($adjacents * 2))
+			{
+				$pagination.= "<a class=\"page-numbers\" href=\"$url?page=1\">1</a>";
+				$pagination.= "<a class=\"page-numbers\" href=\"$url?page=2\">2</a>";
+				$pagination.= "...";
+				for ($counter = $page - $adjacents; $counter <= $page + $adjacents; $counter++)
+				{
+					if ($counter == $page)
+						$pagination.= "<span class=\"page-numbers current\">$counter</span>";
+					else
+						$pagination.= "<a class=\"page-numbers\" href=\"$url?page=$counter\">$counter</a>";					
+				}
+				$pagination.= "...";
+				$pagination.= "<a class=\"page-numbers\" href=\"$url?page=$lpm1\">$lpm1</a>";
+				$pagination.= "<a class=\"page-numbers\" href=\"$url?page=$lastpage\">$lastpage</a>";		
+			}
+			//close to end; only hide early pages
+			else
+			{
+				$pagination.= "<a class=\"page-numbers\" href=\"$url?page=1\">1</a>";
+				$pagination.= "<a class=\"page-numbers\" href=\"$url?page=2\">2</a>";
+				$pagination.= "...";
+				for ($counter = $lastpage - (2 + ($adjacents * 2)); $counter <= $lastpage; $counter++)
+				{
+					if ($counter == $page)
+						$pagination.= "<span class=\"page-numbers  current\">$counter</span>";
+					else
+						$pagination.= "<a class=\"page-numbers\" href=\"$url?page=$counter\">$counter</a>";					
+				}
+			}
+		}
+		
+		//next button
+		if ($page < $counter - 1) 
+			$pagination.= "<a class=\"page-numbers\" href=\"$url?page=$next\">»</a>";
+		else
+			$pagination.= "<span class=\"page-numbers disabled\">»</span>";	
+	}
+	echo $pagination;
+
+}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>
