@@ -28,11 +28,11 @@
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
 			?>
-			<?php echo do_shortcode('[addtoany]'); ?>
 	</div><!-- .entry-content -->
 	<div class="tags-section page-section">
 		<?php echo get_the_tag_list('<ul class="tag-list"><li>','</li><li>','</li></ul>'); ?>
 	</div>
+	<?php echo do_shortcode('[addtoany]'); ?>
 	<div class="about-author-section page-section">
 		<h3 class="section-title">About the Author</h3>
 		<?php get_template_part( 'template-parts/biography' ); ?>
