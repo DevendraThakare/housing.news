@@ -90,6 +90,9 @@ endif;
 // endif;
 
 
+function entry_meta() {
+	
+}
 
 function social_page_links() {
 	$menu_name = 'media_pages'; // specify custom menu slug
@@ -132,11 +135,6 @@ if ( ! function_exists( 'post_date' ) ) :
 		);
 	}
 endif;
-
-
-
-
-
 
 
 function custom_pagination($current_page_no, $max_num_pages){
@@ -251,26 +249,5 @@ function custom_pagination($current_page_no, $max_num_pages){
 	echo $pagination;
 
 }
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>

@@ -85,6 +85,11 @@ a:hover{
 
 #masthead{
 	color: #7323DC;
+	position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 .site-header .navbar-default{
 	background-color: #7323dc;
@@ -211,6 +216,7 @@ a:hover{
 .site-content{
 	max-width: 1800px;
 	margin: 0 auto;
+	margin-top: 50px;
 }
 
 #page-container{
@@ -260,9 +266,10 @@ a:hover{
 	margin-bottom: 14px;
 }
 .entry-subtitle{
-	font-size: 14px;
+	font-size: 16px;
     font-weight: bold;
     margin: 0px;
+    margin-bottom: 14px;
 }
 
 .entry-title a{
@@ -276,11 +283,14 @@ a:hover{
   font-size: 15px;
   line-height: 22px;
 }
-.entry-content{
-  border-bottom: 1px solid #7f7f7f;
-}
+// .entry-content{
+//   border-bottom: 1px solid #7f7f7f;
+// }
 .entry-content ul{
 	list-style: inherit;
+}
+.entry-content a{
+	color: #333;
 }
 .entry-excerpt{
 	position: relative;
@@ -649,12 +659,20 @@ div.wpcf7-mail-sent-ok{
 }
 .nav-previous, .nav-next{
 	width: 48%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .nav-previous{
 	float: left;
 }
 .nav-next{
 	float: right;
+}
+
+
+.tags-section, .cat-links{
+	display: block;
 }
 
 .section-title{
@@ -669,13 +687,41 @@ div.wpcf7-mail-sent-ok{
 }
 
 .addtoany_list.a2a_kit_size_32 a > span{
-	width: 40px !important;
-	height: 40px !important;
+	width: 44px !important;
+	height: 44px !important;
 	background-repeat: no-repeat !important;
 	background-size: cover;
 	border-radius: 0px !important;
 }
 
+.author-data{
+}
+.author-avatar{
+	margin-right: 15px;
+	float: left;
+}
+.author-avatar, .author-data{
+	display: inline;
+}
+.author-name, .author-username{
+	display: block;
+}
+
+.tags-section .tag-list{
+	list-style: none;
+	padding: 0px;
+}
+.tags-section .tag-list li{
+	display: inline-block;
+    margin: 5px;
+}
+.tags-section .tag-list a{
+    display: inline-block;
+    padding: 10px 8px;
+    background-color: #F5F5F5;
+    border: 1px solid #e6e6e6;
+    border-bottom: 3px solid #e6e6e6;
+}
 
 @media (max-width: 1124px) {
 	.navbar-collapse{

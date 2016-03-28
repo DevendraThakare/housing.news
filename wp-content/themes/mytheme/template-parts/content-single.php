@@ -13,8 +13,7 @@
 		<?php the_subtitle('<h3 class="entry-subtitle">', '</h3>'); ?>
 	</header><!-- .entry-header -->
 
-	<?php twentysixteen_excerpt(); ?>
-
+	<?php echo do_shortcode('[addtoany]'); ?>
 
 	<div class="entry-content">
 		<?php
@@ -28,16 +27,21 @@
 				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentysixteen' ) . ' </span>%',
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
-
-			if ( get_the_author_meta( 'description' ) !== '' ) {
-				get_template_part( 'template-parts/biography' );
-			}
-		?>
+			?>
+			<?php echo do_shortcode('[addtoany]'); ?>
 	</div><!-- .entry-content -->
+	<div class="tags-section page-section">
+		<?php echo get_the_tag_list('<ul class="tag-list"><li>','</li><li>','</li></ul>'); ?>
+	</div>
+	<div class="about-author-section page-section">
+		<h3 class="section-title">About the Author</h3>
+		<?php get_template_part( 'template-parts/biography' ); ?>
+	</div>
+	<div class="fb-comment-section page-section">
+		<?php echo do_shortcode('[fbcomments]'); ?>
+	</div>
 
 	<footer class="entry-footer">
-		<h3 class="section-title">About the Author</h3>
-		<?php twentysixteen_entry_meta(); ?>
 		<?php
 			edit_post_link(
 				sprintf(
