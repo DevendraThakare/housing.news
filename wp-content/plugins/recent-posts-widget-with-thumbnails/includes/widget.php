@@ -15,7 +15,8 @@
 					// look for featured image
 					if ( has_post_thumbnail() ) : 
 						// if there is featured image then show featured image
-						echo wp_get_attachment_image( get_post_thumbnail_id(), $this->current_thumb_dimensions ); // use wp_get_attachment_image() instead to have the same behaviour as in $this->the_first_post_image()
+						#echo wp_get_attachment_image( get_post_thumbnail_id(), $this->current_thumb_dimensions ); // use wp_get_attachment_image() instead to have the same behaviour as in $this->the_first_post_image()
+						the_post_thumbnail( $this->current_thumb_dimensions ); // use wp_get_attachment_image() instead to have the same behaviour as in $this->the_first_post_image()
 						$is_thumb = true;
 					else :
 						// else 

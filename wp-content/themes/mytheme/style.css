@@ -657,6 +657,26 @@ div.wpcf7-mail-sent-ok{
 	float: right;
 }
 
+.section-title{
+	font-size: 18px;
+    margin: 0px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.addtoany_list.a2a_kit_size_32 a{
+	padding: 0px;
+}
+
+.addtoany_list.a2a_kit_size_32 a > span{
+	width: 40px !important;
+	height: 40px !important;
+	background-repeat: no-repeat !important;
+	background-size: cover;
+	border-radius: 0px !important;
+}
+
+
 @media (max-width: 1124px) {
 	.navbar-collapse{
 		position: absolute;
@@ -785,7 +805,7 @@ div.wpcf7-mail-sent-ok{
 		margin: 0;
 		box-sizing: border-box;
 	}
-	.post{
+	body:not(.single) .post{
 		box-shadow: 0px 2px 2px #EAE8E8;
 		-webkit-box-shadow:0px 2px 2px #EAE8E8;
 	}

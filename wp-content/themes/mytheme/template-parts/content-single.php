@@ -29,13 +29,14 @@
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
 
-			if ( '' !== get_the_author_meta( 'description' ) ) {
+			if ( get_the_author_meta( 'description' ) !== '' ) {
 				get_template_part( 'template-parts/biography' );
 			}
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
+		<h3 class="section-title">About the Author</h3>
 		<?php twentysixteen_entry_meta(); ?>
 		<?php
 			edit_post_link(

@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: arabic, aspect ratio, author, category, categories, category, current post, excerpt, extended, featured, featured images, first post image, height, image, images, listed posts, post date, post categories, post category, post title, random, recent posts, sticky, thumb, thumbnail, thumbnails, thumbs, widget, widgets, width, persian, farsi
 Requires at least: 2.9
 Tested up to: 4.4.2
-Stable tag: 4.9
+Stable tag: 4.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,7 @@ You can set the width and heigth of the thumbnails in the list. The thumbnails a
 
 = What users said =
 
+* **"&hellip;you just have to try it out"** in [WordPress Tools That Use Visuals to Grab Visitors’ Attention](http://www.onextrapixel.com/2016/02/25/wordpress-tools-that-use-visuals-to-grab-visitors-attention/) by Gayane Mar on February 25, 2016
 * **"Easy and lightweight"** in [8 Useful WordPress Widgets for Your Site](http://dinevthemes.com/8-useful-wordpress-widgets-for-your-site/) by Lucy Barret on January 21, 2016
 * **Number 5** in [12 Useful WordPress Sidebar Widgets to Engage Visitors](https://85ideas.com/plugins/best-widgets-wordpress/) by Pawan Kumar on December 8, 2015
 * **Number 1** in [Los 10 widgets de WordPress más prácticos](http://wpdirecto.com/los-10-widgets-de-wordpress-mas-practicos-1860/) by Jorge López on November 13, 2015
@@ -193,10 +194,15 @@ If you want to contribute a translation of the plugin in your language it would 
 
 == Changelog ==
 
+= 4.9.1 =
+* Improved integration of 3rd party plugins for effects on the thumbnail
+
 = 4.9 =
 * Added option: Open post links in new windows
 * Renamed back: Hook 'rpwwt-widget-title' to 'widget-title' to let 3rd party plugins change the title
 * Improved sanitizing of stored variables
+* Updated *.pot file and translations
+* Updated screenshot of widget in the backend
 
 = 4.8 =
 * Added option: Show post author
@@ -340,6 +346,9 @@ Successfully tested with WordPress 4.0
 * The plugin was released.
 
 == Upgrade Notice ==
+
+= 4.9.1 =
+Improved integration of 3rd party plugins on the thumbnail
 
 = 4.9 =
 Added option: Open link in new window; renamed back: hook 'rpwwt-widget-title' to 'widget-title'
