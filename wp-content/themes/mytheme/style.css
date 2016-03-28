@@ -224,7 +224,7 @@ a:hover{
 
 .page-header{
 	margin: 0px;
-	padding: 10px 0;
+	padding: 7px 0;
 }
 .page-title{
 	margin: 0;
@@ -466,12 +466,22 @@ a:hover{
 
 .wpcf7-email{
 	width: 80%;
+	padding: 8px 10px;
+	outline: none;
+	border: 1px solid #e6e6e6;
 }
 
 .wpcf7-submit{
   background-color: #7323DC;
   border: 0px;
   color: #fff;
+  padding: 10px;
+}
+div.wpcf7-mail-sent-ok{
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	color: #398f14;
 }
 
 
@@ -619,6 +629,7 @@ a:hover{
 	height: 600px;
 	background-size: cover;
 	background-color: #e6e6e6;
+	margin-bottom: 15px;
 }
 .main-carousel .carousel-caption a{
 	color : #fff
@@ -629,7 +640,15 @@ a:hover{
     font-size: 40px;
     font-weight: bold;
 }
-
+.nav-previous, .nav-next{
+	width: 48%;
+}
+.nav-previous{
+	float: left;
+}
+.nav-next{
+	float: right;
+}
 
 @media (max-width: 1124px) {
 	.navbar-collapse{
@@ -805,6 +824,10 @@ a:hover{
 		float: left !important;
 		width: 50%;
 		clear: none !important;
+	}
+	.nav-previous, .nav-next{
+		float: none;
+		width: 100%;
 	}
 }
 

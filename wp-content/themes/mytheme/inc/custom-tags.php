@@ -145,7 +145,7 @@ function custom_pagination($current_page_no, $max_num_pages){
 	*/
 	
 	// How many adjacent pages should be shown on each side?
-	$adjacents = 2;
+	$adjacents = 1;
 	
 	/* 
 	   First get total number of rows in data table. 
@@ -178,9 +178,9 @@ function custom_pagination($current_page_no, $max_num_pages){
 	{	
 		//previous button
 		if ($page > 1) 
-			$pagination.= "<a class\"page-numbers  page-numbers\" href=\"$url?page=$prev\">«</a>";
+			$pagination.= "<a class=\"page-numbers glyphicon glyphicon-menu-left\" href=\"$url?page=$prev\"></a>";
 		else
-			$pagination.= "<span class=\"page-numbers disabled\">«</span>";	
+			$pagination.= "<span class=\"page-numbers glyphicon glyphicon-menu-left disabled\"></span>";	
 		
 		//pages	
 		if ($lastpage < 7 + ($adjacents * 2))	//not enough pages to bother breaking it up
@@ -244,9 +244,9 @@ function custom_pagination($current_page_no, $max_num_pages){
 		
 		//next button
 		if ($page < $counter - 1) 
-			$pagination.= "<a class=\"page-numbers\" href=\"$url?page=$next\">»</a>";
+			$pagination.= "<a class=\"page-numbers glyphicon glyphicon-menu-right\" href=\"$url?page=$next\"></a>";
 		else
-			$pagination.= "<span class=\"page-numbers disabled\">»</span>";	
+			$pagination.= "<span class=\"page-numbers glyphicon glyphicon-menu-right disabled\"></span>";	
 	}
 	echo $pagination;
 
