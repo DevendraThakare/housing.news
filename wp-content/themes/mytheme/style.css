@@ -259,6 +259,11 @@ a:hover{
 	margin-top: 18px;
 	margin-bottom: 14px;
 }
+.entry-subtitle{
+	font-size: 14px;
+    font-weight: bold;
+    margin: 0px;
+}
 
 .entry-title a{
 	color: #4C4C4C;
@@ -629,6 +634,8 @@ div.wpcf7-mail-sent-ok{
 	height: 600px;
 	background-size: cover;
 	background-color: #e6e6e6;
+}
+.entry-banner{
 	margin-bottom: 15px;
 }
 .main-carousel .carousel-caption a{
