@@ -83,8 +83,79 @@ a:hover{
 	color: #000;
 }
 
+#main-menu{
+	float: left;
+}
+
+.content-area, .sidebar{
+	float: left;
+}
+
+.content-area{
+	max-width: 900px;
+	width: 70%;
+}
+
+.site {
+	background-color: #fff;
+}
+.skip-link{
+	display: none;
+}
+.site-inner {
+	margin: 0 auto;
+	position: relative;
+}
+.site-content{
+	max-width: 1800px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+#page-container{
+	word-wrap: break-word;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 0 2%;
+}
+
+.page-header{
+	margin: 0px;
+	padding: 10px 0;
+}
+.page-title{
+	margin: 0;
+	font-size: 20px;
+}
+.entry-wrapper{
+	padding-top: 40px;
+}
+.single-post #page-container{
+	margin-top: 0px;
+}
+
+.whats-new{
+	font-size: 16px;
+	padding: 8px 0px;
+	border-bottom: 1px solid #e6e6e6;
+}
+.tab-content{
+	margin-top: 30px;
+}
+
+.menu-social_links-container{
+	margin-top: 20px;
+}
+
+
+
+
+/** Header **/
+
+
 #masthead{
-	// color: #7323DC;
 	position: fixed;
     top: 0;
     left: 0;
@@ -166,13 +237,13 @@ a:hover{
 }
 
 .site-header .navbar-default{
-	background-color: transparent;
+	background-color: #7323dc;
 	border-radius: 0px;
 	margin-bottom: 0px;
 	border: 0px;
-	-webkit-transition: background-color 0.4s ease-out;
-	-moz-transition: background-color 0.4s ease-out;
-	transition: background-color 0.4s ease-out;
+	-webkit-transition: background-color 0.5s ease-out;
+	-moz-transition: background-color 0.5s ease-out;
+	transition: background-color 0.5s ease-out;
 }
 .site-header .navbar-default .navbar-nav>li>a{
 	color: #fff;
@@ -217,13 +288,8 @@ a:hover{
 }
 
 .site-header .search-form{
-	background-color: transparent;
 	color: #fff;
 	padding: 0;
-}
-
-.site-header.headroom--not-top .navbar-default{
-	background-color: #7323dc;
 }
 
 /** Search Form **/
@@ -239,7 +305,7 @@ a:hover{
 }
 
 .search-form .input-group .form-control{
-	background-color: rgba(0,0,0,0.1);
+	background-color: #8442DA;
 	transition : width 0.3s ease-out;
 	box-sizing: border-box;
 	-webkit-transition : width 0.3s ease-out;
@@ -272,72 +338,25 @@ a:hover{
 }
 
 
-#main-menu{
-	float: left;
+.single .navbar-default, .home .navbar-default{
+	background-color: transparent;
 }
-
-
-
-.content-area, .sidebar{
-	float: left;
-}
-
-.content-area{
-	max-width: 900px;
-	width: 70%;
-}
-
-.site {
-	background-color: #fff;
-}
-.skip-link{
-	display: none;
-}
-.site-inner {
-	margin: 0 auto;
-	position: relative;
-}
-.site-content{
-	max-width: 1800px;
-	margin: 0 auto;
-}
-
-#page-container{
-	word-wrap: break-word;
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 40px;
-    padding: 0 2%;
-}
-
-.page-header{
-	margin: 0px;
-	padding: 7px 0;
-}
-.page-title{
-	margin: 0;
-	font-size: 20px;
-}
-.entry-wrapper{
-	padding-top: 40px;
-}
-.single-post #page-container{
+.single .site-content, .home .site-content{
 	margin-top: 0px;
 }
 
-.whats-new{
-	font-size: 16px;
-	padding: 8px 0px;
-	border-bottom: 1px solid #e6e6e6;
-}
-.tab-content{
-	margin-top: 30px;
+.single .search-form .input-group .form-control, .home .search-form .input-group .form-control{
+	background-color: rgba(0,0,0,0.1);
 }
 
-.menu-social_links-container{
-	margin-top: 20px;
+.site-header.headroom--not-top .navbar-default{
+	background-color: #7323dc;
 }
+
+
+
+
+
 /**
  * 11.2 - Posts and pages
  */
@@ -488,10 +507,9 @@ a:hover{
  */
 
 .sidebar {
-	// width: 320px;
-	// margin-left: 40px;
 	width: 26%;
-	margin-left: 4%
+	margin-left: 4%;
+	margin-top: 8px;
 }
 
 .sidebar .widget .widget-title{
@@ -824,6 +842,7 @@ div.wpcf7-mail-sent-ok{
     }
     .navbar-toggle {
         display: block;
+        margin-right: 5px;
     }
     .navbar-collapse {
         border-top: 1px solid transparent;
@@ -891,6 +910,12 @@ div.wpcf7-mail-sent-ok{
 }
 
 @media (max-width: 768px) {
+	.entry-wrapper{
+		padding-top: 0px;
+	}
+	.page-header{
+		padding: 15px 0;
+	}
 	.main-carousel .caption-title{
 		font-size: 32px;
 	}
@@ -948,7 +973,7 @@ div.wpcf7-mail-sent-ok{
     	color: #7323DC;
 	}
 	.main-carousel .img-holder, .entry-banner{
-		400px;
+		height: 400px;
 	}
 	.entry-thumb{
 		height: 300px;
@@ -985,8 +1010,9 @@ div.wpcf7-mail-sent-ok{
 	}
 	.site-header .navbar-form{
 		position: absolute;
-		left: 77px;
-		right: 40px;
+		left: 95px;
+    	right: 48px;
+    	padding: 8px 0px;
 	}
 	.entry-thumb, .main-carousel .img-holder, .entry-banner{
 		height: 240px;
@@ -1004,9 +1030,6 @@ div.wpcf7-mail-sent-ok{
 	}
 	.sidebar #sb_instagram #sbi_images .sbi_item:nth-child(3n+1){
 		padding: 5px !important;
-	}
-	.entry-wrapper{
-		padding-top: 10px;
 	}
 	#page-container{
 		margin-top: 0px;
@@ -1045,6 +1068,12 @@ div.wpcf7-mail-sent-ok{
 }
 
 @media (max-width: 375px) {
+	.entry-thumb, .main-carousel .img-holder, .entry-banner{
+		height: 240px;
+	}
+}
+
+@media (max-width: 320px) {
 	.entry-thumb, .main-carousel .img-holder, .entry-banner{
 		height: 200px;
 	}
