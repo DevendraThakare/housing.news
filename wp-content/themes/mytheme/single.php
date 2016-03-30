@@ -1,14 +1,14 @@
 <?php
 get_header(); ?>
+<?php 
+	$post_image_id = get_post_thumbnail_id($post_to_use->ID);
+	if ($post_image_id) {
+		$thumbnail = wp_get_attachment_image_src( $post_image_id, array(1160, 450), false);
+		if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+	}
+?>
+<div class="entry-banner" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
 <div id="page-container" class="clear">
-	<?php 
-		$post_image_id = get_post_thumbnail_id($post_to_use->ID);
-		if ($post_image_id) {
-			$thumbnail = wp_get_attachment_image_src( $post_image_id, array(1160, 450), false);
-			if ($thumbnail) (string)$thumbnail = $thumbnail[0];
-		}
-	?>
-	<div class="entry-banner" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php

@@ -13,7 +13,7 @@
 	<div class="form-group">
 		<div class="input-group">
 			<input type="search" class="form-control" placeholder="Search" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'twentysixteen' ); ?>">
-			<span class="glyphicon glyphicon-search search-icon"></span>
+			<button type="submit" class="glyphicon glyphicon-search search-icon"></button>
     	</div><!-- /input-group -->
 	</div>
 </form>
