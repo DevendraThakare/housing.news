@@ -1,9 +1,9 @@
 (function( $ ) {
 	$( document ).ready( function() {
-		$('.carousel').carousel({wrap: false});
+		$('.carousel').carousel();
 		var myElement = document.getElementById("masthead");
 		var headroom  = new Headroom(myElement,{
-		"offset": 205,
+		"offset": 580,
 		"tolerance": 5});
 		headroom.init(); 
 	});

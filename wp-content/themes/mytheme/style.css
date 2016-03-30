@@ -84,7 +84,7 @@ a:hover{
 }
 
 #masthead{
-	color: #7323DC;
+	// color: #7323DC;
 	position: fixed;
     top: 0;
     left: 0;
@@ -166,10 +166,13 @@ a:hover{
 }
 
 .site-header .navbar-default{
-	background-color: #7323dc;
+	background-color: transparent;
 	border-radius: 0px;
 	margin-bottom: 0px;
-	border: 0px
+	border: 0px;
+	-webkit-transition: background-color 0.4s ease-out;
+	-moz-transition: background-color 0.4s ease-out;
+	transition: background-color 0.4s ease-out;
 }
 .site-header .navbar-default .navbar-nav>li>a{
 	color: #fff;
@@ -189,6 +192,7 @@ a:hover{
 .site-header .navbar-default .navbar-nav>.open>a, .site-header .navbar-default .navbar-nav>.open>a:focus, .site-header .navbar-default .navbar-nav>.open>a:hover{
 	color: #fff;
 	background-color: #8442DA;
+	background-color: rgba(0,0,0,0.1);
 }
 
 .site-header .navbar-default .navbar-toggle{
@@ -218,6 +222,9 @@ a:hover{
 	padding: 0;
 }
 
+.site-header.headroom--not-top .navbar-default{
+	background-color: #7323dc;
+}
 
 /** Search Form **/
 .search-form .search-icon{
@@ -232,7 +239,7 @@ a:hover{
 }
 
 .search-form .input-group .form-control{
-	background-color: #8442DA;
+	background-color: rgba(0,0,0,0.1);
 	transition : width 0.3s ease-out;
 	box-sizing: border-box;
 	-webkit-transition : width 0.3s ease-out;
@@ -293,7 +300,6 @@ a:hover{
 .site-content{
 	max-width: 1800px;
 	margin: 0 auto;
-	margin-top: 50px;
 }
 
 #page-container{
@@ -718,9 +724,11 @@ div.wpcf7-mail-sent-ok{
 }
 .img-holder, .entry-banner{
 	width: 100%;
-	height: 560px;
+	height: 580px;
 	background-size: cover;
 	background-color: #e6e6e6;
+	background-position: center;
+	min-height: 260px;
 }
 .entry-banner{
 	margin-bottom: 15px;
@@ -799,6 +807,9 @@ div.wpcf7-mail-sent-ok{
     border: 1px solid #e6e6e6;
     border-bottom: 3px solid #e6e6e6;
 }
+.navbar-default .navbar-toggle .icon-bar{
+	background-color: #fff;
+}
 
 @media (max-width: 1124px) {
 	.navbar-collapse{
@@ -844,53 +855,25 @@ div.wpcf7-mail-sent-ok{
     .collapsing {
         overflow: hidden!important;
     }
+    .navbar-nav .open .dropdown-menu {
+		position: static;
+		float: none;
+		width: auto;
+		margin-top: 0;
+		background-color: rgba(0, 0, 0, 0);
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	.dropdown-menu>li>a:focus, .dropdown-menu>li>a{
+		color: #fff;
+	}
+	.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+		background-color: #8442DA;
+	}
 }
 
 @media (max-width: 1024px) {
-	.navbar-collapse{
-		position: absolute;
-		right: 20px;
-		top: 50px;
-		background-color: #7323DC;
-		z-index: 10;
-	}
-    .navbar-header {
-        float: none;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin: 7.5px -15px;
-        min-width: 160px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .navbar-text {
-        float: none;
-        margin: 15px 0;
-    }
-    /* since 3.1.0 */
-    .navbar-collapse.collapse.in { 
-        display: block!important;
-    }
-    .collapsing {
-        overflow: hidden!important;
-    }
-	
 	.main-carousel .img-holder, .entry-banner{
 		height: 500px;
 	}
@@ -908,6 +891,18 @@ div.wpcf7-mail-sent-ok{
 }
 
 @media (max-width: 768px) {
+	.main-carousel .caption-title{
+		font-size: 32px;
+	}
+	.site-header .navbar-default{
+		background-color: #7323dc;
+	}
+	.site-content{
+		margin-top: 50px;
+	}
+	.search-form .input-group .form-control{
+		background-color: #8442DA;
+	}
 	.site-header .navbar-form{
 		margin:0px;
 		padding: 8px 15px;
@@ -952,7 +947,10 @@ div.wpcf7-mail-sent-ok{
     	border-top: 1px solid #e6e6e6;
     	color: #7323DC;
 	}
-	.entry-thumb, .main-carousel .img-holder, .entry-banner{
+	.main-carousel .img-holder, .entry-banner{
+		400px;
+	}
+	.entry-thumb{
 		height: 300px;
 	}
 	.site-header .navbar-brand{
