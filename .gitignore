@@ -1,3 +1,5 @@
 wp-content/backup-db/
 wp-content/uploads/
 wp-content/uploads-bak/
+node_modules/
+npm-debug.log

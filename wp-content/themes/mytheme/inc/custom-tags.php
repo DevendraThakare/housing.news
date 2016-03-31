@@ -102,10 +102,10 @@ function social_page_links() {
 
 		$menu_list .= "\t\t\t\t". '<ul class="media-pages-links nav navbar-nav">' ."\n";
 		foreach ((array) $menu_items as $key => $menu_item) {
-			$el_class='glyphicon-tint';
+			$el_class='icon-facebook';
 			$title = $menu_item->title;
 			$url = $menu_item->url;
-			$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'"><span class="glyphicon '.$el_class.'"></span></a></li>' ."\n";
+			$menu_list .= "\t\t\t\t\t". '<li><a href="'. $url .'"><span class="icon '.$el_class.'"></span></a></li>' ."\n";
 		}
 		$menu_list .= "\t\t\t\t". '</ul>' ."\n";
 		$menu_list .= "\t\t\t". '</nav>' ."\n";
@@ -176,9 +176,9 @@ function custom_pagination($current_page_no, $max_num_pages){
 	{	
 		//previous button
 		if ($page > 1) 
-			$pagination.= "<a class=\"page-numbers glyphicon glyphicon-menu-left\" href=\"$url?page=$prev\"></a>";
+			$pagination.= "<a class=\"page-numbers icon icon-arrow-left\" href=\"$url?page=$prev\"></a>";
 		else
-			$pagination.= "<span class=\"page-numbers glyphicon glyphicon-menu-left disabled\"></span>";	
+			$pagination.= "<span class=\"page-numbers icon icon-arrow-left disabled\"></span>";	
 		
 		//pages	
 		if ($lastpage < 7 + ($adjacents * 2))	//not enough pages to bother breaking it up
@@ -242,9 +242,9 @@ function custom_pagination($current_page_no, $max_num_pages){
 		
 		//next button
 		if ($page < $counter - 1) 
-			$pagination.= "<a class=\"page-numbers glyphicon glyphicon-menu-right\" href=\"$url?page=$next\"></a>";
+			$pagination.= "<a class=\"page-numbers icon icon-arrow-right\" href=\"$url?page=$next\"></a>";
 		else
-			$pagination.= "<span class=\"page-numbers glyphicon glyphicon-menu-right disabled\"></span>";	
+			$pagination.= "<span class=\"page-numbers icon icon-arrow-right disabled\"></span>";	
 	}
 	echo $pagination;
 

@@ -117,7 +117,7 @@ a:hover{
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 15px;
     padding: 0 2%;
 }
 
@@ -155,12 +155,13 @@ a:hover{
 /** Header **/
 
 
-#masthead{
-	position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+.site-header{
+	// position: fixed;
+ //    top: 0;
+ //    left: 0;
+ //    right: 0;
     z-index: 1000;
+    position: relative;
 }
 
 .headroom {
@@ -168,9 +169,14 @@ a:hover{
     transition: transform 200ms linear;
     -webkit-transition: transform 200ms linear;
 }
+
 .headroom--pinned {
     transform: translateY(0%);
     -webkit-transform: translateY(0%);
+    position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 .headroom--unpinned {
     transform: translateY(-100%);
@@ -228,7 +234,9 @@ a:hover{
     -o-animation-name: slideDown;
     animation-name: slideDown;
 }
-
+.headroom--pinned.headroom--top{
+	position: relative;
+}
 .headroom--unpinned{
     -webkit-animation-name: slideUp;
     -moz-animation-name: slideUp;
@@ -342,7 +350,7 @@ a:hover{
 	background-color: transparent;
 }
 .single .site-content, .home .site-content{
-	margin-top: 0px;
+	margin-top: -50px;
 }
 
 .single .search-form .input-group .form-control, .home .search-form .input-group .form-control{
@@ -352,7 +360,12 @@ a:hover{
 .site-header.headroom--not-top .navbar-default{
 	background-color: #7323dc;
 }
-
+.single .site-header.headroom--not-top .form-control, .home .site-header.headroom--not-top .form-control{
+	background-color: #8442DA;
+	-webkit-transition: background-color 0.5s ease-out;
+	-moz-transition: background-color 0.5s ease-out;
+	transition: background-color 0.5s ease-out;
+}
 
 
 
@@ -579,19 +592,51 @@ a:hover{
 	font-size: 12px;
 	line-height: 22px;
 }
+.subscription-form-wrap{
+	background-color: #e6e6e6;
+	padding: 20px;
+}
+
+.subscription-header-wrap{
+	text-align: center;
+}
+
+.subscription-subheader{
+	font-size: 16px;
+    color: #8E8E8E;
+}
+
+.wpcf7-form-control-wrap{
+	width:80%;
+}
+
+.wpcf7-form > p{
+	position: relative;
+	margin-bottom: 5px;
+}
 
 .wpcf7-email{
-	width: 80%;
-	padding: 8px 10px;
+	width: 100%;
+	padding: 10px;
 	outline: none;
-	border: 1px solid #e6e6e6;
+	border: 0px;
+	border-radius: 2px;
 }
 
 .wpcf7-submit{
-  background-color: #7323DC;
-  border: 0px;
-  color: #fff;
-  padding: 10px;
+    background-color: #1fc055;
+    border: 0px;
+    color: #fff;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.wpcf7-form .ajax-loader{
+	position: absolute;
+    margin-top: 10px;
 }
 div.wpcf7-mail-sent-ok{
 	margin: 0px;
@@ -599,14 +644,21 @@ div.wpcf7-mail-sent-ok{
 	border: 0px;
 	color: #398f14;
 }
-
+.wpcf7-form .icon-arrow-diagonal{
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	display: inline-block;	
+}
 
 .rpwwt-post-title{
-  display: block;
-  float: left;
-  width: 66%;
-  font-size: 13px;
-  margin-top: 18px;
+	display: block;
+	float: left;
+	width: 66%;
+	font-size: 13px;
+	margin-top: 18px;
 	color: #000000;
 	font-weight: bold;
 }
@@ -615,6 +667,34 @@ div.wpcf7-mail-sent-ok{
 	color: #7323dc;
 }
 
+
+
+#menu-social_links{
+	padding-left: 0px;
+}
+
+#menu-social_links .icon{
+	padding: 5px;
+    font-size: 14px;
+    border: 1px solid #e6e6e6;
+    border-radius: 15px;
+    margin-right: 8px;
+}
+#menu-social_links .menu-item{
+	line-height: 36px;
+}
+
+#menu-social_links .icon-facebook{
+	color: #3b5998;
+}
+
+#menu-social_links .icon-twitter{
+	color: #55acee;
+}
+
+#menu-social_links .icon-instagram{
+	color: #125688
+}
 /** Autor footer **/
 
 .entry-footer .byline .author .avatar{
@@ -696,26 +776,38 @@ div.wpcf7-mail-sent-ok{
 	font-weight: normal;
 }
 @media screen and (min-width: 768px){
-	.carousel-control .glyphicon-menu-left{
+	.carousel-control .icon-arrow-left{
 	    margin-left: -10px;
 	}
-	.carousel-control .glyphicon-menu-left, .carousel-control .glyphicon-menu-right{
+	.carousel-control .icon-arrow-left, .carousel-control .icon-arrow-right{
 	    width: 30px;
 	    height: 30px;
 	    margin-top: -10px;
 	    font-size: 30px;
 	}
 }
-.carousel-control .glyphicon-menu-left{
+.carousel-control .icon-arrow-left{
     left: 50%;
     margin-left: -10px;
 }
-.carousel-control .glyphicon-menu-left, .carousel-control .glyphicon-menu-right{
+.carousel-control .icon-arrow-left, .carousel-control .icon-arrow-right{
     position: absolute;
     top: 50%;
     z-index: 5;
     display: inline-block;
     margin-top: -10px;
+}
+
+.carousel-control .icon-arrow-left, .carousel-control .icon-arrow-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
+}
+.carousel-control .icon-arrow-left {
+    left: 50%;
+    margin-left: -10px;
 }
 
 
@@ -923,7 +1015,7 @@ div.wpcf7-mail-sent-ok{
 		background-color: #7323dc;
 	}
 	.site-content{
-		margin-top: 50px;
+		margin-top: 0px;
 	}
 	.search-form .input-group .form-control{
 		background-color: #8442DA;

@@ -1,0 +1,250 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icons.eot');
+	src:url('../fonts/icons.eot') format('embedded-opentype'),
+		url('../fonts/icons.woff2') format('woff2'),
+		url('../fonts/icons.woff') format('woff'),
+		url('../fonts/icons.ttf') format('truetype'),
+		url('../fonts/icons.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+    content: "\b600";
+}
+.icon-building:before {
+    content: "\b601";
+}
+.icon-contact:before {
+    content: "\b602";
+}
+.icon-lease:before {
+    content: "\b603";
+}
+.icon-save-search:before {
+    content: "\b604";
+}
+.icon-shortlist-circle:before {
+    content: "\b605";
+}
+.icon-radio:before {
+    content: "\b606";
+}
+.icon-rupee:before {
+    content: "\b607";
+}
+.icon-tick-filled:before {
+    content: "\b608";
+}
+.icon-agent:before {
+    content: "\b609";
+}
+.icon-email-alert:before {
+    content: "\b60a";
+}
+.icon-options:before {
+    content: "\b60b";
+}
+.icon-filter-filled:before {
+    content: "\b60c";
+}
+.icon-filter:before {
+    content: "\b60d";
+}
+.icon-link:before {
+    content: "\b60e";
+}
+.icon-minus-circle:before {
+    content: "\b60f";
+}
+.icon-minus:before {
+    content: "\b610";
+}
+.icon-plus-circle:before {
+    content: "\b611";
+}
+.icon-plus:before {
+    content: "\b612";
+}
+.icon-close-thin:before {
+    content: "\b613";
+}
+.icon-close:before {
+    content: "\b614";
+}
+.icon-radio-filled:before {
+    content: "\b615";
+}
+.icon-price-tag:before {
+    content: "\b616";
+}
+.icon-shortlist-filled:before {
+    content: "\b617";
+}
+.icon-bulding:before {
+    content: "\b618";
+}
+.icon-point-of-interest:before {
+    content: "\b619";
+}
+.icon-forward-arrow:before {
+    content: "\b61a";
+}
+.icon-shortlist:before {
+    content: "\b61b";
+}
+.icon-checkbox-selected:before {
+    content: "\b61c";
+}
+.icon-bedroom:before {
+    content: "\b61d";
+}
+.icon-service-home-loans:before {
+    content: "\b61e";
+}
+.icon-apex:before {
+    content: "\b61f";
+}
+.icon-arrow-diagonal:before {
+    content: "\b620";
+}
+.icon-arrow-down:before {
+    content: "\b621";
+}
+.icon-arrow-left-back:before {
+    content: "\b622";
+}
+.icon-arrow-left:before {
+    content: "\b623";
+}
+.icon-arrow-right:before {
+    content: "\b624";
+}
+.icon-arrow-up:before {
+    content: "\b625";
+}
+.icon-bank:before {
+    content: "\b626";
+}
+.icon-bulding-filled:before {
+    content: "\b627";
+}
+.icon-checkbox-filled:before {
+    content: "\b628";
+}
+.icon-checkbox:before {
+    content: "\b629";
+}
+.icon-close-circle:before {
+    content: "\b62a";
+}
+.icon-contact-filled:before {
+    content: "\b62b";
+}
+.icon-double-arrow-up:before {
+    content: "\b62c";
+}
+.icon-double-arrow:before {
+    content: "\b62d";
+}
+.icon-edit:before {
+    content: "\b62e";
+}
+.icon-email-alert-thin:before {
+    content: "\b62f";
+}
+.icon-external-link:before {
+    content: "\b630";
+}
+.icon-facebook:before {
+    content: "\b631";
+}
+.icon-forum:before {
+    content: "\b632";
+}
+.icon-gplus:before {
+    content: "\b633";
+}
+.icon-home:before {
+    content: "\b634";
+}
+.icon-instagram:before {
+    content: "\b635";
+}
+.icon-list-your-property:before {
+    content: "\b636";
+}
+.icon-location-filled:before {
+    content: "\b637";
+}
+.icon-location-thin:before {
+    content: "\b638";
+}
+.icon-lock:before {
+    content: "\b639";
+}
+.icon-logout:before {
+    content: "\b63a";
+}
+.icon-menu:before {
+    content: "\b63b";
+}
+.icon-message-sent:before {
+    content: "\b63c";
+}
+.icon-message:before {
+    content: "\b63d";
+}
+.icon-picture:before {
+    content: "\b63e";
+}
+.icon-pinterest:before {
+    content: "\b63f";
+}
+.icon-point-of-interest-filled:before {
+    content: "\b640";
+}
+.icon-search:before {
+    content: "\b641";
+}
+.icon-service-buy:before {
+    content: "\b642";
+}
+.icon-service-new-projects:before {
+    content: "\b643";
+}
+.icon-service-pg:before {
+    content: "\b644";
+}
+.icon-service-rent:before {
+    content: "\b645";
+}
+.icon-tick-circle:before {
+    content: "\b646";
+}
+.icon-time:before {
+    content: "\b647";
+}
+.icon-twitter:before {
+    content: "\b648";
+}
+.icon-youtube:before {
+    content: "\b649";
+}
