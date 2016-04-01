@@ -576,6 +576,9 @@ a:hover{
 #sb_instagram .sbi_photo{
 	background-color: #e6e6e6;
 }
+#sb_instagram .sbi_photo img{
+	width: 100%;
+}
 
 .sidebar .fetched_tweets > li{
 	box-shadow: none;
@@ -1121,9 +1124,9 @@ div.wpcf7-mail-sent-ok{
 	#sb_instagram.sbi_col_3 #sbi_images .sbi_item, #sb_instagram.sbi_col_4 #sbi_images .sbi_item, #sb_instagram.sbi_col_5 #sbi_images .sbi_item, #sb_instagram.sbi_col_6 #sbi_images .sbi_item, #sb_instagram.sbi_col_7 #sbi_images .sbi_item, #sb_instagram.sbi_col_8 #sbi_images .sbi_item, #sb_instagram.sbi_col_9 #sbi_images .sbi_item, #sb_instagram.sbi_col_10 #sbi_images .sbi_item{
 		width: 33.33%;
 	}
-	#sb_instagram .sbi_photo{
-		height: 114px !important;
-	}
+	// #sb_instagram .sbi_photo{
+	// 	height: 114px !important;
+	// }
 	.sidebar li.tweets_avatar, .wpp-list > li{
 		float: left !important;
 		width: 50%;
@@ -1167,9 +1170,9 @@ div.wpcf7-mail-sent-ok{
 	#sb_instagram.sbi_col_3 #sbi_images .sbi_item, #sb_instagram.sbi_col_4 #sbi_images .sbi_item, #sb_instagram.sbi_col_5 #sbi_images .sbi_item, #sb_instagram.sbi_col_6 #sbi_images .sbi_item, #sb_instagram.sbi_col_7 #sbi_images .sbi_item, #sb_instagram.sbi_col_8 #sbi_images .sbi_item, #sb_instagram.sbi_col_9 #sbi_images .sbi_item, #sb_instagram.sbi_col_10 #sbi_images .sbi_item{
 		width: 50%;
 	}
-	#sb_instagram .sbi_photo{
-		height: 124px !important;
-	}
+	// #sb_instagram .sbi_photo{
+	// 	height: 124px !important;
+	// }
 	.sidebar #sb_instagram #sbi_images .sbi_item:nth-child(3n+1){
 		padding: 5px !important;
 	}

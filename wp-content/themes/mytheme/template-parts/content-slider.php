@@ -6,7 +6,11 @@
 				<?php 
 					$post_image_id = get_post_thumbnail_id($post_to_use->ID);
 					if ($post_image_id) {
-						$thumbnail = wp_get_attachment_image_src( $post_image_id, 'large', false);
+						if (is_mobile()) {
+							$thumbnail = wp_get_attachment_image_src( $post_image_id, array(960, 480), false);
+						} else {
+							$thumbnail = wp_get_attachment_image_src( $post_image_id, 'large', false);
+						}
 						if ($thumbnail) (string)$thumbnail = $thumbnail[0];
 					}
 
@@ -33,7 +37,11 @@
 				<?php 
 					$post_image_id = get_post_thumbnail_id($post_to_use->ID);
 					if ($post_image_id) {
-						$thumbnail = wp_get_attachment_image_src( $post_image_id, 'large', false);
+						if (is_mobile()) {
+							$thumbnail = wp_get_attachment_image_src( $post_image_id, array(960, 480), false);
+						} else {
+							$thumbnail = wp_get_attachment_image_src( $post_image_id, 'large', false);
+						}
 						if ($thumbnail) (string)$thumbnail = $thumbnail[0];
 					}
 
