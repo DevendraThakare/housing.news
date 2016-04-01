@@ -247,7 +247,7 @@ a:hover{
 	background-color: #7323dc;
 	border-radius: 0px;
 	margin-bottom: 0px;
-	border: 0px;
+	border-color: rgba(0,0,0,0);
 	-webkit-transition: background-color 0.5s ease-out;
 	-moz-transition: background-color 0.5s ease-out;
 	transition: background-color 0.5s ease-out;
