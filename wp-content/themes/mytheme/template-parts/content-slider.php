@@ -1,5 +1,5 @@
-<div id="main-slider" class="carousel slide" data-ride="carousel">
-	<div class="carousel-inner" role="listbox">
+<div id="main-slider" class="swipe">
+	<div id="head-slider" class="swipe-wrap" role="listbox">
 		<?php $the_query = new WP_Query(array('category_name' => 'slider', 'posts_per_page' => 1 )); 
 			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<div class="item active">

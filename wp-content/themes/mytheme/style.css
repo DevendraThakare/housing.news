@@ -818,6 +818,24 @@ div.wpcf7-mail-sent-ok{
 #main-slider .item > a{
 	display: block;
 }
+
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap .item {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+
 .main-carousel .carousel-caption{
     text-shadow: none;
     top: 50%;
