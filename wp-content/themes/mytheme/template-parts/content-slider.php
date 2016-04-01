@@ -21,6 +21,7 @@
 					<h4 class="caption-title"><a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark"><?php the_title();?></a></h4>
 					<div class="date-comment-count-wrap">
 				 		<span class="slider-date"><?php post_date(); ?></span>
+				 		<span class="seperator">|</span>
 				 		<span class="comment-count"> <?php comments_number(); ?> </span>
 				 	</div>
 				</div>
@@ -47,6 +48,7 @@
 					<h4 class="caption-title"><a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark"><?php the_title();?></a></h4>
 					<div class="date-comment-count-wrap">
 				 		<span class="slider-date"><?php post_date(); ?></span>
+				 		<span class="seperator">|</span>
 				 		<span class="comment-count"> <?php comments_number(); ?> </span>
 				 	</div>
 				</div>

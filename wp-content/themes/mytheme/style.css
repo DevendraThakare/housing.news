@@ -109,7 +109,6 @@ a:hover{
 .site-content{
 	max-width: 1800px;
 	margin: 0 auto;
-	margin-top: 50px;
 }
 
 #page-container{
@@ -130,7 +129,7 @@ a:hover{
 	font-size: 20px;
 }
 .entry-wrapper{
-	padding-top: 40px;
+	padding-top: 20px;
 }
 .single-post #page-container{
 	margin-top: 0px;
@@ -313,11 +312,15 @@ a:hover{
 }
 
 .search-form .input-group .form-control{
-	background-color: #8442DA;
+	background-color: rgba(255, 255, 255, 0.1);
 	transition : width 0.3s ease-out;
 	box-sizing: border-box;
 	-webkit-transition : width 0.3s ease-out;
+	-moz-transition: width 0.3s ease-out;
+	transition: width 0.3s ease-out;
 	color: #fff;
+	box-shadow: none;
+
 }
 .search-form .form-group, .search-form .input-group{
     width: 340px;
@@ -353,15 +356,10 @@ a:hover{
 	margin-top: -50px;
 }
 
-.single .search-form .input-group .form-control, .home .search-form .input-group .form-control{
-	background-color: rgba(0,0,0,0.1);
-}
-
 .site-header.headroom--not-top .navbar-default{
 	background-color: #7323dc;
 }
 .single .site-header.headroom--not-top .form-control, .home .site-header.headroom--not-top .form-control{
-	background-color: #8442DA;
 	-webkit-transition: background-color 0.5s ease-out;
 	-moz-transition: background-color 0.5s ease-out;
 	transition: background-color 0.5s ease-out;
@@ -441,7 +439,7 @@ a:hover{
 .post{
 	position: relative;
 	min-height: 200px;
-	margin-bottom: 24px;
+	margin-bottom: 32px;
 }
 .post-thum-wrap{
 	position: absolute;
@@ -921,6 +919,26 @@ div.wpcf7-mail-sent-ok{
 	background-color: #fff;
 }
 
+
+.dropdown .icon-arrow-down{
+	margin-left: 4px;
+	-webkit-transition: transform 0.3s ease-out;
+	-moz-transition: transform 0.3s ease-out;
+	transition: transform 0.3s ease-out;
+	display: inline-block;
+}
+
+.dropdown.open .icon-arrow-down{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	transform: rotate(180deg)
+}
+
+.seperator{
+	padding: 0 5px;
+}
+
+
 @media (max-width: 1124px) {
 	.navbar-collapse{
 		position: absolute;
@@ -929,6 +947,9 @@ div.wpcf7-mail-sent-ok{
 		background-color: #7323DC;
 		z-index: 10;
 	}
+	.navbar-default .navbar-nav .open .dropdown-menu>li>a{
+    	color: #fff;
+    }
     .navbar-header {
         float: none;
     }
@@ -1017,8 +1038,8 @@ div.wpcf7-mail-sent-ok{
 	.site-content{
 		margin-top: 0px;
 	}
-	.search-form .input-group .form-control{
-		background-color: #8442DA;
+	.home .site-content, .single .site-content{
+		margin-top: 0px;
 	}
 	.site-header .navbar-form{
 		margin:0px;
@@ -1097,6 +1118,17 @@ div.wpcf7-mail-sent-ok{
 }
 
 @media (max-width: 480px) {
+	.navbar-collapse{
+		position: absolute;
+		left: 0;
+		right: 0px;
+		top: 50px;
+		background-color: #7323DC;
+		z-index: 10;
+	}
+	.navbar-nav .dropdown .icon-arrow-down{
+		float: right;
+	}
 	.search-form .form-group, .search-form .input-group{
 		width: 100%;
 	}
