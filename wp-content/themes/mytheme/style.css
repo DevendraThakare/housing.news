@@ -162,6 +162,12 @@ a:hover{
     z-index: 1000;
     position: relative;
 }
+.site-header .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 .headroom {
     will-change: transform;
