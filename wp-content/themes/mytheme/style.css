@@ -678,6 +678,7 @@ div.wpcf7-mail-sent-ok{
 
 #menu-social_links{
 	padding-left: 0px;
+	list-style: none;
 }
 
 #menu-social_links .icon{
