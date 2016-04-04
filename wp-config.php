@@ -1,9 +1,11 @@
 <?php
+/** Enable W3 Total Cache */
+define('WP_CACHE', true); // Added by W3 Total Cache
+
 /** Enable W3 Total Cache Edge Mode */
 define('W3TC_EDGE_MODE', true); // Added by W3 Total Cache
 
-/** Enable W3 Total Cache */
-define('WP_CACHE', true); // Added by W3 Total Cache
+
 
 /**
  * The base configuration for WordPress

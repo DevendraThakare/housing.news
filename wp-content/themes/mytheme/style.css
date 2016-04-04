@@ -257,6 +257,7 @@ a:hover{
 	-webkit-transition: background-color 0.5s ease-out;
 	-moz-transition: background-color 0.5s ease-out;
 	transition: background-color 0.5s ease-out;
+	border: 0px;
 }
 .site-header .navbar-default .navbar-nav>li>a{
 	color: #fff;
