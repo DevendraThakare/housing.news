@@ -10,7 +10,9 @@
 			mySwipe.next();
 		});
 		var myElement = document.getElementById("masthead");
-		var headroom  = new Headroom(myElement,{"tolerance": 5});
+		var headroom  = new Headroom(myElement,{
+			"tolerance": 5
+		});
 		headroom.init(); 
 	});
 })(jQuery );

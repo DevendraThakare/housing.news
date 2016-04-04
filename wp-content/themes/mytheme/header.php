@@ -79,5 +79,5 @@
 				</nav>
 			</div><!-- .site-header-main -->
 		</header><!-- .site-header -->
-
+		<div class="header-filler"></div>
 		<div id="content" class="site-content">

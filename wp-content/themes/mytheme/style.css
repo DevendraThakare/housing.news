@@ -187,6 +187,14 @@ a:hover{
     transform: translateY(-100%);
     -webkit-transform: translateY(-100%);
 }
+.headroom--pinned:not(.headroom--top) + .header-filler{
+	display: block;
+}
+.header-filler{
+	height: 50px;
+	width: 100%;
+	display: none;
+}
 
 @-webkit-keyframes slideDown{
 	0%{-webkit-transform:translateY(-100%)}
