@@ -397,6 +397,7 @@ a:hover{
 }
 .entry-title a:hover{
 	color: #000;
+	text-decoration: none;
 }
 .entry-content, .entry-excerpt{
   color: #7f7f7f;
@@ -873,7 +874,9 @@ div.wpcf7-mail-sent-ok{
 .main-carousel .carousel-caption a{
 	color : #fff
 }
-
+.main-carousel .carousel-caption a:hover{
+	text-decoration: none;
+}
 .main-carousel .caption-title{
 	margin: 24px 0;
     font-size: 40px;

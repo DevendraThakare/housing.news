@@ -76,7 +76,7 @@
           <div class="heading">404</div>
           <div class="sub-heading">Page not Found</div>
           <div class="description">Seems like you have lost your way. Let's bring you back home to
-            <a id="location" href="<?php echo $_SERVER['PHP_SELF']; ?>">Housing News.</a>
+            <a id="location" href="<?php echo "/news"; ?>">Housing News.</a>
           </div>
       </div>
     </div>

@@ -420,3 +420,15 @@ function custom_excerpt_length( $length ) {
 	return 50;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+add_action( 'transition_post_status', 'a_new_post', 10, 3 );
+
+function a_new_post( $new_status, $old_status, $post )
+{
+    if ( 'publish' !== $new_status or 'publish' === $old_status )
+        return;
+
+    var_dump($post); exit();
+}
+
