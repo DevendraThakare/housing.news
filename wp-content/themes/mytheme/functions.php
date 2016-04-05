@@ -417,7 +417,7 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 
 function custom_excerpt_length( $length ) {
-	return 50;
+	return 40;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
