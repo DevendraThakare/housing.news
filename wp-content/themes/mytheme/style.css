@@ -79,8 +79,9 @@ a{
 	color: #8E8E8E;
 }
 
-a:hover{
+a:hover, a:focus{
 	color: #000;
+	// text-decoration: none;
 }
 
 #main-menu{
