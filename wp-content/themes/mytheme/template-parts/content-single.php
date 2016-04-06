@@ -8,13 +8,13 @@
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<div class="post-meta">
+		<?php post_meta(); ?>
+	</div>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php the_subtitle('<h3 class="entry-subtitle">', '</h3>'); ?>
 	</header><!-- .entry-header -->
-	<div class="post-meta">
-		<?php post_meta(); ?>
-	</div>
 	<?php echo do_shortcode('[addtoany]'); ?>
 
 	<div class="entry-content">

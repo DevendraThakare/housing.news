@@ -24,7 +24,7 @@ get_header(); ?>
 					// 	comments_template();
 					// }
 					?>
-					<div class="pagination-wrap">
+					<!-- <div class="pagination-wrap">
 						<?php
 							if ( is_singular( 'attachment' ) ) {
 								the_post_navigation( array(
@@ -43,7 +43,7 @@ get_header(); ?>
 								) );
 							}
 						?>
-					</div>
+					</div> -->
 			<?php
 				endwhile;
 			?>
