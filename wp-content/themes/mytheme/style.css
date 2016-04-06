@@ -100,6 +100,7 @@ a{
 
 a:hover, a:focus{
 	color: #000;
+	outline: none;
 	// text-decoration: none;
 }
 
@@ -1007,7 +1008,7 @@ div.wpcf7-mail-sent-ok{
 .main-carousel .carousel-caption a{
 	color : #fff
 }
-.main-carousel .carousel-caption a:hover{
+.main-carousel .carousel-caption a:hover, .main-carousel .carousel-caption a:focus{
 	text-decoration: none;
 }
 .main-carousel .caption-title{
@@ -1171,9 +1172,6 @@ div.wpcf7-mail-sent-ok{
 }
 
 @media (max-width: 1024px) {
-	.main-carousel .img-holder, .entry-banner{
-		height: 500px;
-	}
     .entry-thumb{
 		width: 220px;
 		height: 146px;
@@ -1194,6 +1192,12 @@ div.wpcf7-mail-sent-ok{
 
 	.footer .links-detail.social, .footer .links-detail.about-company-footer{
 		min-width: 180px;	
+	}
+	.main-carousel .caption-title{
+		font-size: 32px;
+	}
+	.main-carousel .carousel-caption{
+		width: 60%;
 	}
 }
 
