@@ -20,7 +20,7 @@
 				<?php //the_post_thumbnail('large');?>
 				<div class="carousel-caption">
 					<div class="caption-author"> 
-						BY <a class="" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>"><?php echo strtoupper(get_the_author()); ?></a>
+						By <a class="" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>"><?php echo get_the_author(); ?></a>
 						
 				 		<span class="seperator">|</span>
 						<span class="slider-date"><?php post_date(); ?></span>

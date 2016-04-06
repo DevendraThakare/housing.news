@@ -1,5 +1,6 @@
 <?php
 get_header(); ?>
+<div class="home-page-banner-gradient"></div>
 <?php 
 	$post_image_id = get_post_thumbnail_id($post_to_use->ID);
 	if ($post_image_id) {

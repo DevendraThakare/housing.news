@@ -12,7 +12,9 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php the_subtitle('<h3 class="entry-subtitle">', '</h3>'); ?>
 	</header><!-- .entry-header -->
-
+	<div class="post-meta">
+		<?php post_meta(); ?>
+	</div>
 	<?php echo do_shortcode('[addtoany]'); ?>
 
 	<div class="entry-content">
@@ -33,10 +35,6 @@
 		<?php echo get_the_tag_list('<ul class="tag-list"><li>','</li><li>','</li></ul>'); ?>
 	</div>
 	<?php echo do_shortcode('[addtoany]'); ?>
-	<div class="about-author-section page-section">
-		<h3 class="section-title">About the Author</h3>
-		<?php get_template_part( 'template-parts/biography' ); ?>
-	</div>
 	<div class="fb-comment-section page-section">
 		<?php echo do_shortcode('[fbcomments]'); ?>
 	</div>

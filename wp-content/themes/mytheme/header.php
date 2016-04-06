@@ -40,13 +40,12 @@
 									<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 								<?php endif; // End header image check. ?>
 							</a>
-							<?php echo get_search_form( $echo ); ?>
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
+							<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu">
 								<span class="sr-only">Toggle navigation</span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
-							</button>
+							</button> -->
 							<?php if ( has_nav_menu( 'primary' ) ) : ?>
 							    <?php
 							        wp_nav_menu( array(
@@ -54,7 +53,7 @@
 							            'theme_location'    => 'primary',
 							            'depth'             => 2,
 							            'container'         => 'div',
-							            'container_class'   => 'collapse navbar-collapse pull-right',
+							            'container_class'   => 'collapse navbar-collapse',
 							    		'container_id'      => 'main-menu',
 							            'menu_class'        => 'nav navbar-nav',
 							            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
@@ -62,6 +61,7 @@
 							        );
 							    ?>
 							<?php endif; ?>
+							<?php echo get_search_form( $echo ); ?>
 							<?php //social_page_links(); ?>
 						</div>
 						<?php if ( has_nav_menu( 'social' ) ) : ?>

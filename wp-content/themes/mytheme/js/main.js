@@ -14,5 +14,9 @@
 			"tolerance": 5
 		});
 		headroom.init(); 
+		$().focus(function(){
+			
+		});
+
 	});
 })(jQuery );
