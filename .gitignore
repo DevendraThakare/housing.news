@@ -5,3 +5,4 @@ node_modules/
 npm-debug.log
 wp-content/cache/config/
 .htaccess
+wp-config.php
