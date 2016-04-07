@@ -33,7 +33,7 @@
 					<div class="container-fluid">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
-							<span class="icon icon-menu side-menu-icon"></span>
+							<span class="icon icon-menu side-menu-icon" data-toggle="collapse" data-target="#main-menu"></span>
 							<a class="navbar-brand" href="<?php echo home_url(); ?>">
 								<?php if ( get_header_image() ) : ?>
 									<?php $custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' ); ?>

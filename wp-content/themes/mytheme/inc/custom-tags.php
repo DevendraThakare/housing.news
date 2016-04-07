@@ -2,7 +2,7 @@
 if ( ! function_exists( 'post_meta' ) ) :
 function post_meta() {
 	if ( 'post' === get_post_type() ) {
-		printf( '<span class="byline">By <span class="author vcard"> <a class="url fn n" href="%1$s">%2$s</a></span></span>',
+		printf( '<span class="byline">By <span class="author vcard"> <span class="post-author-name" href="%1$s">%2$s</span></span></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			get_the_author()
 		);
@@ -129,7 +129,7 @@ if ( ! function_exists( 'post_date' ) ) :
 			$time_string = sprintf( $time_string, esc_attr( get_the_date( 'c' ) ), get_the_date());
 		}
 
-		printf( '<span class="posted-on"><span class="screen-reader-text"></span><a href="%1$s" rel="bookmark">%2$s</a></span>',
+		printf( '<span class="posted-on"><span href="%1$s" rel="bookmark">%2$s</span></span>',
 			esc_url( get_permalink() ),
 			$time_string
 		);
@@ -171,7 +171,8 @@ function custom_pagination($current_page_no, $max_num_pages){
 		We're actually saving the code to a variable in case we want to draw it more than once.
 	*/
 	$pagination = "";
-	$url = $_SERVER['PHP_SELF'];
+	// $url = $_SERVER['PHP_SELF'];
+	$url = home_url();
 	if($lastpage > 1)
 	{	
 		//previous button

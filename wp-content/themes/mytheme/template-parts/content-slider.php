@@ -16,22 +16,15 @@
 
 					?>
 				<div class="img-holder" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
-
-				<?php //the_post_thumbnail('large');?>
 				<div class="carousel-caption">
 					<div class="caption-author"> 
-						By <a class="" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>"><?php echo get_the_author(); ?></a>
+						By <span class="slider-author-name"><?php echo get_the_author(); ?></span>
 						
 				 		<span class="seperator">|</span>
 						<span class="slider-date"><?php post_date(); ?></span>
 
 					</div>
 					<h4 class="caption-title"><a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark"><?php the_title();?></a></h4>
-					<!-- <div class="date-comment-count-wrap">
-				 		<span class="slider-date"><?php post_date(); ?></span>
-				 		<span class="seperator">|</span>
-				 		<span class="comment-count"> <?php comments_number(); ?> </span>
-				 	</div> -->
 				</div>
 			</div><!-- item active -->
 		<?php endwhile; wp_reset_postdata(); ?>
@@ -55,16 +48,11 @@
 				<?php //the_post_thumbnail('large');?>
 				<div class="carousel-caption">
 					<div class="caption-author"> 
-						BY <a class="" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ?>"><?php echo strtoupper(get_the_author()); ?></a>
+						BY By <span class="slider-author-name"><?php echo get_the_author(); ?></span>
 						<span class="seperator">|</span>
 						<span class="slider-date"><?php post_date(); ?></span>
 					</div>
 					<h4 class="caption-title"><a href="<?php echo esc_url(get_permalink()); ?>" rel="bookmark"><?php the_title();?></a></h4>
-					<!-- <div class="date-comment-count-wrap">
-				 		<span class="slider-date"><?php post_date(); ?></span>
-				 		<span class="seperator">|</span>
-				 		<span class="comment-count"> <?php comments_number(); ?> </span>
-				 	</div> -->
 				</div>
 			</div><!-- item -->
 		<?php endwhile; wp_reset_postdata(); ?>
