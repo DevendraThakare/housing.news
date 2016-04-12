@@ -10,25 +10,35 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php 
-		$post_image_id = get_post_thumbnail_id($post_to_use->ID);
-		if ($post_image_id) {
-			$thumbnail = wp_get_attachment_image_src( $post_image_id, 'medium', false);
-			if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+
+		if( class_exists('MultiPostThumbnails') ) {
+			$thumbnail = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'thumbnail-image');
 		}
-	?>
-	<a href="<?php echo  esc_url( get_permalink());?>"><div class="entry-thumb" style="background-image: url('<?php echo $thumbnail; ?>');"></div></a>
-	<div class="category-tag">
-		<?php
-			$categories = '';
-			foreach((get_the_category()) as $category) {
-				if ($category->cat_name != 'slider') {
-					$categories .= $category->name.", ";
-				}
+
+	   	if(!$thumbnail){
+			$post_image_id = get_post_thumbnail_id();
+			if ($post_image_id) {
+				$thumbnail = wp_get_attachment_image_src( $post_image_id, 'medium', false);
+				if ($thumbnail) (string)$thumbnail = $thumbnail[0];
 			}
-			echo rtrim($categories, ", ");
-		?>
-		<?php //the_category( ', ' ); ?>
-	</div>
+	   	}
+
+	?>
+	<?php if($thumbnail){ ?>
+		<a href="<?php echo  esc_url( get_permalink());?>"><div class="entry-thumb" style="background-image: url('<?php echo $thumbnail; ?>');"></div></a>
+
+		<div class="category-tag">
+			<?php
+				$categories = '';
+				foreach((get_the_category()) as $category) {
+					if ($category->cat_name != 'slider') {
+						$categories .= $category->name.", ";
+					}
+				}
+				echo rtrim($categories, ", ");
+			?>
+		</div>
+	<?php } ?>
 	<div class="post-content-wrap">
 		<header class="entry-header">
 			<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>

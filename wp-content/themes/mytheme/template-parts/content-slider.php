@@ -4,17 +4,24 @@
 			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<div class="item active">
 				<?php 
-					$post_image_id = get_post_thumbnail_id($post_to_use->ID);
-					if ($post_image_id) {
-						if (is_mobile()) {
-							$thumbnail = wp_get_attachment_image_src( $post_image_id, array(960, 480), false);
-						} else {
-							$thumbnail = wp_get_attachment_image_src( $post_image_id, 'large', false);
+					if (function_exists('is_mobile') && is_mobile()) {
+						if( class_exists('MultiPostThumbnails') ) {
+							$thumbnail = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'thumbnail-image');
+						}else{
+							$post_image_id = get_post_thumbnail_id();
+							if ($post_image_id) {
+								$thumbnail = wp_get_attachment_image_src( $post_image_id, 'medium', false);
+								if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+							}
 						}
-						if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+					} else {
+						$post_image_id = get_post_thumbnail_id();
+						if ($post_image_id) {
+							$thumbnail = wp_get_attachment_image_src( $post_image_id, 'full', false);
+							if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+						}
 					}
-
-					?>
+				?>
 				<div class="img-holder" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
 				<div class="carousel-caption">
 					<div class="caption-author"> 
@@ -32,17 +39,24 @@
 			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<div class="item">
 				<?php 
-					$post_image_id = get_post_thumbnail_id($post_to_use->ID);
-					if ($post_image_id) {
-						if (is_mobile()) {
-							$thumbnail = wp_get_attachment_image_src( $post_image_id, array(960, 480), false);
-						} else {
-							$thumbnail = wp_get_attachment_image_src( $post_image_id, 'large', false);
+					if (function_exists('is_mobile') && is_mobile()) {
+						if( class_exists('MultiPostThumbnails') ) {
+							$thumbnail = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'thumbnail-image');
+						}else{
+							$post_image_id = get_post_thumbnail_id();
+							if ($post_image_id) {
+								$thumbnail = wp_get_attachment_image_src( $post_image_id, 'medium', false);
+								if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+							}
 						}
-						if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+					} else {
+						$post_image_id = get_post_thumbnail_id();
+						if ($post_image_id) {
+							$thumbnail = wp_get_attachment_image_src( $post_image_id, 'full', false);
+							if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+						}
 					}
-
-					?>
+				?>
 				<div class="img-holder" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
 
 				<?php //the_post_thumbnail('large');?>

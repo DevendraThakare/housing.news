@@ -157,6 +157,10 @@ a:hover, a:focus{
 	margin-top: 20px;
 }
 
+#main-side-menu{
+	height: 100%;
+	overflow: auto;
+}
 
 #main-side-menu-wrap{
 	position: fixed;
@@ -179,6 +183,10 @@ a:hover, a:focus{
 	-webkit-transition: transform 0.4s ease-out;
 	-moz-transition: transform 0.4s ease-out;
 	transition: transform 0.4s ease-out;
+}
+
+.side-menu-shown{
+	overflow: hidden;
 }
 
 .side-menu-shown #page{
@@ -523,6 +531,10 @@ a:hover, a:focus{
 }
 .single .site-content, .home .site-content{
 	margin-top: -50px;
+}
+
+.home .site-header .navbar-default .navbar-nav>.active>a, .home .site-header .navbar-default .navbar-nav>.active>a:focus, .home .site-header .navbar-default .navbar-nav>.active>a:hover{
+	background-color: transparent;
 }
 
 .site-header.headroom--not-top .navbar-default{
@@ -1225,6 +1237,9 @@ div.wpcf7-mail-sent-ok{
 	border-radius: 24px !important;
 }
 
+.addtoany_list  .a2a_button_whatsapp{
+	display: none;
+}
 .author-data{
 }
 .author-avatar{
@@ -1407,6 +1422,9 @@ div.wpcf7-mail-sent-ok{
 		width: 60%;
 	}
 
+	.addtoany_list  .a2a_button_whatsapp{
+		display: inline-block;
+	}
 	// #main-menu{
 	// 	position: absolute;
 	// 	top: 50px;
