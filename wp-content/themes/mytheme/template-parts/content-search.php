@@ -16,8 +16,19 @@
 			if ($thumbnail) (string)$thumbnail = $thumbnail[0];
 		}
 	?>
-	<div class="entry-thumb" style="background-image: url('<?php echo $thumbnail; ?>');"></div>
-	<?php //post_thumbnail(); ?>
+	<a href="<?php echo  esc_url( get_permalink());?>"><div class="entry-thumb" style="background-image: url('<?php echo $thumbnail; ?>');"></div></a>
+	<div class="category-tag">
+		<?php
+			$categories = '';
+			foreach((get_the_category()) as $category) {
+				if ($category->cat_name != 'slider') {
+					$categories .= $category->name.", ";
+				}
+			}
+			echo rtrim($categories, ", ");
+		?>
+		<?php //the_category( ', ' ); ?>
+	</div>
 	<div class="post-content-wrap">
 		<header class="entry-header">
 			<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
@@ -50,6 +61,7 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
+		<a class="read-full-story-lnk" href="<?php echo  esc_url( get_permalink());?>">READ FULL STORY</a>
 
 		<!-- <footer class="entry-footer">
 			<?php

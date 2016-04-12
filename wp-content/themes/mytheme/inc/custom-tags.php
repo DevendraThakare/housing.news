@@ -53,6 +53,11 @@ endif;
 
 if ( ! function_exists( 'post_excerpt' ) ) :
 	function post_excerpt(){
+		// $str = '<p class="excerpt-para">';
+		// $str .= get_the_excerpt();
+		// $str .= '</p>';
+		// $str .= '<a href="'.esc_url( get_permalink()).'" class="more-link">READ FULL STORY</a>';
+		// echo $str;
 		the_excerpt();
 	}
 endif;
