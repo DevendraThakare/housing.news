@@ -17,8 +17,8 @@ get_header(); ?>
 					<div class="pagination-wrap">
 						<?php
 							the_posts_pagination( array(
-								'prev_text'          => __( 'Previous page', 'twentysixteen' ),
-								'next_text'          => __( 'Next page', 'twentysixteen' ),
+								'prev_text'          => __( '<span class="icon icon-arrow-left"></span>', 'twentysixteen' ),
+								'next_text'          => __( '<span class="icon icon-arrow-right"></span>', 'twentysixteen' ),
 								'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( '', 'twentysixteen' ) . ' </span>',
 							) );
 						?>

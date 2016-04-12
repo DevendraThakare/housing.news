@@ -13,8 +13,12 @@
 <html <?php language_attributes(); ?> class="no-js">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta content='IE=Edge,chrome=1' http-equiv='X-UA-Compatible'/>
+	<meta http-equiv = 'Content-type' content = 'text/plain; charset=x-user-defined'/>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0' />
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
@@ -23,6 +27,27 @@
 </head>
 
 <body <?php body_class(); ?>>
+<header id="main-side-menu-wrap">
+	<!-- <a class="sidebar-logo" href="<?php echo home_url(); ?>">
+		<?php if ( get_header_image() ) : ?>
+			<?php $custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' ); ?>
+			<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+		<?php endif; // End header image check. ?>
+	</a> -->
+	<?php
+	    wp_nav_menu( array(
+	        'menu'              => 'primary',
+	        'theme_location'    => 'primary',
+	        'depth'             => 2,
+	        'container'         => 'div',
+	        'container_id'      => 'main-side-menu',
+	        'container_class'   => 'main-side-menu-wrap',
+	        'menu_class'        => 'nav navbar-nav main-side-menu',
+	        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+	        'walker'            => new wp_bootstrap_navwalker())
+	    );
+	?>
+</header>
 <div id="page" class="site">
 	<div class="site-inner">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
@@ -33,7 +58,7 @@
 					<div class="container-fluid">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
-							<span class="icon icon-menu side-menu-icon" data-toggle="collapse" data-target="#main-menu"></span>
+							<span class="icon icon-menu side-menu-icon"></span>
 							<a class="navbar-brand" href="<?php echo home_url(); ?>">
 								<?php if ( get_header_image() ) : ?>
 									<?php $custom_header_sizes = apply_filters( 'twentysixteen_custom_header_sizes', '(max-width: 709px) 85vw, (max-width: 909px) 81vw, (max-width: 1362px) 88vw, 1200px' ); ?>

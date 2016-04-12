@@ -48,7 +48,7 @@
 				<?php //the_post_thumbnail('large');?>
 				<div class="carousel-caption">
 					<div class="caption-author"> 
-						BY By <span class="slider-author-name"><?php echo get_the_author(); ?></span>
+						By <span class="slider-author-name"><?php echo get_the_author(); ?></span>
 						<span class="seperator">|</span>
 						<span class="slider-date"><?php post_date(); ?></span>
 					</div>
