@@ -23,13 +23,14 @@
 		});
 		$('#page').click(function(){
 			$('body').removeClass('side-menu-shown');
-			$('.site-header  .search-form').removeClass('form-shown');
+			$('.site-header').removeClass('form-shown');
 		});
 
 		$('.site-header .search-form .search-icon').click(function(e){
 			e.preventDefault();
 			e.stopPropagation();
-			$('.site-header  .search-form').addClass('form-shown');
+			$('.site-header').addClass('form-shown');
+			$('.site-header .search-form input').focus();
 		});
 		$('.site-header .search-form input').click(function(e){
 			e.stopPropagation();
