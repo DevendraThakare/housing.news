@@ -427,10 +427,15 @@ a:hover, a:focus{
 }
 
 .site-header .search-form{
+	width: 40px;
+    overflow: hidden;
 	color: #fff;
 	padding: 0;
 	position: absolute;
     right: 10px;
+    -webkit-transition: width 0.3s ease-out;
+    -moz-transition: width 0.3s ease-out;
+    transition: width 0.3s ease-out;
 }
 
 /** Search Form **/
@@ -461,20 +466,23 @@ a:hover, a:focus{
 	border: 0px;
 }
 
-// .search-form .form-group, .search-form .input-group{
-// 	-webkit-transition : width 0.3s ease-out;
-// 	-moz-transition: width 0.3s ease-out;
-// 	transition: width 0.3s ease-out;
-//     width: 40px;
-// }
+.search-form .form-group, .search-form .input-group{
+    width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 .form-shown .search-form .form-control{
 	opacity: 1;
 	padding: 6px 12px;
 	width: 100%;
 }
-.form-shown .form-group, .form-shown .input-group{
+.form-shown .search-form{
 	width: 280px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 
@@ -506,7 +514,7 @@ a:hover, a:focus{
 
 .search-form .form-control:focus{
 	outline: none;
-	border: 1px solid rgba(0,0,0,0);
+	border: 0px;
 	box-shadow: none;
 }
 
@@ -1314,16 +1322,11 @@ div.wpcf7-mail-sent-ok{
 }
 
 @media (max-width: 1140px) {
-	.form-shown .form-group, .form-shown .input-group{
+	.form-shown .search-form{
 		width: 220px;
 	}
 	.main-carousel .carousel-caption{
 		width: 70%;
-	}
-}
-@media (max-width: 1080px) {
-	.form-shown .form-group, .form-shown .input-group{
-		width: 160px;
 	}
 }
 
@@ -1735,26 +1738,24 @@ div.wpcf7-mail-sent-ok{
 		display: block;
 		margin-bottom: 10px;
 	}
-}
-
-@media (max-width: 375px) {
-	.entry-thumb, .main-carousel .img-holder, .entry-banner{
-		height: 240px;
-	}
 	.site-header.form-shown .navbar-default{
 		background-color: #7323dc;
 	}
 	.form-shown .search-form{
 		left: 44px;
+		width: auto;
 	}
-	.form-shown .form-group, .form-shown .input-group{
-		width: 100%;
-		-webkit-transition: none;
-	    -moz-transition: none;
-	    transition: none;
-	}
+	// .form-shown .form-group, .form-shown .input-group{
+	// 	width: 100%;
+	// }
 	.site-header.form-shown .navbar-brand{
 		display: none;
+	}
+}
+
+@media (max-width: 375px) {
+	.entry-thumb, .main-carousel .img-holder, .entry-banner{
+		height: 240px;
 	}
 }
 
