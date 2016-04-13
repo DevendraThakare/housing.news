@@ -5,7 +5,8 @@ get_header(); ?>
 	if (function_exists('is_mobile') && is_mobile()) {
 		if( class_exists('MultiPostThumbnails') ) {
 			$thumbnail = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'thumbnail-image');
-		}else{
+		}
+		if(!$thumbnail){
 			$post_image_id = get_post_thumbnail_id();
 			if ($post_image_id) {
 				$thumbnail = wp_get_attachment_image_src( $post_image_id, 'medium', false);

@@ -220,7 +220,7 @@ a:hover, a:focus{
     float: none;
 }
 #main-side-menu-wrap .navbar-nav>li>a {
-    padding: 12px 20;
+    padding: 12px 20px;
     text-transform: uppercase;
     color: #fff;
     font-size: 14px;
@@ -610,7 +610,9 @@ a:hover, a:focus{
 .entry-content a{
 	color: #7323dc;
 }
-
+.entry-content img.size-large{
+	width: 100%;
+}
 // .entry-excerpt:after{
 // 	content: "...";
 //     position: absolute;
@@ -1656,9 +1658,9 @@ div.wpcf7-mail-sent-ok{
 	.navbar-nav .dropdown .icon-arrow-down{
 		float: right;
 	}
-	.search-form .form-group, .search-form .input-group{
-		width: 100%;
-	}
+	// .search-form .form-group, .search-form .input-group{
+	// 	width: 100%;
+	// }
 	.entry-thumb, .main-carousel .img-holder, .entry-banner{
 		height: 240px;
 	}
