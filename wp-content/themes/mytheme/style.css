@@ -829,13 +829,12 @@ a:hover, a:focus{
 	line-height: 22px;
 }
 .subscription-form-wrap{
-	background-color: #e6e6e6;
-	padding: 20px;
+	margin-top: 15px;
 }
-.subscription-subheader{
-	margin-bottom: 10px;
-	color: #8E8E8E;
-}
+// .subscription-subheader{
+// 	margin-bottom: 10px;
+// 	color: #8E8E8E;
+// }
 .wpcf7-form-control-wrap{
 	width:80%;
 }
@@ -1672,9 +1671,13 @@ div.wpcf7-mail-sent-ok{
 }
 
 @media (max-width: 480px) {
-	.single-post .entry-title, .entry-title{
+	.entry-title{
+		font-size: 16px;
+    	line-height: 20px;
+	}
+	.single-post .entry-title{
 		font-size: 18px;
-    	line-height: 22px;
+    	line-height: 22px;	
 	}
 	.navbar-collapse{
 		position: absolute;
