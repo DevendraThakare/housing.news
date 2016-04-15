@@ -1666,6 +1666,9 @@ div.wpcf7-mail-sent-ok{
 		right: 0;
 		background-color: rgba(0,0,0,0.5);
 	}
+	#sb_instagram .sbi_photo{
+		max-height: 200px;	
+	}
 }
 
 @media (max-width: 480px) {
