@@ -1668,6 +1668,10 @@ div.wpcf7-mail-sent-ok{
 }
 
 @media (max-width: 480px) {
+	.single-post .entry-title, .entry-title{
+		font-size: 18px;
+    	line-height: 22px;
+	}
 	.navbar-collapse{
 		position: absolute;
 		left: 0;
@@ -1757,13 +1761,29 @@ div.wpcf7-mail-sent-ok{
 	.entry-thumb, .main-carousel .img-holder, .entry-banner{
 		height: 240px;
 	}
+
+	.footer .links-row .links-detail, .footer .links.half, .footer .links-row .links-detail.column2{
+		width: 100%;
+		display: block;
+	}
+	.footer .links-row .links-detail.column2{
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.footer .links{
+		text-align: center;
+	}
+	.footer .links li{
+		float: left;
+    	margin-right: 24px;
+	}
+	#sb_instagram .sbi_photo{
+		height: 120px !important;
+	}
 }
 
 @media (max-width: 320px) {
-	.single-post .entry-title, .entry-title{
-		font-size: 16px;
-    	line-height: 20px;
-	}
+	
 	.main-carousel .carousel-caption{
 		width: 78%;
 	}
