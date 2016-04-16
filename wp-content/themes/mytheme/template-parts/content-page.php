@@ -60,7 +60,6 @@
 				) );
 			?>
 		</div><!-- .entry-content -->
-		<a class="read-full-story-lnk" href="<?php echo  esc_url( get_permalink());?>">READ FULL STORY</a>
 
 		<!-- <footer class="entry-footer">
 			<?php

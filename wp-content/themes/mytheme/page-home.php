@@ -9,9 +9,6 @@
 <div id="page-container" class="clear">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<header class="page-header">
-				<h1 class="page-title">WHAT'S NEW</h1>
-			</header><!-- .page-header -->
 			<div class="entry-wrapper">
 				<?php 
 					if ( get_query_var( 'paged' ) ) { $paged = get_query_var( 'paged' ); }

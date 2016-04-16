@@ -121,7 +121,7 @@ a:hover, a:focus{
 
 #page-container{
 	word-wrap: break-word;
-    max-width: 1280px;
+    max-width: 1160px;
     width: 100%;
     margin: 0 auto;
     margin-top: 15px;
@@ -562,23 +562,22 @@ a:hover, a:focus{
 
 .entry-title{
 	font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 6px;
     margin-bottom: 6px;
-    line-height: 30px;
+    line-height: 1.2em;
 }
 .single-post .entry-title{
-	margin: 12px 0;
-	font-size: 32px;
-	margin-bottom: 6px;
-	line-height: 36px;
+	margin: 20px 0;
+	font-size: 42px;
+	line-height: 1.2em;
 }
 
 .single-post .post .post-meta{
-	margin-top: 10px;
+	margin-top: 40px;
 }
 .single-post .entry-content{
-	line-height: 32px;
+	line-height: 28px;
 }
 .entry-subtitle{
 	font-size: 16px;
@@ -599,7 +598,7 @@ a:hover, a:focus{
 .entry-content, .entry-excerpt{
   color: #333;
   font-size: 16px;
-  line-height: 30px;
+  line-height: 28px;
 }
 .entry-excerpt{
 	line-height: 28px;
@@ -632,26 +631,15 @@ a:hover, a:focus{
 .entry-excerpt p{
 	overflow: hidden;
 	margin-top: 0px;
+	line-height: 1.8em;
 }
 .more-link{
-	display: none;
+	display: block;
+	padding: 5px 0;
+	text-transform: capitalize;
+	color: #7323dc;
+	font-size: 12px;
 }
-.read-full-story-lnk{
-	position: absolute;
-    bottom: 0px;
-    display: block;
-    background-color: #fff;
-    padding: 5px 0;
-    left: 0px;
-    right: 0px;
-}
-// .entry-excerpt .more-link{
-// 	display: block;
-//     position: absolute;
-//     bottom: 0;
-//     font-size: 12px;
-//     line-height: 14px;
-// }
 
 .entry-footer{
 	margin-top:20px; 
@@ -663,8 +651,9 @@ a:hover, a:focus{
 
 .post{
 	position: relative;
-	min-height: 200px;
-	margin-bottom: 36px;
+    min-height: 220px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
 }
 .post-thum-wrap{
 	position: absolute;
@@ -696,8 +685,6 @@ a:hover, a:focus{
 .post-content-wrap{
 	margin-left: 320px;
 	position: relative;
-	height: 200px;
-	overflow: hidden;
 }
 .post-banner-img .wp-post-image{
 	width: 100%;
@@ -746,9 +733,9 @@ a:hover, a:focus{
  */
 
 .sidebar {
-	width: 26%;
-	margin-left: 4%;
-	margin-top: 0px;
+	width: 25%;
+	margin-left: 5%;
+	margin-top: 30px;
 }
 
 .sidebar .widget{
@@ -772,6 +759,10 @@ a:hover, a:focus{
 
 .sidebar .widget:first-child h2{
 	margin-top: 0px;
+}
+
+.sidebar .widget:first-child{
+	margin-bottom: 0px;
 }
 
 
@@ -931,6 +922,9 @@ div.wpcf7-mail-sent-ok{
 .post .post-meta{
 	line-height: 20px;
 	color: #8E8E8E;
+	font-size: 12px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
 .entry-footer .byline .author .avatar{
 	margin-right: 14px;
@@ -1192,7 +1186,7 @@ div.wpcf7-mail-sent-ok{
 .main-carousel .caption-title{
 	margin: 24px 0;
 	font-size: 36px;
-	font-weight: 400;
+	font-weight: 600;
 	line-height: 44px;
 }
 .nav-previous, .nav-next{
@@ -1225,7 +1219,7 @@ div.wpcf7-mail-sent-ok{
 	padding: 14px 0;
 	border-bottom: 1px solid #e6e6e6;
 	border-top: 1px solid #e6e6e6;
-	margin-bottom: 36px;
+	margin: 30px 0;
 }
 
 .addtoany_shortcode:before{
@@ -1252,6 +1246,31 @@ div.wpcf7-mail-sent-ok{
 
 .addtoany_list  .a2a_button_whatsapp{
 	display: none;
+}
+
+.img-icon{
+	display: inline-block;
+    width: 44px;
+    height: 44px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 5px;
+}
+
+.img-icon.facebook{
+	background-image: url('images/facebook.png');
+}
+.img-icon.twitter{
+	background-image: url('images/twitter.png');
+}
+.img-icon.instagram{
+	background-image: url('images/instagram.png');
+}
+.img-icon.linkedin{
+	background-image: url('images/linkedin.png');
+}
+.img-icon.youtube{
+	background-image: url('images/youtube.png');
 }
 .author-data{
 }
