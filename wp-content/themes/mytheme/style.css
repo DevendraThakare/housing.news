@@ -271,10 +271,6 @@ a:hover, a:focus{
 
 
 .site-header{
-	// position: fixed;
- //    top: 0;
- //    left: 0;
- //    right: 0;
     z-index: 1000;
     position: relative;
 }
@@ -1430,7 +1426,6 @@ div.wpcf7-mail-sent-ok{
     }
     .post-content-wrap {
 		margin-left: 240px;
-		height: 210px;
 	}
 	.entry-title{
 		margin: 8px 0;
@@ -1604,25 +1599,20 @@ div.wpcf7-mail-sent-ok{
 	.post-content-wrap{
 		margin-left: 0;
 		padding: 20px;
-		height: 215px;
+		padding-bottom: 0px;
+		height: auto;
 	}
 	#page-container{
-		margin-top: 20px;
+		margin-top: 16px;
 		padding: 0 2%;
 	}
-	.read-full-story-lnk{
-		padding: 10px 20px;
+	.more-link{
+		padding: 8px 20px;
 		border-top: 1px solid #e6e6e6; 
+		margin-top: 10px;
+		margin-left: -20px;
+		margin-right: -20px;
 	}
-	// .entry-excerpt .more-link{
-	// 	padding: 10px 18px;
-	// 	right: 0px;
-	// 	left: 0px;
-	// 	bottom: 0px;
-	// 	border-top: 1px solid #e6e6e6;
-	// 	color: #7323DC;
-	// 	background-color: #fff;
-	// }
 	.main-carousel .img-holder, .entry-banner{
 		height: 400px;
 	}
@@ -1687,6 +1677,13 @@ div.wpcf7-mail-sent-ok{
 	#sb_instagram .sbi_photo{
 		max-height: 200px;	
 	}
+	.post{
+		padding-bottom: 0;
+	}
+	.entry-excerpt p{
+		margin-bottom: 0px;
+		overflow: visible;
+	}
 }
 
 @media (max-width: 480px) {
@@ -1731,23 +1728,15 @@ div.wpcf7-mail-sent-ok{
 		padding: 5px !important;
 	}
 	#page-container{
-		margin-top: 0px;
+		margin-top: 10px;
 	}
 	.post-content-wrap{
 		padding: 10px;
-		height: 238px;
+		padding-bottom: 0px;
 	}
 	.page-title{
 		font-size: 16px;
 	}
-	.read-full-story-lnk{
-		padding: 10px;
-	}
-	// .entry-excerpt .more-link{
-	// 	bottom: -10px;
-	// 	left: -10px;
-	// 	right: -10px;
-	// }
 	.footer-menu-wrap{
 		float: none;
 		max-width: none;
@@ -1780,6 +1769,11 @@ div.wpcf7-mail-sent-ok{
 	// }
 	.site-header.form-shown .navbar-brand{
 		display: none;
+	}
+	.more-link{
+		padding: 8px 10px;
+		margin-left: -10px;
+		margin-right: -10px;
 	}
 }
 
