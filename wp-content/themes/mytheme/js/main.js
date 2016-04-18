@@ -13,7 +13,10 @@
 		});
 		var myElement = document.getElementById("masthead");
 		var headroom  = new Headroom(myElement,{
-			"tolerance": 5
+			"tolerance": 5,
+			onTop : function() {
+				$('#masthead').removeClass('headroom--pinned');
+			},
 		});
 		headroom.init(); 
 
