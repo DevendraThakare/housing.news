@@ -651,6 +651,9 @@ a:hover, a:focus{
     margin-bottom: 20px;
     border-bottom: 1px solid #e6e6e6;
 }
+.single .post{
+	border-bottom: 0px;	
+}
 .post-thum-wrap{
 	position: absolute;
 }
@@ -1041,6 +1044,8 @@ div.wpcf7-mail-sent-ok{
 	font-weight: 500;
 	display: block;
 	margin-bottom: 4px;
+	height: 60px;
+    overflow: hidden;
 }
 // .wpp-content-wrap{
 // 	padding: 10px 0;
