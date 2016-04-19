@@ -443,3 +443,33 @@ if (class_exists('MultiPostThumbnails')) {
         )
     );
 }
+
+function check_values($post_ID, $post_after, $post_before){
+	$params = [];
+    $params['title'] = $post_after->post_title;
+    $params['content'] = $post_after->post_content;
+    $params['status'] = $post_after->post_status;
+    $params['authorid'] = $post_after->post_author;
+    $params['forumid'] = 'news';
+    $url =  'http://10.1.6.244:3000/api/forum/25/discussion/new';
+    $response = wp_remote_post( $url, array('body' => $params));
+
+	if ( is_wp_error( $response ) ) {
+	   $error_message = $response->get_error_message();
+	   echo "Something went wrong: $error_message";
+	} else {
+	   echo 'Response:<pre>';
+	   print_r( $response['body'] );
+	   echo '</pre>';
+	}
+
+    // var_dump(wp_get_post_tags( $post_ID));
+    // $params['tags'] = wp_get_post_tags( $post_ID);
+    // var_dump($params);
+
+    // exit;
+}
+
+add_action( 'post_updated', 'check_values', 10, 3 ); //don't forget the last argument to allow all three arguments of the function
+
+?>
