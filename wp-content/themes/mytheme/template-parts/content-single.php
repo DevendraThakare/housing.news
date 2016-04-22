@@ -13,7 +13,7 @@
 	</div>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		<?php the_subtitle('<h3 class="entry-subtitle">', '</h3>'); ?>
+		<?php if(function_exists('the_subtitle')){the_subtitle('<h3 class="entry-subtitle">', '</h3>');} ?>
 	</header><!-- .entry-header -->
 	<?php echo do_shortcode('[addtoany]'); ?>
 

@@ -14,7 +14,7 @@
 					if ( get_query_var( 'paged' ) ) { $paged = get_query_var( 'paged' ); }
 					elseif ( get_query_var( 'page' ) ) { $paged = get_query_var( 'page' ); }
 					else { $paged = 1; }
-					$the_query = new WP_Query('posts_per_page=10&paged=' . $paged); 
+					$the_query = new WP_Query('orderby=modified&posts_per_page=10&paged=' . $paged); 
 					global $wp_query;
   					$wp_query->in_the_loop = true;
 				?>

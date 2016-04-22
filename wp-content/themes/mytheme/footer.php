@@ -61,7 +61,7 @@
 			<div class="footer"><div class="housing-line">
 				<div class="footer-logo-coloured"></div>
 				<div class="desc">
-				© 2012-15 Locon Solutions Pvt. Ltd.
+				© 2012-16 Locon Solutions Pvt. Ltd.
 				</div>
 				</div><div class="links-row"><div class="about-company-footer links-detail">
 				<div class="footer-header">

@@ -1,6 +1,6 @@
 <div id="main-slider" class="swipe">
 	<div id="head-slider" class="swipe-wrap" role="listbox">
-		<?php $the_query = new WP_Query(array('category_name' => 'slider', 'posts_per_page' => 5)); 
+		<?php $the_query = new WP_Query(array('category_name' => 'slider', 'posts_per_page' => 5, 'orderby'=>'modified')); 
 			while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 			<div class="item">
 				<?php 
