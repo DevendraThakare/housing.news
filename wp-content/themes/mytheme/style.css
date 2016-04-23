@@ -1724,6 +1724,9 @@ div.wpcf7-mail-sent-ok{
 		margin-bottom: 0px;
 		overflow: visible;
 	}
+	.single-post .post .post-meta {
+		margin-top: 20px;
+	}
 }
 
 @media (max-width: 480px) {
