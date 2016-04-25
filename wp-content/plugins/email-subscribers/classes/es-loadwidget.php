@@ -26,12 +26,12 @@ class es_cls_widget
 				$es = $es . '<input class="es_textbox_class" name="es_txt_name_pg" id="es_txt_name_pg" value="" maxlength="225" type="text">';
 			$es = $es . '</div>';
 		}
-		$es = $es . '<div class="es_lablebox">'.__('Email *', 'email-subscribers').'</div>';
-		$es = $es . '<div class="es_textbox">';
-			$es = $es . '<input class="es_textbox_class" name="es_txt_email_pg" id="es_txt_email_pg" onkeypress="if(event.keyCode==13) es_submit_pages('.$url.')" value="" maxlength="225" type="text">';
+		// $es = $es . '<div class="es_lablebox">'.__('Email *', 'email-subscribers').'</div>';
+		$es = $es . '<div class="es_textbox subscription-form-control-wrap">';
+			$es = $es . '<input placeholder="Enter your email address" class="es_textbox_class subscription-email" name="es_txt_email_pg" id="es_txt_email_pg" onkeypress="if(event.keyCode==13) es_submit_pages('.$url.')" value="" maxlength="225" type="text">';
 		$es = $es . '</div>';
 		$es = $es . '<div class="es_button">';
-			$es = $es . '<input class="es_textbox_button" name="es_txt_button_pg" id="es_txt_button_pg" onClick="return es_submit_pages('.$url.')" value="'.__('Subscribe', 'email-subscribers').'" type="button">';
+			$es = $es . '<button class="es_textbox_button subscription-submit" name="es_txt_button_pg" id="es_txt_button_pg" onClick="return es_submit_pages('.$url.')" value="'.__('Subscribe', 'email-subscribers').'" type="submit"><i class="icon icon-arrow-diagonal"></i></button>';
 		$es = $es . '</div>';
 		if( $es_name != "YES" ) {
 			$es = $es . '<input name="es_txt_name_pg" id="es_txt_name_pg" value="" type="hidden">';

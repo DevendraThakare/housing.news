@@ -5,18 +5,22 @@
 	es_group = document.getElementById("es_txt_group_pg");
     if( es_email.value == "" )
     {
-        alert(es_widget_page_notices.es_email_notice);
+    	document.getElementById("es_msg_pg").innerHTML = es_widget_page_notices.es_email_notice;
+    	document.getElementById("es_msg_pg").className = document.getElementById("es_msg_pg").className + ' error-state';
+        // alert(es_widget_page_notices.es_email_notice);
         es_email.focus();
         return false;    
     }
 	if( es_email.value!="" && ( es_email.value.indexOf("@",0) == -1 || es_email.value.indexOf(".",0) == -1 ))
     {
-        alert(es_widget_page_notices.es_incorrect_email);
+        // alert(es_widget_page_notices.es_incorrect_email);
+        document.getElementById("es_msg_pg").innerHTML = es_widget_page_notices.es_incorrect_email;
+        document.getElementById("es_msg_pg").className = document.getElementById("es_msg_pg").className + ' error-state';
         es_email.focus();
         es_email.select();
         return false;
     }
-
+    document.getElementById("es_msg_pg").className = '';
 	document.getElementById("es_msg_pg").innerHTML = es_widget_page_notices.es_load_more;
 	var date_now = "";
     var mynumber = Math.random();
@@ -81,31 +85,37 @@ function eemail_submitresults()
 				{
 					document.getElementById("es_msg_pg").innerHTML = es_widget_page_notices.es_success_message;
 					document.getElementById("es_txt_email_pg").value="";
+					document.getElementById("es_msg_pg").className = document.getElementById("es_msg_pg").className + ' success-state';
 				}
 				else if((http_req.responseText).trim() == "subscribed-pending-doubleoptin")
 				{
-					alert(es_widget_page_notices.es_success_notice);
+					// alert(es_widget_page_notices.es_success_notice);
 					document.getElementById("es_msg_pg").innerHTML = es_widget_notices.es_success_message;
 					document.getElementById("es_txt_email_pg").value="";
 					document.getElementById("es_txt_name_pg").value="";
+					document.getElementById("es_msg_pg").className = document.getElementById("es_msg_pg").className + ' success-state';
 				}
 				else if((http_req.responseText).trim() == "already-exist")
 				{
 					document.getElementById("es_msg_pg").innerHTML = es_widget_page_notices.es_email_exists;
+					document.getElementById("es_msg_pg").className = document.getElementById("es_msg_pg").className + ' error-state';
 				}
 				else if((http_req.responseText).trim() == "unexpected-error")
 				{
 					document.getElementById("es_msg_pg").innerHTML = es_widget_page_notices.es_error;
+					document.getElementById("es_msg_pg").className = document.getElementById("es_msg_pg").className + ' error-state';
 				}
 				else if((http_req.responseText).trim() == "invalid-email")
 				{
 					document.getElementById("es_msg_pg").innerHTML = es_widget_page_notices.es_invalid_email;
+					document.getElementById("es_msg_pg").className = document.getElementById("es_msg_pg").className + ' error-state';
 				}
 				else
 				{
 					document.getElementById("es_msg_pg").innerHTML = es_widget_page_notices.es_try_later;
 					document.getElementById("es_txt_email_pg").value="";
 					document.getElementById("es_txt_name_pg").value="";
+					document.getElementById("es_msg_pg").className = document.getElementById("es_msg_pg").className + ' error-state';
 				}
 			} 
 		}

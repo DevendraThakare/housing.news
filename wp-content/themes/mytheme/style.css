@@ -840,12 +840,13 @@ a:hover, a:focus{
 }
 .subscription-form-wrap{
 	margin-top: 15px;
+	max-width: 400px;
 }
 // .subscription-subheader{
 // 	margin-bottom: 10px;
 // 	color: #8E8E8E;
 // }
-.wpcf7-form-control-wrap{
+.wpcf7-form-control-wrap, .subscription-form-control-wrap{
 	width:80%;
 	display: inline-block;
 }
@@ -855,7 +856,7 @@ a:hover, a:focus{
 	margin-bottom: 5px;
 }
 
-.wpcf7-email{
+.wpcf7-email, .subscription-email{
 	width: 100%;
 	padding: 10px;
 	outline: none;
@@ -865,13 +866,21 @@ a:hover, a:focus{
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
 }
-
+.es_button{
+	display: inline-block;
+	width: 20%;
+}
 .wpcf7-submit{
+	width: 20%;
+}
+.subscription-submit{
+	width: 100%;
+}
+.wpcf7-submit, .subscription-submit{
     background-color: #1fc055;
     border: 0px;
     color: #fff;
     padding: 10px 0px;
-   	width: 20%;
     height: 42px;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
@@ -887,13 +896,22 @@ div.wpcf7-mail-sent-ok{
 	border: 0px;
 	color: #398f14;
 }
-.wpcf7-form .icon-arrow-diagonal{
+.wpcf7-form .icon-arrow-diagonal, .subscription-submit .icon-arrow-diagonal{
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 	transform: rotate(45deg);
 	display: inline-block;	
+}
+#es_msg_pg{
+	color: #000;
+}
+#es_msg_pg.success-state{
+	color: #1fc055;
+}
+#es_msg_pg.error-state{
+	color: #F00;
 }
 
 .rpwwt-post-title{
@@ -1715,7 +1733,8 @@ div.wpcf7-mail-sent-ok{
 		background-color: rgba(0,0,0,0.5);
 	}
 	#sb_instagram .sbi_photo{
-		max-height: 200px;	
+		max-height: 200px;
+		overflow: hidden;	
 	}
 	.post{
 		padding-bottom: 0;
