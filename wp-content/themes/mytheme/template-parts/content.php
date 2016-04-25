@@ -32,7 +32,13 @@
 				$categories = '';
 				foreach((get_the_category()) as $category) {
 					if ($category->cat_name != 'slider') {
-						$categories .= $category->name.", ";
+						if($category->parent != 0){
+							$categories = get_the_category_by_ID( $category->parent );
+						}
+						else{
+							$categories .= $category->name;
+						}
+						break;
 					}
 				}
 				echo rtrim($categories, ", ");
