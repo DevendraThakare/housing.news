@@ -428,6 +428,10 @@ a:hover, a:focus{
 	background-color: #8442DA;
 }
 
+.site-header .dropdown-menu>.active>a, .site-header .dropdown-menu>.active>a:hover, .site-header .dropdown-menu>.active>a:focus{
+	background-color: #7323dc;
+}
+
 .site-header .side-menu-icon{
     color: #fff;
     font-size: 22px;
@@ -1447,27 +1451,27 @@ div.wpcf7-mail-sent-ok{
 	    display: block;
 
 	}
-	.dropdown-menu:before, .dropdown-menu:after{
-	  position: absolute;
-	  content: '';
-	  display: inline-block;
-	}
-	.dropdown-menu:before {
-	  top: -10px;
-	  right: 35px;
-	  border-right: 10px solid transparent;
-	  border-bottom: 10px solid #ccc;
-	  border-left: 10px solid transparent;
-	  border-bottom-color: rgba(0, 0, 0, 0.2);
-	}
-	.dropdown-menu:after{
-	  position: absolute;
-	  top: -9px;
-	  right: 36px;
-	  border-right: 9px solid transparent;
-	  border-bottom: 9px solid #ffffff;
-	  border-left: 9px solid transparent;
-	}
+	// .dropdown-menu:before, .dropdown-menu:after{
+	//   position: absolute;
+	//   content: '';
+	//   display: inline-block;
+	// }
+	// .dropdown-menu:before {
+	//   top: -10px;
+	//   right: 35px;
+	//   border-right: 10px solid transparent;
+	//   border-bottom: 10px solid #ccc;
+	//   border-left: 10px solid transparent;
+	//   border-bottom-color: rgba(0, 0, 0, 0.2);
+	// }
+	// .dropdown-menu:after{
+	//   position: absolute;
+	//   top: -9px;
+	//   right: 36px;
+	//   border-right: 9px solid transparent;
+	//   border-bottom: 9px solid #ffffff;
+	//   border-left: 9px solid transparent;
+	// }
 
 	.site-header .open .dropdown-menu{
 	    -webkit-transform: scale(1);
