@@ -34,7 +34,7 @@ get_header(); ?>
 			<?php
 				endwhile;
 			?>
-			<div class="pagination-wrap clear">
+			<!-- <div class="pagination-wrap clear">
 				<?php
 					if ( is_singular( 'attachment' ) ) {
 						the_post_navigation( array(
@@ -53,7 +53,7 @@ get_header(); ?>
 						) );
 					}
 				?>
-			</div>
+			</div> -->
 
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->

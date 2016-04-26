@@ -780,7 +780,7 @@ a:hover, a:focus{
 	color: #000;
 	font-size: 14px;
 	letter-spacing: .4px;
-	
+	font-weight: 600;
 }
 
 .sidebar .widget .widget_text{
@@ -850,13 +850,44 @@ a:hover, a:focus{
 	line-height: 22px;
 }
 .subscription-form-wrap{
-	margin-top: 15px;
+	margin: 0 0 10px 0;
 	max-width: 400px;
 }
-// .subscription-subheader{
-// 	margin-bottom: 10px;
-// 	color: #8E8E8E;
-// }
+.subscribe-box{
+	box-sizing: border-box;
+	padding: 13px;
+	border-radius: 2px;
+	background-color: #7323dc;
+	box-shadow: 1px 1px 4px -2px rgba(0,0,0,0.4); 
+	max-width: 400px;
+}
+.subscribe-box.widget .widget-title{
+	color: #fff;
+}
+.feedback-box{
+	background-color: #e62878;
+	color:#fff;
+	padding: 10px;
+	border-radius: 2px;
+}
+.feedback-box a{
+	color: #fff;
+	font-weight: 600;
+}
+
+#cff{
+	position: relative;
+}
+
+#cff .cff-item:first-child{
+	margin-top: 160px;
+}
+#cff .cff-likebox{
+	position: absolute;
+	top:0px;
+}
+
+
 .wpcf7-form-control-wrap, .subscription-form-control-wrap{
 	width:80%;
 	display: inline-block;
@@ -925,6 +956,41 @@ div.wpcf7-mail-sent-ok{
 	color: #F00;
 }
 
+
+
+
+#wp_rp_first .related_post_title {
+	margin: 20px 0 !important;
+}
+#wp_rp_first ul.related_post li {
+	width: 33.33% !important;
+	box-sizing: border-box;
+	margin: 0px !important;
+	box-shadow: 1px 1px 4px -2px rgba(0,0,0,0.4);
+	border: 1px solid #e6e6e6; 
+}
+#wp_rp_first ul.related_post li a {
+ 	padding: 10px;
+ 	width: 100%;
+ 	box-sizing: border-box;
+}
+#wp_rp_first ul.related_post li img {
+	width: 100% !important;
+	box-shadow: none !important;
+	border-radius: 0px !important;
+}
+
+
+.entry-content a.wp_rp_title{
+	color: #000;
+	height: 60px;
+	overflow: hidden;
+}
+.entry-content a.wp_rp_title:hover{
+	color: #7323dc;
+}
+
+
 .rpwwt-post-title{
 	display: block;
 	float: left;
@@ -955,7 +1021,7 @@ div.wpcf7-mail-sent-ok{
     margin-right: 14px;
 }
 #menu-social_links .menu-item{
-	line-height: 36px;
+	line-height: normal;
 	float: left;
 }
 
@@ -1190,6 +1256,8 @@ div.wpcf7-mail-sent-ok{
     top: 50%;
     left: 50%;
     bottom: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 50%;
 	text-shadow:none
@@ -1312,8 +1380,8 @@ div.wpcf7-mail-sent-ok{
 
 .img-icon{
 	display: inline-block;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     background-repeat: no-repeat;
     background-size: contain;
     margin: 5px;
@@ -1755,6 +1823,12 @@ div.wpcf7-mail-sent-ok{
 	.single-post .post .post-meta {
 		margin-top: 20px;
 	}
+	#menu-social_links{
+		margin: 20px 0;
+	}
+	#wp_rp_first ul.related_post li {
+		width: 50% !important;
+	}
 }
 
 @media (max-width: 480px) {
@@ -1877,6 +1951,9 @@ div.wpcf7-mail-sent-ok{
 	}
 	#sb_instagram .sbi_photo{
 		height: 120px !important;
+	}
+	#wp_rp_first ul.related_post li{
+		width: 100% !important;
 	}
 }
 
