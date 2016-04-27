@@ -865,7 +865,7 @@ a:hover, a:focus{
 	color: #fff;
 }
 .feedback-box{
-	background-color: #e62878;
+	background-color: #000;
 	color:#fff;
 	padding: 10px;
 	border-radius: 2px;
@@ -983,7 +983,7 @@ div.wpcf7-mail-sent-ok{
 
 .entry-content a.wp_rp_title{
 	color: #000;
-	height: 60px;
+	height: 50px;
 	overflow: hidden;
 }
 .entry-content a.wp_rp_title:hover{
@@ -1928,7 +1928,11 @@ div.wpcf7-mail-sent-ok{
 		margin-right: -10px;
 	}
 }
-
+@media (max-width: 414px) {
+	#wp_rp_first ul.related_post li{
+		width: 100% !important;
+	}
+}
 @media (max-width: 375px) {
 	.entry-thumb, .main-carousel, .main-carousel .img-holder, .entry-banner{
 		height: 240px;
@@ -1951,9 +1955,6 @@ div.wpcf7-mail-sent-ok{
 	}
 	#sb_instagram .sbi_photo{
 		height: 120px !important;
-	}
-	#wp_rp_first ul.related_post li{
-		width: 100% !important;
 	}
 }
 
