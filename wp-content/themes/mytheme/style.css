@@ -31,6 +31,7 @@ blockquote:after,
 .textwidget:after,
 .content-bottom-widgets:before,
 .content-bottom-widgets:after,
+.sidebar-posts .pis-ul:after, .sidebar-posts .pis-ul:before,
 .wpp-list:after, .wpp-list:before, .fetched_tweets:after, .fetched_tweets:before {
 	content: "";
 	display: table;
@@ -46,6 +47,7 @@ blockquote:after,
 .primary-menu:after,
 .social-links-menu:after,
 .textwidget:after,
+.sidebar-posts .pis-ul:after,
 .content-bottom-widgets:after, .wpp-list:after, .fetched_tweets:after{
 	clear: both;
 }
@@ -430,6 +432,10 @@ a:hover, a:focus{
 
 .site-header .dropdown-menu>.active>a, .site-header .dropdown-menu>.active>a:hover, .site-header .dropdown-menu>.active>a:focus{
 	background-color: #7323dc;
+}
+
+#main-side-menu-wrap .dropdown-menu>.active>a, #main-side-menu-wrap .dropdown-menu>.active>a:hover, #main-side-menu-wrap .dropdown-menu>.active>a:focus{
+	background-color: rgba(255,255,255,0.05);
 }
 
 .site-header .side-menu-icon{
@@ -864,6 +870,49 @@ a:hover, a:focus{
 .subscribe-box.widget .widget-title{
 	color: #fff;
 }
+
+.sidebar-posts .pis-ul{
+	padding: 0px;
+    list-style: none;
+}
+
+.sidebar-posts .pis-li{
+    width: 100%;
+    margin-bottom: 10px;
+    float: left;
+}
+.sidebar-posts .pis-thumbnail{
+    float: left;
+}
+.sidebar-posts .pis-thumbnail-img.wp-post-image{
+	width: 80px;
+    height: 80px;
+    margin: 0 14px 0 0;
+}
+.sidebar-posts .pis-excerpt{
+	display: none;
+}
+.sidebar-posts .pis-title{
+	margin-bottom: 0px;
+}
+.sidebar-posts .pis-date{
+	font-size: 14px;
+	font-weight: 400;
+	color: #7f7f7f;
+}
+.sidebar-posts .pis-title a{
+	color: #000;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+    max-height: 60px;
+    overflow: hidden;
+}
+.sidebar-posts .pis-title a:hover{
+	color: #7323dc;
+}
+
+
 .feedback-box{
 	background-color: #000;
 	color:#fff;
@@ -958,36 +1007,54 @@ div.wpcf7-mail-sent-ok{
 
 
 
+#wp_rp_first ul.related_post{
+	list-style: none;
+	padding: 0px;
+}
 
 #wp_rp_first .related_post_title {
 	margin: 20px 0 !important;
 }
-#wp_rp_first ul.related_post li {
-	width: 33.33% !important;
+#wp_rp_first .related_post li {
+	position: relative;
+	width: 50%;
 	box-sizing: border-box;
-	margin: 0px !important;
-	box-shadow: 1px 1px 4px -2px rgba(0,0,0,0.4);
-	border: 1px solid #e6e6e6; 
+	margin: 0px ;
+	margin-bottom: 10px;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+#wp_rp_first .wp_rp_thumbnail{
+	padding-left: 15px;
+}
+
+#wp_rp_first .wp_rp_title{
+	color: #000;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+    max-height: 60px;
+    overflow: hidden;
+}
+#wp_rp_first .wp_rp_title, #wp_rp_first .wp_rp_publish_date{
+	position: absolute;
+	left: 105px;
+}
+#wp_rp_first .wp_rp_publish_date{
+	bottom: 0px;
+	font-size: 14px;
+    font-weight: 400;
+    color: #7f7f7f;
 }
 #wp_rp_first ul.related_post li a {
- 	padding: 10px;
- 	width: 100%;
  	box-sizing: border-box;
+ 	display: inline-block;
 }
 #wp_rp_first ul.related_post li img {
-	width: 100% !important;
+	width: 80px; !important;
+	height: auto !important;
 	box-shadow: none !important;
 	border-radius: 0px !important;
-}
-
-
-.entry-content a.wp_rp_title{
-	color: #000;
-	height: 50px;
-	overflow: hidden;
-}
-.entry-content a.wp_rp_title:hover{
-	color: #7323dc;
 }
 
 
@@ -1770,7 +1837,7 @@ div.wpcf7-mail-sent-ok{
 		margin: 0;
 		box-sizing: border-box;
 	}
-	.sidebar li.tweets_avatar, .wpp-list > li{
+	.sidebar li.tweets_avatar, .wpp-list > li, .sidebar-posts .pis-li{
 		float: left !important;
 		width: 50%;
 		clear: none !important;
@@ -1893,7 +1960,7 @@ div.wpcf7-mail-sent-ok{
 	.site-footer #menu-explore li{
 		display: inline-block;
 	}
-	.sidebar li.tweets_avatar, .wpp-list > li{
+	.sidebar li.tweets_avatar, .wpp-list > li, .sidebar-posts .pis-li{
 		float: none !important;
 		width: 100%;
 		clear: both !important;

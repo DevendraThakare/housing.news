@@ -422,7 +422,7 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-
+// add_image_size('small_thumb', 80, 80);
 
 // add_action( 'transition_post_status', 'a_new_post', 10, 3 );
 
