@@ -1023,6 +1023,7 @@ div.wpcf7-mail-sent-ok{
 	margin-bottom: 10px;
 	display: inline-block;
 	margin-bottom: 20px;
+	min-height: 80px;
 }
 #wp_rp_first .related_post li:nth-child(odd) .wp_rp_thumbnail{
 	padding-left: 0px;
@@ -1539,6 +1540,22 @@ div.wpcf7-mail-sent-ok{
 
 .pagination-wrap{
 	margin-bottom: 10px;
+}
+
+.media-credit-container{
+	position: relative;
+}
+
+.media-credit{
+	position: absolute;
+	top: 0px;
+	color: #fff;
+	background-color: #000;
+	left: 0px;
+	margin: 0px;
+	padding: 2px 4px;
+	font-size: 10px;
+	margin-top: 4px;
 }
 
 @media (max-width: 1140px) {
