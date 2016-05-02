@@ -298,6 +298,72 @@ a:hover, a:focus{
     margin-left: auto;
 }
 
+
+
+.site-header .dropdown-menu{
+	-webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+	-webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    -webkit-transform: 50% -10px;
+    -moz-transform: 50% -10px;
+    -ms-transform: 50% -10px;
+    -o-transform: 50% -10px;
+    transform: 50% -10px;
+    -webkit-transform-origin: 50% -10px;
+    -moz-transform-origin: 50% -10px;
+    -ms-transform-origin: 50% -10px;
+    -o-transform-origin: 50% -10px;
+    transform-origin: 50% -10px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 1001;
+    display: block;
+
+}
+.site-header .dropdown-menu:before, .dropdown-menu:after{
+  position: absolute;
+  content: '';
+  display: inline-block;
+}
+.site-header .dropdown-menu:before {
+  top: -10px;
+  right: 35px;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ccc;
+  border-left: 10px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+.site-header .dropdown-menu:after{
+  position: absolute;
+  top: -9px;
+  right: 36px;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid #ffffff;
+  border-left: 9px solid transparent;
+}
+
+.site-header .open .dropdown-menu{
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    height: auto;
+    overflow: visible;
+    opacity: 1;
+    -webkit-transition: -webkit-transform .3s cubic-bezier(.3,1.6,.7,1),.3s opacity ease-out;
+    -moz-transition: -moz-transform .3s cubic-bezier(.3,1.6,.7,1),.3s opacity ease-out;
+    -o-transition: -o-transform .3s cubic-bezier(.3,1.6,.7,1),.3s opacity ease-out;
+    transition: transform .3s cubic-bezier(.3,1.6,.7,1),.3s opacity ease-out;
+}
+
 .headroom {
     will-change: transform;
     transition: transform 200ms linear;
@@ -1580,70 +1646,6 @@ div.wpcf7-mail-sent-ok{
 }
 
 @media (max-width: 1024px) {
-	.site-header .dropdown-menu{
-		-webkit-transform: scale(0);
-	    -moz-transform: scale(0);
-	    -ms-transform: scale(0);
-	    -o-transform: scale(0);
-	    transform: scale(0);
-		-webkit-transition: all .2s ease-out;
-	    -o-transition: all .2s ease-out;
-	    transition: all .2s ease-out;
-	    -webkit-transform: 50% -10px;
-	    -moz-transform: 50% -10px;
-	    -ms-transform: 50% -10px;
-	    -o-transform: 50% -10px;
-	    transform: 50% -10px;
-	    -webkit-transform-origin: 50% -10px;
-	    -moz-transform-origin: 50% -10px;
-	    -ms-transform-origin: 50% -10px;
-	    -o-transform-origin: 50% -10px;
-	    transform-origin: 50% -10px;
-	    height: 0;
-	    opacity: 0;
-	    overflow: hidden;
-	    position: absolute;
-	    z-index: 1001;
-	    display: block;
-
-	}
-	// .dropdown-menu:before, .dropdown-menu:after{
-	//   position: absolute;
-	//   content: '';
-	//   display: inline-block;
-	// }
-	// .dropdown-menu:before {
-	//   top: -10px;
-	//   right: 35px;
-	//   border-right: 10px solid transparent;
-	//   border-bottom: 10px solid #ccc;
-	//   border-left: 10px solid transparent;
-	//   border-bottom-color: rgba(0, 0, 0, 0.2);
-	// }
-	// .dropdown-menu:after{
-	//   position: absolute;
-	//   top: -9px;
-	//   right: 36px;
-	//   border-right: 9px solid transparent;
-	//   border-bottom: 9px solid #ffffff;
-	//   border-left: 9px solid transparent;
-	// }
-
-	.site-header .open .dropdown-menu{
-	    -webkit-transform: scale(1);
-	    -moz-transform: scale(1);
-	    -ms-transform: scale(1);
-	    -o-transform: scale(1);
-	    transform: scale(1);
-	    height: auto;
-	    overflow: visible;
-	    opacity: 1;
-	    -webkit-transition: -webkit-transform .3s cubic-bezier(.3,1.6,.7,1),.3s opacity ease-out;
-	    -moz-transition: -moz-transform .3s cubic-bezier(.3,1.6,.7,1),.3s opacity ease-out;
-	    -o-transition: -o-transform .3s cubic-bezier(.3,1.6,.7,1),.3s opacity ease-out;
-	    transition: transform .3s cubic-bezier(.3,1.6,.7,1),.3s opacity ease-out;
-	}
-
 	.site-header .dropdown-menu{
 		-webkit-box-shadow: 0 2px 10px rgba(0,0,0,.4);
 	    box-shadow: 0 2px 10px rgba(0,0,0,.4);
