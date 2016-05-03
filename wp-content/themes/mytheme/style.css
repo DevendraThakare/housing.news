@@ -1105,6 +1105,7 @@ div.wpcf7-mail-sent-ok{
     margin-bottom: 4px;
     max-height: 60px;
     overflow: hidden;
+    line-height: 20px;
 }
 #wp_rp_first .wp_rp_title, #wp_rp_first .wp_rp_publish_date{
 	position: absolute;
@@ -1115,6 +1116,7 @@ div.wpcf7-mail-sent-ok{
 	font-size: 14px;
     font-weight: 400;
     color: #7f7f7f;
+    line-height: 14px;
 }
 #wp_rp_first ul.related_post li a {
  	box-sizing: border-box;
@@ -2017,8 +2019,11 @@ div.wpcf7-mail-sent-ok{
 	#wp_rp_first ul.related_post li{
 		width: 100% !important;
 	}
-	#wp_rp_first .related_post li:nth-child(odd) .wp_rp_thumbnail{
-		padding-left: 15px;
+	#wp_rp_first .related_post li:nth-child(even) .wp_rp_thumbnail{
+		padding-left: 0px;
+	}
+	#wp_rp_first .wp_rp_title, #wp_rp_first .wp_rp_publish_date{
+		left: 90px;
 	}
 }
 @media (max-width: 375px) {
