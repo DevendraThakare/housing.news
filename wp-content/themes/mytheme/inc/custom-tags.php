@@ -2,7 +2,7 @@
 if ( ! function_exists( 'post_meta' ) ) :
 function post_meta() {
 	if ( 'post' === get_post_type() ) {
-		printf( '<span class="byline">By <span class="author vcard"> <span class="post-author-name" href="%1$s">%2$s</span></span></span>',
+		printf( '<span class="byline">By <span class="author vcard"> <a class="post-author-name" href="%1$s">%2$s</a></span></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			get_the_author()
 		);
