@@ -35,6 +35,8 @@
     				$cat = $cat->get_primary_term();
     				if($cat)
     					$categories = get_the_category_by_ID($cat);
+    					if($categories == 'slider')
+    						$categories = '';
 				}
 				if($categories == ''){
 					foreach((get_the_category()) as $category) {
