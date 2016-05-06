@@ -1,6 +1,6 @@
 (function( $ ) {
 	$( document ).ready( function() {
-		window.mySwipe = Swipe(document.getElementById('main-slider'));
+		window.mySwipe = Swipe(document.getElementById('main-slider'), {auto: 5000});
 		$('#main-slider .carousel-control.left').click(function(e){
 			e.preventDefault();
 			e.stopPropagation();
