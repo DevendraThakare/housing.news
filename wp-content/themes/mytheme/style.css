@@ -837,6 +837,8 @@ a:hover, a:focus{
 .sidebar {
 	width: 25%;
 	margin-left: 5%;
+}
+.single .sidebar, .home .sidebar{
 	margin-top: 30px;
 }
 
@@ -1111,6 +1113,11 @@ div.wpcf7-mail-sent-ok{
 	position: absolute;
 	left: 105px;
 }
+
+#wp_rp_first .related_post li:nth-child(odd) .wp_rp_title, #wp_rp_first .related_post li:nth-child(odd) .wp_rp_publish_date{
+	left: 90px;
+}
+
 #wp_rp_first .wp_rp_publish_date{
 	bottom: 0px;
 	font-size: 14px;

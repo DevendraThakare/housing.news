@@ -123,16 +123,17 @@ function social_page_links() {
 
 if ( ! function_exists( 'post_date' ) ) :
 	function post_date(){
+		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		$time_string = sprintf( $time_string, esc_attr( get_the_date( 'c' ) ), get_the_date());
+		// if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		// 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+		// 	$time_string = sprintf( $time_string, esc_attr( get_the_modified_date( 'c' ) ), get_the_modified_date());
 
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-			$time_string = sprintf( $time_string, esc_attr( get_the_modified_date( 'c' ) ), get_the_modified_date());
-
-		}
-		else{
-			$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-			$time_string = sprintf( $time_string, esc_attr( get_the_date( 'c' ) ), get_the_date());
-		}
+		// }
+		// else{
+		// 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+		// 	$time_string = sprintf( $time_string, esc_attr( get_the_date( 'c' ) ), get_the_date());
+		// }
 
 		printf( '<span class="posted-on"><span href="%1$s" rel="bookmark">%2$s</span></span>',
 			esc_url( get_permalink() ),

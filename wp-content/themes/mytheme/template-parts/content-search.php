@@ -30,9 +30,25 @@
 		<div class="category-tag">
 			<?php
 				$categories = '';
-				foreach((get_the_category()) as $category) {
-					if ($category->cat_name != 'slider') {
-						$categories .= $category->name.", ";
+				if( class_exists('WPSEO_Primary_Term') ) {
+					$cat = new WPSEO_Primary_Term('category', get_the_ID());
+    				$cat = $cat->get_primary_term();
+    				if($cat)
+    					$categories = get_the_category_by_ID($cat);
+    					if($categories == 'slider')
+    						$categories = '';
+				}
+				if($categories == ''){
+					foreach((get_the_category()) as $category) {
+						if ($category->cat_name != 'slider') {
+							if($category->parent != 0){
+								$categories = get_the_category_by_ID( $category->parent );
+							}
+							else{
+								$categories .= $category->name;
+							}
+							break;
+						}
 					}
 				}
 				echo rtrim($categories, ", ");
