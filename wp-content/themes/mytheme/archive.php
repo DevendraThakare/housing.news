@@ -9,7 +9,7 @@
 				?>
 			</header><!-- .page-header -->
 			<div class="entry-wrapper">
-				<?php query_posts($query_string . '&orderby=modified&order=DESC'); ?>
+				<?php query_posts(); ?>
 				<?php while ( have_posts() ) : the_post();
 						get_template_part( 'template-parts/content', get_post_format() );
 					endwhile;
