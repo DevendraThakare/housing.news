@@ -242,7 +242,7 @@ function twentysixteen_scripts() {
 	wp_enqueue_style( 'fonts-style', get_template_directory_uri() . '/css/font.css', array(), '20160409');
 	wp_enqueue_style( 'bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '20160409');
 	wp_enqueue_style( 'icons-style', get_template_directory_uri() . '/css/icons.css', array(), '20160409');
-    wp_enqueue_style( 'twentysixteen-style', get_stylesheet_uri(), array(), '20160509');
+    wp_enqueue_style( 'twentysixteen-style', get_stylesheet_uri(), array(), '20160510');
 	// wp_enqueue_style( 'less-style', get_stylesheet_directory_uri() . '/style.less' );
 
 	// wp_enqueue_style( 'homepage-style', get_template_directory_uri() . '/css/home-page.css', array( 'twentysixteen-style' ), '20160309' );
@@ -451,23 +451,21 @@ function check_values($post_ID, $post_after, $post_before){
     $params['status'] = $post_after->post_status;
     $params['authorid'] = $post_after->post_author;
     $params['forumid'] = 'news';
-    $url =  'http://10.1.6.244:3000/api/forum/25/discussion/new';
-    $response = wp_remote_post( $url, array('body' => $params));
+    $params['userid'] = 'Yoast Coolness';
+    $params['email'] = 'amdkma@kskkf.ocm';
+    $params['source'] = 'housing';
+    $thread_id = get_post_meta($post_ID, 'iref_thread_id');
+    if(empty($thread_id)){
+    	$url =  'http://post.iref.com/api/forum/25/discussion/new';
+	    $response = wp_remote_post( $url, array('body' => $params));
 
-	if ( is_wp_error( $response ) ) {
-	   $error_message = $response->get_error_message();
-	   echo "Something went wrong: $error_message";
-	} else {
-	   echo 'Response:<pre>';
-	   print_r( $response['body'] );
-	   echo '</pre>';
-	}
-
-    // var_dump(wp_get_post_tags( $post_ID));
-    // $params['tags'] = wp_get_post_tags( $post_ID);
-    // var_dump($params);
-
-    // exit;
+		if ( is_wp_error( $response ) ) {
+		   $error_message = $response->get_error_message();
+		} else {
+			$msg = json_decode($response['body'], true)['message'];
+		   	add_post_meta($post_ID, 'iref_thread_id', $msg['thread_id'], true);
+		}
+    }
 }
 
 add_action( 'post_updated', 'check_values', 10, 3 ); //don't forget the last argument to allow all three arguments of the function

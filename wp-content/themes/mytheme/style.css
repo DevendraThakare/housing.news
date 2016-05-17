@@ -1579,6 +1579,10 @@ div.wpcf7-mail-sent-ok{
     color: #7f7f7f;
     border: 1px solid #e6e6e6;
 }
+.tags-section .tag-list a:hover{
+	color: #7323dc;
+	border-color: #7323dc;
+}
 .navbar-default .navbar-toggle .icon-bar{
 	background-color: #fff;
 }
