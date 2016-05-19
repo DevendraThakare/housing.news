@@ -91,6 +91,9 @@ do_action( 'rss_tag_pre', 'rss2' );
 		<?php the_category_rss('rss2') ?>
 
 		<guid isPermaLink="false"><?php the_guid(); ?></guid>
+		<?php if ( has_post_thumbnail() ) { ?>
+			<media:thumbnail><?php convert_chars(the_post_thumbnail_url('thumbnail')); ?></media:thumbnail>
+		<?php } ?>
 <?php if (get_option('rss_use_excerpt')) : ?>
 		<description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
 <?php else : ?>
