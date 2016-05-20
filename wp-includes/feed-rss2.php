@@ -23,6 +23,7 @@ do_action( 'rss_tag_pre', 'rss2' );
 <rss version="2.0"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
 	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:media="http://search.yahoo.com/mrss/"
 	xmlns:dc="http://purl.org/dc/elements/1.1/"
 	xmlns:atom="http://www.w3.org/2005/Atom"
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
@@ -92,7 +93,7 @@ do_action( 'rss_tag_pre', 'rss2' );
 
 		<guid isPermaLink="false"><?php the_guid(); ?></guid>
 		<?php if ( has_post_thumbnail() ) { ?>
-			<media:thumbnail><?php convert_chars(the_post_thumbnail_url('thumbnail')); ?></media:thumbnail>
+			<media:thumbnail url='<?php convert_chars(the_post_thumbnail_url('thumbnail')); ?>'></media:thumbnail>
 		<?php } ?>
 <?php if (get_option('rss_use_excerpt')) : ?>
 		<description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
