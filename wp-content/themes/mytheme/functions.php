@@ -443,3 +443,4 @@ if (class_exists('MultiPostThumbnails')) {
         )
     );
 }
+include 'functions_custom.php';
