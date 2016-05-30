@@ -1,0 +1,130 @@
+<?php
+define('GET_API_URL', 'https://api.iref.com/api/');
+define('POST_API_URL', 'http://post.iref.com/api/');
+define('GET_API_THREAD', constant('GET_API_URL').'discussion/');
+define('GET_API_THREAD_TAGS', constant('GET_API_URL').'tags/discussion/');
+define('POST_API_UPDATE_TAGS', constant('POST_API_URL').'tags/');
+define('FETCH_HOUSING_TAGS_URL', 'https://tags.housing.com/api/v1/fetch-query-tags');
+define('NEWS_MODERATOR_ID', 'Yoast Coolness');
+define('NEWS_MODERATOR_EMAIL', 'amdkma@kskkf.ocm');
+define('IREF_API_SOURCE', 'housing');
+add_action( 'wp_ajax_ajax-tag-search', 'adding_custom_tag',1,2);
+function adding_custom_tag() {
+	if ( ! isset( $_GET['tax'] ) ) {
+		wp_die( 0 );
+	}
+	$s = wp_unslash( $_GET['q'] );
+
+	$comma = _x( ',', 'tag delimiter' );
+	if ( ',' !== $comma )
+		$s = str_replace( $comma, ',', $s );
+	if ( false !== strpos( $s, ',' ) ) {
+		$s = explode( ',', $s );
+		$s = $s[count( $s ) - 1];
+	}
+	$s = trim( $s );
+	$tags_url = constant('FETCH_HOUSING_TAGS_URL').'?query='.$s;
+	$results = file_get_contents($tags_url);
+	echo $results;	
+	wp_die();
+}
+
+function autocomplete_hook() {
+	wp_register_script( 'tag-it',  get_template_directory_uri().'/js/tag-it.min.js', array(
+		'jquery',
+		'jquery-ui-autocomplete'
+		));
+
+	wp_enqueue_script( 'jquery-ui-autocomplete' );
+
+	wp_enqueue_style( 'tagit', '/wp-content/themes/mytheme/css/tagit.css');
+	wp_enqueue_style( 'tagit-zndesk', '/wp-content/themes/mytheme/css/tagit.ui-zendesk.css');
+	wp_enqueue_script( 'jquery' );
+	wp_enqueue_script('custom', '/wp-content/themes/mytheme/js/custom.js', FILE , array( 'jquery','jquery-ui-autocomplete','tag-it' )); 
+	wp_enqueue_script( 'tag-it', '/wp-content/themes/mytheme/js/tag-it.min.js',FILE , array( 'jquery','jquery-ui-autocomplete','tag-it' ) );
+}
+add_action('admin_enqueue_scripts', 'autocomplete_hook');
+
+
+function add_custom_meta_box()
+{
+	add_meta_box("demo-meta-box", "Update Housing Tags", "custom_meta_box_markup", "post", "side", "high", null);
+}
+
+add_action("add_meta_boxes", "add_custom_meta_box");
+add_action("save_post", "save_custom_meta_box", 10, 3);
+function save_custom_meta_box($post_id, $post, $update){	
+	if( isset( $_POST['jsonObject'] ) && ! empty( $_POST['jsonObject'] ) ){		
+		post_api_update_tags($_POST['jsonObject']);
+	}
+}
+
+
+function custom_meta_box_markup()
+{	
+	try{
+		// global $wp;
+		$thread_id=74685;
+		$tags_json = get_housing_tags($thread_id);
+		$tags_arr = json_decode($tags_json,1);
+	// print_r($tags_json);exit;
+		$html='<input type="hidden" id="jsonObject" name="jsonObject" value="">';
+		$html.='<input type="hidden" id="existing_tags" value='."'".$tags_json."'>";
+		$html.='<ul id="singleFieldTags">';	
+		foreach ($tags_arr as $key => $value) {		
+			$html.='<li>'.$value['tag_name'].'</li>';
+		}	
+		$html.='</ul>';
+		echo $html;
+	} catch (Exception $e) {
+		echo $e->getMessage();
+	}
+}
+
+function get_housing_tags($thread_id){
+	$api_url = constant('GET_API_THREAD_TAGS').$thread_id;		
+	$response = wp_remote_get( $api_url, array(
+		'method' => 'GET',	
+		'headers' => array('Content-Type'=>'application/json')		
+		)
+	);
+	if ( is_wp_error( $response ) ) {
+		$error_message = $response->get_error_message();
+		echo "Something went wrong: $error_message";
+	} else {
+		if($response['response']['code']=="200"){
+			return $response['body'];
+		} else {
+			throw new Exception ($response['response']['message']);
+		}
+	}	
+}
+function post_api_update_tags($jsonObject){
+	$thread_id=74685;
+	$api_url = constant('POST_API_UPDATE_TAGS').$thread_id.'/update';
+	$args = array(
+		'data'=>array(
+			'tagsjson' => $jsonObject,
+			'userid' => constant('NEWS_MODERATOR_ID'),
+			'source'=> constant('IREF_API_SOURCE'),
+			'email' => constant('NEWS_MODERATOR_EMAIL')
+			),		
+		'url' => $api_url
+		);	
+	$response = wp_remote_post( $api_url, array(
+		'method' => 'POST',			
+		'body' => array(
+			'tagsjson' => stripslashes($jsonObject),
+			'userid' => 'Yoast Coolness',
+			'source'=>'housing',
+			'email' => 'amdkma@kskkf.ocm'
+			)
+		)
+	);
+	if ( is_wp_error( $response ) ) {
+		$error_message = $response->get_error_message();
+		echo "Something went wrong: $error_message";
+	}
+	// exit;
+}
+?>
