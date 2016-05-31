@@ -78,7 +78,7 @@ function post_api_update_thread($params){
 			'content' => $params['post_content'],
 			'title' => $params['post_title'],			
 			'source'=> constant('IREF_API_SOURCE'),
-			'email' => 'newuser6@housing.com',
+			'email' => constant('NEWS_MODERATOR_EMAIL'),
 			'useragent' => $_SERVER['HTTP_USER_AGENT'],
 			'clientip'=>$_SERVER['REMOTE_ADDR']
 			)
@@ -144,9 +144,9 @@ function post_api_update_tags($jsonObject){
 		'method' => 'POST',			
 		'body' => array(
 			'tagsjson' => stripslashes($jsonObject),
-			'userid' => 'Yoast Coolness',
-			'source'=>'housing',
-			'email' => 'amdkma@kskkf.ocm'
+			'userid' => constant('NEWS_MODERATOR_ID'),
+			'source'=> constant('IREF_API_SOURCE'),		
+			'email' => constant('NEWS_MODERATOR_EMAIL')
 			)
 		)
 	);
