@@ -92,7 +92,7 @@ jQuery( document ).ready(function() {
 									result = true;
 									// id=this.id;
 									id=(this.housing_tag_id==undefined)?this.id:this.housing_tag_id;
-									alert(id);
+									// alert(id);
 									housing_tag_id = id;
 									tag_name=this.tag_name;
 									display_name=this.display_name;
