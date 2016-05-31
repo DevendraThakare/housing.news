@@ -4,6 +4,7 @@ define('POST_API_URL', 'http://post.iref.com/api/');
 define('GET_API_THREAD', constant('GET_API_URL').'discussion/');
 define('GET_API_THREAD_TAGS', constant('GET_API_URL').'tags/discussion/');
 define('POST_API_UPDATE_TAGS', constant('POST_API_URL').'tags/');
+define('POST_API_UPDATE_THREAD', constant('POST_API_URL').'/discussion/');
 define('FETCH_HOUSING_TAGS_URL', 'https://tags.housing.com/api/v1/fetch-query-tags');
 define('NEWS_MODERATOR_ID', 'Yoast Coolness');
 define('NEWS_MODERATOR_EMAIL', 'amdkma@kskkf.ocm');
@@ -53,28 +54,64 @@ function add_custom_meta_box()
 
 add_action("add_meta_boxes", "add_custom_meta_box");
 add_action("save_post", "save_custom_meta_box", 10, 3);
-function save_custom_meta_box($post_id, $post, $update){	
-	if( isset( $_POST['jsonObject'] ) && ! empty( $_POST['jsonObject'] ) ){		
-		post_api_update_tags($_POST['jsonObject']);
+function save_custom_meta_box($post_id, $post, $update) {	
+	try {				
+		if(!empty($_POST)){
+			post_api_update_thread($_POST);				
+			if( isset( $_POST['jsonObject'] ) && ! empty( $_POST['jsonObject'] ) ){			
+				post_api_update_tags($_POST['jsonObject']);
+			}	
+		}
+	} catch (Exception $e) {		
+		echo 'Error Occurred in processing request.<br>';
+		echo $e->getMessage();exit;
 	}
 }
 
+function post_api_update_thread($params){
+	if(empty($params['post_content'])||empty($params['post_title'])) {
+		throw new Exception('Missing Params', 404);
+	}
+	$args = array(
+		'method' => 'POST',
+		'body' => array(
+			'content' => $params['post_content'],
+			'title' => $params['post_title'],			
+			'source'=> constant('IREF_API_SOURCE'),
+			'email' => 'newuser6@housing.com',
+			'useragent' => $_SERVER['HTTP_USER_AGENT'],
+			'clientip'=>$_SERVER['REMOTE_ADDR']
+			)
+		);		
+	$thread_id=91656;
+	$api_url = constant('POST_API_UPDATE_THREAD').$thread_id.'/update';	
+	$response = wp_remote_post( $api_url, $args);			
+	if ( is_wp_error( $response ) ) {		
+		throw new Exception($response->get_error_message(), 1);
+	}	
+	$res_body = json_decode($response['body']);	
+	if($response['response']['code'] != 201){
+		throw new Exception($res_body->message, 1);
+	}
+}
 
 function custom_meta_box_markup()
 {	
 	try{
 		// global $wp;
-		$thread_id=74685;
-		$tags_json = get_housing_tags($thread_id);
-		$tags_arr = json_decode($tags_json,1);
-	// print_r($tags_json);exit;
+		// $thread_id=74685;		
+		$tags_json = get_housing_tags($thread_id);		
+		if(!empty($tags_json))
+			$tags_arr = json_decode($tags_json,1);
 		$html='<input type="hidden" id="jsonObject" name="jsonObject" value="">';
-		$html.='<input type="hidden" id="existing_tags" value='."'".$tags_json."'>";
+		$html.='<input type="hidden" id="existing_tags" value='."'".$tags_json."'>";		
 		$html.='<ul id="singleFieldTags">';	
-		foreach ($tags_arr as $key => $value) {		
-			$html.='<li>'.$value['tag_name'].'</li>';
+		if(!empty($tags_json)){
+			foreach ($tags_arr as $key => $value) {		
+				$html.='<li>'.$value['tag_name'].'</li>';
+			}
 		}	
-		$html.='</ul>';
+		$html.='</ul>';		
 		echo $html;
 	} catch (Exception $e) {
 		echo $e->getMessage();
@@ -95,22 +132,14 @@ function get_housing_tags($thread_id){
 		if($response['response']['code']=="200"){
 			return $response['body'];
 		} else {
-			throw new Exception ($response['response']['message']);
+			return false;
+			// throw new Exception ($response['response']['message']);
 		}
 	}	
 }
 function post_api_update_tags($jsonObject){
 	$thread_id=74685;
-	$api_url = constant('POST_API_UPDATE_TAGS').$thread_id.'/update';
-	$args = array(
-		'data'=>array(
-			'tagsjson' => $jsonObject,
-			'userid' => constant('NEWS_MODERATOR_ID'),
-			'source'=> constant('IREF_API_SOURCE'),
-			'email' => constant('NEWS_MODERATOR_EMAIL')
-			),		
-		'url' => $api_url
-		);	
+	$api_url = constant('POST_API_UPDATE_TAGS').$thread_id.'/update';	
 	$response = wp_remote_post( $api_url, array(
 		'method' => 'POST',			
 		'body' => array(
@@ -122,8 +151,9 @@ function post_api_update_tags($jsonObject){
 		)
 	);
 	if ( is_wp_error( $response ) ) {
-		$error_message = $response->get_error_message();
-		echo "Something went wrong: $error_message";
+		// $error_message = $response->get_error_message();
+		// echo "Something went wrong: $error_message";
+		throw new Exception('Post is updated. Error in updating Tags '.$response->get_error_message(), 1);
 	}
 	// exit;
 }
