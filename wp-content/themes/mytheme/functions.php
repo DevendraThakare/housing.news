@@ -1,4 +1,11 @@
 <?php
+
+define('IREF_POST_API_URL', 'http://post.iref.com/api/');
+define('IREF_NEWS_FORUMID', 'news');
+define('IREF_NEWS_USERID', 'Yoast Coolness');
+define('IREF_NEWS_EMAIL', 'amdkma@kskkf.ocm');
+define('IREF_NEWS_SOURCE', 'housing');
+
 /**
  * Twenty Sixteen functions and definitions
  *
@@ -450,13 +457,15 @@ function check_values($post_ID, $post_after, $post_before){
     $params['content'] = $post_after->post_content;
     $params['status'] = $post_after->post_status;
     $params['authorid'] = $post_after->post_author;
-    $params['forumid'] = 'news';
-    $params['userid'] = 'Yoast Coolness';
-    $params['email'] = 'amdkma@kskkf.ocm';
-    $params['source'] = 'housing';
+    $params['forumid'] = constant('IREF_NEWS_FORUMID');
+    $params['userid'] = constant('IREF_NEWS_USERID');
+    $params['email'] = constant('IREF_NEWS_EMAIL');
+    $params['source'] = constant('IREF_NEWS_SOURCE');
+    $params['parseurl'] = 1;
     $thread_id = get_post_meta($post_ID, 'iref_thread_id');
+
     if(empty($thread_id)){
-    	$url =  'http://post.iref.com/api/forum/25/discussion/new';
+    	$url =  constant('IREF_POST_API_URL').'forum/25/discussion/new';
 	    $response = wp_remote_post( $url, array('body' => $params));
 
 		if ( is_wp_error( $response ) ) {
@@ -465,6 +474,7 @@ function check_values($post_ID, $post_after, $post_before){
 			$msg = json_decode($response['body'], true)['message'];
 		   	add_post_meta($post_ID, 'iref_thread_id', $msg['thread_id'], true);
 		}
+
     }
 }
 

@@ -64,7 +64,7 @@ function save_custom_meta_box($post_id, $post, $update) {
 		}
 	} catch (Exception $e) {		
 		echo 'Error Occurred in processing request.<br>';
-		echo $e->getMessage();exit;
+		echo $e->getMessage();
 	}
 }
 
@@ -83,7 +83,8 @@ function post_api_update_thread($params){
 			'clientip'=>$_SERVER['REMOTE_ADDR']
 			)
 		);		
-	$thread_id=91656;
+	// $thread_id=91656;
+	$thread_id = get_post_meta(get_the_ID(), 'iref_thread_id')[0];
 	$api_url = constant('POST_API_UPDATE_THREAD').$thread_id.'/update';	
 	$response = wp_remote_post( $api_url, $args);			
 	if ( is_wp_error( $response ) ) {		
@@ -100,6 +101,7 @@ function custom_meta_box_markup()
 	try{
 		// global $wp;
 		// $thread_id=74685;		
+		$thread_id = get_post_meta(get_the_ID(), 'iref_thread_id')[0];
 		$tags_json = get_housing_tags($thread_id);		
 		if(!empty($tags_json))
 			$tags_arr = json_decode($tags_json,1);
@@ -138,7 +140,7 @@ function get_housing_tags($thread_id){
 	}	
 }
 function post_api_update_tags($jsonObject){
-	$thread_id=74685;
+	$thread_id = get_post_meta(get_the_ID(), 'iref_thread_id');
 	$api_url = constant('POST_API_UPDATE_TAGS').$thread_id.'/update';	
 	$response = wp_remote_post( $api_url, array(
 		'method' => 'POST',			
