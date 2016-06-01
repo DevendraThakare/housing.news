@@ -1,11 +1,5 @@
 <?php
 
-define('IREF_POST_API_URL', 'http://post.iref.com/api/');
-define('IREF_NEWS_FORUMID', 'news');
-define('IREF_NEWS_USERID', 'Yoast Coolness');
-define('IREF_NEWS_EMAIL', 'amdkma@kskkf.ocm');
-define('IREF_NEWS_SOURCE', 'housing');
-
 /**
  * Twenty Sixteen functions and definitions
  *
@@ -450,35 +444,6 @@ if (class_exists('MultiPostThumbnails')) {
         )
     );
 }
-
-function check_values($post_ID, $post_after, $post_before){
-	$params = [];
-    $params['title'] = $post_after->post_title;
-    $params['content'] = $post_after->post_content;
-    $params['status'] = $post_after->post_status;
-    $params['authorid'] = $post_after->post_author;
-    $params['forumid'] = constant('IREF_NEWS_FORUMID');
-    $params['userid'] = constant('IREF_NEWS_USERID');
-    $params['email'] = constant('IREF_NEWS_EMAIL');
-    $params['source'] = constant('IREF_NEWS_SOURCE');
-    $params['parseurl'] = 1;
-    $thread_id = get_post_meta($post_ID, 'iref_thread_id');
-
-    if(empty($thread_id)){
-    	$url =  constant('IREF_POST_API_URL').'forum/25/discussion/new';
-	    $response = wp_remote_post( $url, array('body' => $params));
-
-		if ( is_wp_error( $response ) ) {
-		   $error_message = $response->get_error_message();
-		} else {
-			$msg = json_decode($response['body'], true)['message'];
-		   	add_post_meta($post_ID, 'iref_thread_id', $msg['thread_id'], true);
-		}
-
-    }
-}
-
-add_action( 'post_updated', 'check_values', 10, 3 ); //don't forget the last argument to allow all three arguments of the function
 
 include 'functions_custom.php';
 ?>

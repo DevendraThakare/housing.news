@@ -9,6 +9,7 @@ define('FETCH_HOUSING_TAGS_URL', 'https://tags.housing.com/api/v1/fetch-query-ta
 define('NEWS_MODERATOR_ID', 'Yoast Coolness');
 define('NEWS_MODERATOR_EMAIL', 'amdkma@kskkf.ocm');
 define('IREF_API_SOURCE', 'housing');
+define('IREF_NEWS_FORUMID', 'news');
 add_action( 'wp_ajax_ajax-tag-search', 'adding_custom_tag',1,2);
 function adding_custom_tag() {
 	if ( ! isset( $_GET['tax'] ) ) {
@@ -72,27 +73,38 @@ function post_api_update_thread($params){
 	if(empty($params['post_content'])||empty($params['post_title'])) {
 		throw new Exception('Missing Params', 404);
 	}
-	$args = array(
-		'method' => 'POST',
-		'body' => array(
-			'content' => $params['post_content'],
-			'title' => $params['post_title'],			
-			'source'=> constant('IREF_API_SOURCE'),
-			'email' => constant('NEWS_MODERATOR_EMAIL'),
-			'useragent' => $_SERVER['HTTP_USER_AGENT'],
-			'clientip'=>$_SERVER['REMOTE_ADDR']
-			)
-		);		
-	// $thread_id=91656;
-	$thread_id = get_post_meta(get_the_ID(), 'iref_thread_id')[0];
-	$api_url = constant('POST_API_UPDATE_THREAD').$thread_id.'/update';	
-	$response = wp_remote_post( $api_url, $args);			
-	if ( is_wp_error( $response ) ) {		
-		throw new Exception($response->get_error_message(), 1);
-	}	
-	$res_body = json_decode($response['body']);	
-	if($response['response']['code'] != 201){
-		throw new Exception($res_body->message, 1);
+	$args = [];
+    $args['title'] = $params['post_title'];
+    $args['content'] = $params['post_content'];
+    $args['tagsjson'] = stripslashes($_POST['jsonObject']);
+    $args['forumid'] = constant('IREF_NEWS_FORUMID');
+    $args['userid'] = constant('NEWS_MODERATOR_ID');
+    $args['email'] = constant('NEWS_MODERATOR_EMAIL');
+    $args['source'] = constant('IREF_API_SOURCE');
+    $args['useragent'] = $_SERVER['HTTP_USER_AGENT'];
+    $args['clientip'] = $_SERVER['REMOTE_ADDR'];
+    $args['parseurl'] = 1;
+    $thread_id = get_post_meta($params['post_ID'], 'iref_thread_id', true);
+    if(empty($thread_id)){
+    	$url =  constant('IREF_POST_API_URL').'forum/25/discussion/new';
+    }
+    else{
+    	$args['thread_id'] = $thread_id;
+    	$api_url = constant('POST_API_UPDATE_THREAD').$thread_id.'/update';	
+    }
+
+    $response = wp_remote_post( $url, array('body' => $args));
+	if ( is_wp_error( $response ) ) {
+	   throw new Exception($response->get_error_message(), 1);
+	} else {
+		$res_body = json_decode($response['body']);	
+		if($response['response']['code'] != 201){
+			throw new Exception($res_body->message, 1);
+		}else{
+			if(empty($thread_id))
+				$msg = $res_body->message;
+				add_post_meta($params['post_ID'], 'iref_thread_id', $msg->thread_id, true);
+		}
 	}
 }
 
