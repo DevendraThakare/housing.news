@@ -31,6 +31,7 @@
 			) );
 			?>
 	</div><!-- .entry-content -->
+	<?php if(function_exists('wp_related_posts')){ wp_related_posts(); } ?>
 	<div class="tags-section page-section">
 		<?php echo get_the_tag_list('<ul class="tag-list"><li>','</li><li>','</li></ul>'); ?>
 	</div>
