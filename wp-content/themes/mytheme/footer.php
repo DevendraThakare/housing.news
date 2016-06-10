@@ -13,51 +13,6 @@
 		</div><!-- .site-content -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<!-- <div class="site-info clear">
-				<div class="footer-menu-wrap housing-line">
-					<div class="footer-logo-coloured"></div>
-					<div class="desc"> © 2012-15 Locon Solutions Pvt. Ltd. </div>
-				</div>
-				<div class="footer-menu-wrap company-menu-wrap">
-					<h4 class="footer-menu-head">COMPLANY</h4>
-					<?php
-				        wp_nav_menu( array(
-				            'menu'              => 'company',
-				            'container'         => 'div',
-				            'container_class'   => 'company-menu',
-				            'menu_class'        => 'footer-links-wrap',
-				            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-				            'walker'            => new wp_bootstrap_navwalker())
-				        );
-				    ?>
-			    </div>
-			    <div class="footer-menu-wrap explore-menu-wrap">
-			    	<h4 class="footer-menu-head">EXPLORE</h4>
-					<?php
-				        wp_nav_menu( array(
-				            'menu'              => 'explore',
-				            'container'         => 'div',
-				            'container_class'   => 'explore-menu',
-				            'menu_class'        => 'footer-links-wrap',
-				            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-				            'walker'            => new wp_bootstrap_navwalker())
-				        );
-				    ?>
-			    </div>
-			    <div class="footer-menu-wrap follow-menu-wrap">
-			    	<h4 class="footer-menu-head">FOLLOW</h4>
-					<?php
-				        wp_nav_menu( array(
-				            'menu'              => 'follow',
-				            'container'         => 'div',
-				            'container_class'   => 'follow-menu',
-				            'menu_class'        => 'footer-links-wrap',
-				            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-				            'walker'            => new wp_bootstrap_navwalker())
-				        );
-				    ?>
-			    </div>
-			</div><!-- .site-info -->
 			<div class="footer"><div class="housing-line">
 				<div class="footer-logo-coloured"></div>
 				<div class="desc">
@@ -101,10 +56,7 @@
 				</div>
 				<ul class="links">
 				<li>
-				<a class="link" href="/blog" data-bypass="true" target="_blank">Blog</a>
-				</li>
-				<li>
-				<a class="link" href="/dsl" data-bypass="true" target="_blank">Data Sciences</a>
+				<a class="link" href="/news" data-bypass="true" target="_blank">News</a>
 				</li>
 				<li>
 				<a class="link" href="/attik" data-bypass="true" target="_blank">Attik</a>
@@ -146,6 +98,55 @@
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
 </div><!-- .site -->
+
+<script>
+function objpos(node){
+  var curtop = 0;
+  var curtopscroll = 0;
+  count = 0;
+  if (node.offsetParent) {
+      do {
+          count += 1
+          if(count>10) return
+          curtop += node.offsetTop;
+          curtopscroll += node.offsetParent ? node.offsetParent.scrollTop : 0;
+      } while (node = node.offsetParent);
+  }
+  return curtop - curtopscroll
+}
+var header = document.getElementsByClassName("entry-header");
+var footer = document.getElementsByClassName("related_post_title");
+var scrollstart = false;
+var scrolltillend = false;
+function gatrack(){
+try{
+if(header.length==1 && footer.length==1){
+   var hpos = objpos(header[0]);
+   var fpos = objpos(footer[0]);
+   if(hpos < 0 && !scrollstart){
+      scrollstart = true
+      ga('send', {
+  	hitType: 'event',
+	eventCategory: 'scroll',
+  	eventAction: 'pagestart',
+  	eventLabel: ''
+      });
+   }
+   if(fpos < window.innerHeight && !scrolltillend){
+      scrolltillend = true
+      ga('send', {
+  	hitType: 'event',
+	eventCategory: 'scroll',
+  	eventAction: 'pageend',
+  	eventLabel: ''
+      });
+   }
+}
+}catch(e){}
+setTimeout(gatrack,1000)
+}
+gatrack()
+</script>
 
 <?php wp_footer(); ?>
 </body>
