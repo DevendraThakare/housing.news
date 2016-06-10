@@ -58,10 +58,7 @@ add_action("save_post", "save_custom_meta_box", 10, 3);
 function save_custom_meta_box($post_id, $post, $update) {	
 	try {				
 		if(!empty($_POST)){
-			post_api_update_thread($_POST);				
-			if( isset( $_POST['jsonObject'] ) && ! empty( $_POST['jsonObject'] ) ){			
-				post_api_update_tags($_POST['jsonObject']);
-			}	
+			post_api_update_thread($_POST);					
 		}
 	} catch (Exception $e) {		
 		echo 'Error Occurred in processing request.<br>';
@@ -76,7 +73,8 @@ function post_api_update_thread($params){
 	$args = [];
     $args['title'] = $params['post_title'];
     $args['content'] = $params['post_content'];
-    $args['tagsjson'] = stripslashes($_POST['jsonObject']);
+    if(!empty($_POST['jsonObject']))
+    	$args['tagsjson'] = stripslashes($_POST['jsonObject']);
     $args['forumid'] = constant('IREF_NEWS_FORUMID');
     $args['userid'] = constant('NEWS_MODERATOR_ID');
     $args['email'] = constant('NEWS_MODERATOR_EMAIL');
@@ -84,9 +82,10 @@ function post_api_update_thread($params){
     $args['useragent'] = $_SERVER['HTTP_USER_AGENT'];
     $args['clientip'] = $_SERVER['REMOTE_ADDR'];
     $args['parseurl'] = 1;
+    // print_r($args);exit;
     $thread_id = get_post_meta($params['post_ID'], 'iref_thread_id', true);
     if(empty($thread_id)){
-    	$url =  constant('IREF_POST_API_URL').'forum/25/discussion/new';
+    	$url =  constant('POST_API_URL').'forum/25/discussion/new';
     }
     else{
     	$args['thread_id'] = $thread_id;
@@ -150,25 +149,5 @@ function get_housing_tags($thread_id){
 			// throw new Exception ($response['response']['message']);
 		}
 	}	
-}
-function post_api_update_tags($jsonObject){
-	$thread_id = get_post_meta(get_the_ID(), 'iref_thread_id');
-	$api_url = constant('POST_API_UPDATE_TAGS').$thread_id.'/update';	
-	$response = wp_remote_post( $api_url, array(
-		'method' => 'POST',			
-		'body' => array(
-			'tagsjson' => stripslashes($jsonObject),
-			'userid' => constant('NEWS_MODERATOR_ID'),
-			'source'=> constant('IREF_API_SOURCE'),		
-			'email' => constant('NEWS_MODERATOR_EMAIL')
-			)
-		)
-	);
-	if ( is_wp_error( $response ) ) {
-		// $error_message = $response->get_error_message();
-		// echo "Something went wrong: $error_message";
-		throw new Exception('Post is updated. Error in updating Tags '.$response->get_error_message(), 1);
-	}
-	// exit;
 }
 ?>
