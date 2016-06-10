@@ -93,9 +93,24 @@ do_action( 'rss_tag_pre', 'rss2' );
 
 		<guid isPermaLink="false"><?php the_guid(); ?></guid>
 		<?php if ( has_post_thumbnail() ) { ?>
-				<media:text> 
-					<![CDATA[<?php echo the_post_thumbnail_url('full'); ?>]]>
-				</media:text>
+				<?php
+					if( class_exists('MultiPostThumbnails') ) {
+						$thumbnail = MultiPostThumbnails::get_post_thumbnail_url(get_post_type(), 'thumbnail-image');
+					}
+
+					if(!$thumbnail){
+						$post_image_id = get_post_thumbnail_id();
+						if ($post_image_id) {
+							$thumbnail = wp_get_attachment_image_src( $post_image_id, 'medium', false);
+							if ($thumbnail) (string)$thumbnail = $thumbnail[0];
+						}
+				   	}
+				?>
+				<?php if($thumbnail){ ?>
+					<media:text> 
+						<![CDATA[<?php echo $thumbnail; ?>]]>
+					</media:text>
+				<?php } ?>
 		<?php } ?>
 <?php if (get_option('rss_use_excerpt')) : ?>
 		<description><![CDATA[<?php the_excerpt_rss(); ?>]]></description>
