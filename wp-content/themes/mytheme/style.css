@@ -1519,12 +1519,24 @@ div.wpcf7-mail-sent-ok{
 	margin-right: 0;
 }
 
-.addtoany_list.a2a_kit_size_32 a > span{
+.addtoany_list.a2a_kit_size_32 a > span.a2a_svg{
 	width: 40px !important;
 	height: 40px !important;
 	background-repeat: no-repeat !important;
 	background-size: cover;
 	border-radius: 24px !important;
+}
+
+.addtoany_list.a2a_kit_size_32 a > span.a2a_label{
+	display: none;
+}
+.addtoany_list.a2a_kit_size_32 a > span.a2a_count{
+	width: auto !important;
+	padding: 0 5px;
+	min-width: 20px;
+	height: 20px !important;
+	line-height: 18px !important;
+	font-size: 12px !important;
 }
 
 .addtoany_list  .a2a_button_whatsapp{
