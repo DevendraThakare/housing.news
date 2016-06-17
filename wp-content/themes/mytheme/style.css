@@ -722,6 +722,10 @@ a:hover, a:focus{
 .entry-content h3{
 	font-size: 20px
 }
+.entry-content table td, .entry-content table td{
+	padding: 5px 8px;
+    border: 1px solid #ccc;
+}
 // .entry-excerpt:after{
 // 	content: "...";
 //     position: absolute;
