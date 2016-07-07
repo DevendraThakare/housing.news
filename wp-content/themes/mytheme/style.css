@@ -625,13 +625,12 @@ a:hover, a:focus{
 }
 
 
-.single .navbar-default, .home .navbar-default{
+.single:not(.single-glossary) .navbar-default, .home .navbar-default{
 	background-color: transparent;
 }
-.single .site-content, .home .site-content{
+.single:not(.single-glossary) .site-content, .home .site-content{
 	margin-top: -50px;
 }
-
 .home .site-header .navbar-default .navbar-nav>.active>a, .home .site-header .navbar-default .navbar-nav>.active>a:focus, .home .site-header .navbar-default .navbar-nav>.active>a:hover{
 	background-color: transparent;
 }
@@ -639,7 +638,7 @@ a:hover, a:focus{
 .site-header.headroom--not-top .navbar-default{
 	background-color: #7323dc;
 }
-.single .site-header.headroom--not-top .form-control, .home .site-header.headroom--not-top .form-control{
+.single:not(.single-glossary) .site-header.headroom--not-top .form-control, .home .site-header.headroom--not-top .form-control{
 	-webkit-transition: background-color 0.5s ease-out;
 	-moz-transition: background-color 0.5s ease-out;
 	transition: background-color 0.5s ease-out;
@@ -647,7 +646,7 @@ a:hover, a:focus{
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
-.single .site-header.headroom--not-top .search-form .icon, .home .site-header.headroom--not-top .search-form .icon{
+.single:not(.single-glossary) .site-header.headroom--not-top .search-form .icon, .home .site-header.headroom--not-top .search-form .icon{
 	color: #fff;
 }
 
@@ -791,9 +790,18 @@ a:hover, a:focus{
 .category-tag a{
 	color: #fff;
 }
-.post-content-wrap{
+
+
+.post .post-content-wrap{
 	margin-left: 320px;
 	position: relative;
+}
+.glossary{
+	margin-bottom: 15px;
+}
+.glossary .post-content-wrap{
+	padding: 6px 20px;
+    background-color: #f6f6f6;
 }
 .post-banner-img .wp-post-image{
 	width: 100%;
@@ -1692,7 +1700,7 @@ div.wpcf7-mail-sent-ok{
 		width: 220px;
 		height: 146px;
     }
-    .post-content-wrap {
+    .post .post-content-wrap {
 		margin-left: 240px;
 	}
 	.entry-title{

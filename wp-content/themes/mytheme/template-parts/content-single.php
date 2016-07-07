@@ -15,7 +15,11 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php if(function_exists('the_subtitle')){the_subtitle('<h3 class="entry-subtitle">', '</h3>');} ?>
 	</header><!-- .entry-header -->
-	<?php echo do_shortcode('[addtoany]'); ?>
+	<?php 
+		if(get_post_type()!='glossary'){
+			echo do_shortcode('[addtoany]');
+		}	
+	?>
 
 	<div class="entry-content">
 		<?php
@@ -31,14 +35,20 @@
 			) );
 			?>
 	</div><!-- .entry-content -->
-	<?php echo do_shortcode('[addtoany]'); ?>
-	<?php if(function_exists('wp_related_posts')){ wp_related_posts(); } ?>
+	<?php 
+		if(get_post_type()!='glossary'){
+			echo do_shortcode('[addtoany]');
+		}	
+	?>
+	<?php if(function_exists('wp_related_posts') && get_post_type()!='glossary'){ wp_related_posts(); } ?>
 	<div class="tags-section page-section">
 		<?php echo get_the_tag_list('<ul class="tag-list"><li>','</li><li>','</li></ul>'); ?>
 	</div>
-	<div class="fb-comment-section page-section">
-		<?php echo do_shortcode('[fbcomments]'); ?>
-	</div>
+	<?php if(get_post_type()!='glossary'){ ?>
+		<div class="fb-comment-section page-section">
+			<?php echo do_shortcode('[fbcomments]'); ?>
+		</div>
+	<?php } ?>
 
 	<footer class="entry-footer">
 		<?php
