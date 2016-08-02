@@ -1,12 +1,21 @@
 <?php get_header(); ?>
+<?php if(get_post_type() == 'glossary'){ ?>
+	<div class="home-page-banner-gradient"></div>
+	<div class="entry-banner" style="background-image: url('http://localhost/news/wp-content/uploads/2016/03/Budget-2016-brings-in-hope-and-opportunity-for-first-home-buyers-and-affordable-segment.png');"></div>
+<?php } ?>
 <div id="page-container" class="clear">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<?php if ( have_posts() ) : ?>
 			<header class="page-header">
+			<?php if(get_post_type() == 'glossary'){ ?>
+				<h1 class="page-title">Dictionary of real estate terms</h1>
+			<?php } else{ ?>
+
 				<?php the_archive_title( '<h1 class="page-title">', '</h1>' );
 					  the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
+			<?php }?>
 			</header><!-- .page-header -->
 			<div class="entry-wrapper">
 				<?php while ( have_posts() ) : the_post();

@@ -625,10 +625,10 @@ a:hover, a:focus{
 }
 
 
-.single:not(.single-glossary) .navbar-default, .home .navbar-default{
+.single:not(.single-glossary) .navbar-default, .home .navbar-default, .post-type-archive-glossary .navbar-default{
 	background-color: transparent;
 }
-.single:not(.single-glossary) .site-content, .home .site-content{
+.single:not(.single-glossary) .site-content, .home .site-content, .post-type-archive-glossary .site-content{
 	margin-top: -50px;
 }
 .home .site-header .navbar-default .navbar-nav>.active>a, .home .site-header .navbar-default .navbar-nav>.active>a:focus, .home .site-header .navbar-default .navbar-nav>.active>a:hover{
@@ -638,7 +638,8 @@ a:hover, a:focus{
 .site-header.headroom--not-top .navbar-default{
 	background-color: #7323dc;
 }
-.single:not(.single-glossary) .site-header.headroom--not-top .form-control, .home .site-header.headroom--not-top .form-control{
+.single:not(.single-glossary) .site-header.headroom--not-top .form-control, .home .site-header.headroom--not-top .form-control, 
+.post-type-archive-glossary .site-header.headroom--not-top .form-control{
 	-webkit-transition: background-color 0.5s ease-out;
 	-moz-transition: background-color 0.5s ease-out;
 	transition: background-color 0.5s ease-out;
@@ -646,7 +647,8 @@ a:hover, a:focus{
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
-.single:not(.single-glossary) .site-header.headroom--not-top .search-form .icon, .home .site-header.headroom--not-top .search-form .icon{
+.single:not(.single-glossary) .site-header.headroom--not-top .search-form .icon, .home .site-header.headroom--not-top .search-form .icon,
+.post-type-archive-glossary .site-header.headroom--not-top .search-form .icon{
 	color: #fff;
 }
 
