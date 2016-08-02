@@ -1,8 +1,4 @@
 <?php get_header(); ?>
-<?php if(get_post_type() == 'glossary'){ ?>
-	<div class="home-page-banner-gradient"></div>
-	<div class="entry-banner" style="background-image: url('http://localhost/news/wp-content/uploads/2016/03/Budget-2016-brings-in-hope-and-opportunity-for-first-home-buyers-and-affordable-segment.png');"></div>
-<?php } ?>
 <div id="page-container" class="clear">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
