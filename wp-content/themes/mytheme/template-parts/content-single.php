@@ -16,9 +16,9 @@
 		<?php if(function_exists('the_subtitle')){the_subtitle('<h3 class="entry-subtitle">', '</h3>');} ?>
 	</header><!-- .entry-header -->
 	<?php 
-		if(get_post_type()!='glossary'){
-			echo do_shortcode('[addtoany]');
-		}	
+		// if(get_post_type()!='glossary'){
+		// 	echo do_shortcode('[addtoany]');
+		// }	
 	?>
 
 	<div class="entry-content">
@@ -36,9 +36,9 @@
 			?>
 	</div><!-- .entry-content -->
 	<?php 
-		if(get_post_type()!='glossary'){
-			echo do_shortcode('[addtoany]');
-		}	
+		// if(get_post_type()!='glossary'){
+		// 	echo do_shortcode('[addtoany]');
+		// }	
 	?>
 	<?php if(function_exists('wp_related_posts') && get_post_type()!='glossary'){ wp_related_posts(); } ?>
 	<div class="tags-section page-section">

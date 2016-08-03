@@ -678,6 +678,7 @@ a:hover, a:focus{
 }
 .single-post .entry-content{
 	line-height: 28px;
+	border-bottom: 1px solid #e6e6e6;
 }
 .entry-subtitle{
 	font-size: 16px;
@@ -687,6 +688,8 @@ a:hover, a:focus{
 	line-height: 28px;
 	color: #333;
 	font-style: italic;
+	padding-bottom: 14px;
+    border-bottom: 1px solid #e6e6e6;
 }
 
 .entry-title a{
