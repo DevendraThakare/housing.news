@@ -1554,7 +1554,7 @@ div.wpcf7-mail-sent-ok{
 	font-size: 12px !important;
 }
 
-.addtoany_list  .a2a_button_whatsapp{
+.addtoany_list  .a2a_button_whatsapp, .a2a_floating_style .a2a_button_whatsapp{
 	display: none;
 }
 
@@ -1727,7 +1727,7 @@ div.wpcf7-mail-sent-ok{
 		width: 70%;
 	}
 
-	.addtoany_list  .a2a_button_whatsapp{
+	.addtoany_list  .a2a_button_whatsapp, .a2a_floating_style .a2a_button_whatsapp{
 		display: inline-block;
 	}
 	// #main-menu{
