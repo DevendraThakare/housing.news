@@ -1415,7 +1415,9 @@ div.wpcf7-mail-sent-ok{
 .swipe-wrap .item {
   float:left;
   width:100%;
+  max-width: 800px;
   position: relative;
+  padding: 0 2px;
 }
 
 
@@ -1427,8 +1429,18 @@ div.wpcf7-mail-sent-ok{
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 50%;
-	text-shadow:none
+    width: 80%;
+	text-shadow:none;
+	opacity: 0;
+	-webkit-transition: opacity 0.4s ease-out;
+	-moz-transition: opacity 0.4s ease-out;
+	transition: opacity 0.4s ease-out;
+}
+.main-carousel .carousel-control{
+	z-index: 100;
+}
+.main-carousel .item.active .carousel-caption{
+	opacity: 1;
 }
 .main-carousel .caption-author a:hover, .main-carousel .slider-date a:hover{
 	text-decoration: underline;
@@ -1446,8 +1458,8 @@ div.wpcf7-mail-sent-ok{
     content: "";
     position: absolute;
     top: 0px;
-    right: 0px;
-    left: 0px;
+    right: 2px;
+    left: 2px;
     bottom: 0px;
     background-color: rgba(0,0,0,0.2);
 }
@@ -1483,9 +1495,9 @@ div.wpcf7-mail-sent-ok{
 }
 .main-carousel .caption-title{
 	margin: 24px 0;
-	font-size: 36px;
-	font-weight: 600;
-	line-height: 44px;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
 }
 .nav-previous, .nav-next{
 	width: 48%;
@@ -1688,6 +1700,14 @@ div.wpcf7-mail-sent-ok{
 	}
 	.site-header .container-fluid{
 		padding: 0px;
+	}
+	.swipe-wrap .item {
+		padding: 0px;
+		max-width: 100%;
+	}
+	.img-holder:after{
+		right: 0;
+		left: 0;
 	}
 }
 

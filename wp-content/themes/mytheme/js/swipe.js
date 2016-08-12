@@ -33,6 +33,9 @@ function Swipe(container, options) {
   var index = parseInt(options.startSlide, 10) || 0;
   var speed = options.speed || 300;
   options.continuous = options.continuous !== undefined ? options.continuous : true;
+  var slide_width = 0;
+  if(options.itunes)
+    slide_width = element.children[0].getBoundingClientRect().width || 0;
 
   function setup() {
 
@@ -54,7 +57,10 @@ function Swipe(container, options) {
     slidePos = new Array(slides.length);
 
     // determine width of each slide
-    width = container.getBoundingClientRect().width || container.offsetWidth;
+    if(slide_width)
+      width = slide_width;
+    else
+      width = container.getBoundingClientRect().width || container.offsetWidth;
 
     element.style.width = (slides.length * width) + 'px';
 
@@ -63,7 +69,7 @@ function Swipe(container, options) {
     while(pos--) {
 
       var slide = slides[pos];
-
+      
       slide.style.width = width + 'px';
       slide.setAttribute('data-index', pos);
 
@@ -78,11 +84,14 @@ function Swipe(container, options) {
     if (options.continuous && browser.transitions) {
       move(circle(index-1), -width, 0);
       move(circle(index+1), width, 0);
+      move(circle(index-2), -(2*width), 0);
+      move(circle(index+2), (2*width), 0);
     }
 
     if (!browser.transitions) element.style.left = (index * -width) + 'px';
 
     container.style.visibility = 'visible';
+    slides[index].className += ' active';
 
   }
 
@@ -128,16 +137,18 @@ function Swipe(container, options) {
       }
 
       var diff = Math.abs(index-to) - 1;
-
       // move all the slides between index and to in the right direction
       while (diff--) move( circle((to > index ? to : index) - diff - 1), width * direction, 0);
-
       to = circle(to);
 
       move(index, width * direction, slideSpeed || speed);
       move(to, 0, slideSpeed || speed);
 
-      if (options.continuous) move(circle(to - direction), -(width * direction), 0); // we need to get the next in place
+      move(circle(to - direction), -(2*width * direction), 0);
+      move(circle(index + direction), (2*width * direction), slideSpeed || speed);
+
+      if (options.continuous) move(circle(to - direction), -(width * direction), slideSpeed || speed); // we need to get the next in place
+      slides[to].className += ' active';
 
     } else {
 
@@ -147,11 +158,15 @@ function Swipe(container, options) {
     }
 
     index = to;
+    var pos = slides.length;
+    while(pos--) {
+      slides[pos].className = slides[pos].className.replace(/\bactive\b/,'');
+    }
+    slides[to].className += ' active';
     offloadFn(options.callback && options.callback(index, slides[index]));
   }
 
   function move(index, dist, speed) {
-
     translate(index, dist, speed);
     slidePos[index] = dist;
 
@@ -163,6 +178,10 @@ function Swipe(container, options) {
     var style = slide && slide.style;
 
     if (!style) return;
+
+    if(options.itunes){
+        dist = dist + (container.getBoundingClientRect().width - slide_width)/2;
+    }
 
     style.webkitTransitionDuration =
     style.MozTransitionDuration =
