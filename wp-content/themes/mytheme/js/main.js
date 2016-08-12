@@ -1,19 +1,35 @@
+var timeout = null;
+var current_slide = 0;
+var slider = null;
 (function( $ ) {
 	$( document ).ready( function() {
-		window.mySwipe = Swipe(document.getElementById('main-slider'), {
-			itunes: true, 
-			auto: 5000
+		function initSlider(startSlide){
+			slider = Swipe(document.getElementById('main-slider'), {
+				itunes: true, 
+				auto: 5000,
+				startSlide: startSlide,
+				callback: function(index, elem){ current_slide = index; }
+			});
+		}
+		initSlider(0);
+		$( window ).resize(function() {
+			if(timeout)
+				clearTimeout(timeout);
+			timeout = setTimeout(function(){
+				slider.kill();
+				initSlider(current_slide);
+			}, 400)
 		});
 
 		$('#main-slider .carousel-control.left').click(function(e){
 			e.preventDefault();
 			e.stopPropagation();
-			mySwipe.prev();
+			slider.prev();
 		});
 		$('#main-slider .carousel-control.right').click(function(e){
 			e.preventDefault();
 			e.stopPropagation();
-			mySwipe.next();
+			slider.next();
 		});
 		var myElement = document.getElementById("masthead");
 		var headroom  = new Headroom(myElement,{
