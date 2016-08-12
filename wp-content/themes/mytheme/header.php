@@ -20,6 +20,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta property="fb:pages" content="445540912141491" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<script async src="https://housing-rm.housingcdn.com/news/news.js"></script>
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>

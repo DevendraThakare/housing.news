@@ -650,6 +650,15 @@ a:hover, a:focus{
 	color: #fff;
 }
 
+.post-type-archive-glossary .page-title{
+	background-image: url(http://housing-rm.housingcdn.com/email_campaigns/dictionary.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 135px;
+    background-repeat: no-repeat;
+    font-size: 0px;
+}
+
 #main-menu .dropdown-menu>li>a{
 	line-height: 24px;
 }
