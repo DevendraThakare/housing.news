@@ -1718,6 +1718,9 @@ div.wpcf7-mail-sent-ok{
 		right: 0;
 		left: 0;
 	}
+	.main-carousel .carousel-caption{
+		opacity: 1;
+	}
 }
 
 @media (max-width: 1024px) {

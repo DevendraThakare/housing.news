@@ -72,6 +72,8 @@ function Swipe(container, options) {
       
       slide.style.width = width + 'px';
       slide.setAttribute('data-index', pos);
+      slides[pos].className = slides[pos].className.replace(/\bactive\b/,'');
+      slides[pos].className = slides[pos].className.trim();
 
       if (browser.transitions) {
         slide.style.left = (pos * -width) + 'px';
@@ -161,6 +163,7 @@ function Swipe(container, options) {
     var pos = slides.length;
     while(pos--) {
       slides[pos].className = slides[pos].className.replace(/\bactive\b/,'');
+      slides[pos].className = slides[pos].className.trim();
     }
     slides[to].className += ' active';
     offloadFn(options.callback && options.callback(index, slides[index]));

@@ -18,7 +18,7 @@ var slider = null;
 			timeout = setTimeout(function(){
 				slider.kill();
 				initSlider(current_slide);
-			}, 400)
+			}, 1000)
 		});
 
 		$('#main-slider .carousel-control.left').click(function(e){
