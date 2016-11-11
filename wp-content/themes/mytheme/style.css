@@ -2102,15 +2102,14 @@ div.wpcf7-mail-sent-ok{
 	#wp_rp_first .wp_rp_title, #wp_rp_first .wp_rp_publish_date{
 		left: 90px;
 	}
+	.footer .links-row .links-detail, .footer .links.half, .footer .links-row .links-detail.column2{
+		width: 100%;
+		display: block;
+	}
 }
 @media (max-width: 375px) {
 	.entry-thumb, .main-carousel, .main-carousel .img-holder, .entry-banner{
 		height: 240px;
-	}
-
-	.footer .links-row .links-detail, .footer .links.half, .footer .links-row .links-detail.column2{
-		width: 100%;
-		display: block;
 	}
 	.footer .links-row .links-detail.column2{
 		margin-left: 0;
