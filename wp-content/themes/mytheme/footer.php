@@ -46,9 +46,6 @@
 				<li>
 				<a class="link" data-bypass="true" href="/contact-us" target="_blank" title="Contact Info">Contact Us</a>
 				</li>
-				<li class="feedback-elem">
-				<div class="feedback-btn link">Feedback</div>
-				</li>
 				</ul>
 				</div><div class="column2 explore-links links-detail">
 				<div class="footer-header">
@@ -56,10 +53,7 @@
 				</div>
 				<ul class="links">
 				<li>
-				<a class="link" href="/news" data-bypass="true" target="_blank">News</a>
-				</li>
-				<li>
-				<a class="link" href="/attik" data-bypass="true" target="_blank">Attik</a>
+				<a class="link" href="https://housing.com/" data-bypass="true" target="_blank">Housing.com</a>
 				</li>
 				<li>
 				<a class="link" href="/sitemap" target="_blank" data-bypass="true">Sitemap</a>
